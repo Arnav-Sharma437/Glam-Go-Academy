@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Core brand color palette */
+  /* Core brand color palette - Light Mode */
   --bg: #FAF7F2;          /* Soft ivory / off-white */
   --text: #1C1A17;        /* Deep charcoal / near-black */
   --accent: #C9A24B;      /* Muted gold */
@@ -11,9 +11,21 @@
   --white: #FFFFFF;
   --card-bg: #FFFFFF;
 
-  /* Font mappings */
-  --font-serif: var(--font-playfair);
-  --font-sans: var(--font-inter);
+  /* Font bindings from Next/Google fonts */
+  --font-inter-var: var(--font-inter);
+  --font-roboto-var: var(--font-roboto);
+}
+
+:root.dark {
+  /* Core brand color palette - Dark Mode */
+  --bg: #0C0A09;          /* Premium dark stone */
+  --text: #F5F5F4;        /* Off-white stone text */
+  --accent: #D9B46A;      /* Brightened gold for contrast */
+  --accent-hover: #E2C284;
+  --muted: #A8A29E;       /* Muted grey-stone */
+  --muted-light: #292524; /* Dark stone border */
+  --white: #FFFFFF;
+  --card-bg: #1C1917;     /* Clean dark card background */
 }
 
 @theme {
@@ -25,16 +37,23 @@
   --color-muted-light: var(--muted-light);
   --color-card-bg: var(--card-bg);
 
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-inter-var), system-ui, sans-serif;
+  --font-body: var(--font-roboto-var), system-ui, sans-serif;
+  --font-serif: var(--font-inter-var), system-ui, sans-serif; /* Swapped to Inter to clean up serif "AI" vibe */
 }
 
 /* Base custom styles */
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-body);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Ensure smooth styling transition for borders and divs */
+div, header, footer, section, button, a, select, input {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Custom premium scrollbar */

@@ -56,7 +56,7 @@ export default function CoursesOverview() {
             <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-3 block">
               Our Training Programs
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-text">
+            <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-text">
               Transform Passion Into A Professional Career
             </h2>
           </div>
@@ -89,7 +89,7 @@ export default function CoursesOverview() {
 
               {/* Card Body */}
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="font-serif text-xl font-medium text-text mb-2 group-hover:text-accent transition-colors duration-300">
+                <h3 className="font-sans text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors duration-300">
                   {course.title}
                 </h3>
                 

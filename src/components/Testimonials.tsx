@@ -25,7 +25,7 @@ export default function Testimonials() {
           <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-3 block">
             Success Stories
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-text">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-text">
             Loved by Our Students
           </h2>
         </div>
@@ -47,7 +47,7 @@ export default function Testimonials() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.39 9.39-9.39v2.856c-3.111 0-4.39 2.012-4.39 4.39h4.39v9.535H14.017zm-14 0v-7.391c0-5.704 3.748-9.39 9.407-9.39v2.856c-3.116 0-4.407 2.012-4.407 4.39h4.407v9.535H.017z" />
               </svg>
 
-              <blockquote className="font-serif text-base italic text-text/90 leading-relaxed mb-8 flex-grow">
+              <blockquote className="font-sans text-sm italic text-text/80 leading-relaxed mb-8 flex-grow">
                 “{t.quote}”
               </blockquote>
 

@@ -30,7 +30,7 @@ export default function WhyTrain() {
           <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-3 block">
             Why Train With Us
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-text">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-text">
             Designed for the Modern Beauty Professional
           </h2>
         </div>
@@ -39,10 +39,10 @@ export default function WhyTrain() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {points.map((point, index) => (
             <div key={index} className="flex flex-col text-left">
-              <span className="font-serif text-3xl md:text-4xl text-accent font-light mb-4 block border-b border-muted-light/60 pb-2">
+              <span className="font-sans text-3xl md:text-4xl text-accent font-bold mb-4 block border-b border-muted-light/60 pb-2">
                 {point.num}
               </span>
-              <h3 className="font-serif text-lg font-medium text-text mb-2">
+              <h3 className="font-sans text-lg font-bold text-text mb-2">
                 {point.title}
               </h3>
               <p className="font-sans text-xs text-muted leading-relaxed">

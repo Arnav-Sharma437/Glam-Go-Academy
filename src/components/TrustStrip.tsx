@@ -17,7 +17,7 @@ export default function TrustStrip() {
                 index > 1 ? "pt-6 md:pt-0" : ""
               } ${index === 1 ? "pt-0 md:pt-0" : ""}`}
             >
-              <span className="font-serif text-2xl md:text-3xl text-text font-normal mb-1">
+              <span className="font-sans text-2xl md:text-3xl text-text font-bold mb-1">
                 {item.value}
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-muted font-sans font-medium">

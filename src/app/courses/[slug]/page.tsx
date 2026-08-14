@@ -97,7 +97,7 @@ export default function CourseDetailPage({ params }: PageProps) {
       <>
         <Header />
         <main className="min-h-screen flex flex-col items-center justify-center bg-bg text-center px-6">
-          <h1 className="font-serif text-3xl mb-4">Course Not Found</h1>
+          <h1 className="font-sans text-3xl font-bold mb-4">Course Not Found</h1>
           <p className="font-sans text-sm text-muted mb-8">The course program you requested does not exist or has been moved.</p>
           <Link href="/" className="px-6 py-3 bg-text text-bg text-xs tracking-widest uppercase font-semibold hover:bg-accent transition-colors duration-300">
             Back to Homepage
@@ -153,7 +153,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                 </span>
               </div>
 
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-text mb-6">
+              <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-text mb-6">
                 {course.title}
               </h1>
 
@@ -172,16 +172,16 @@ export default function CourseDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              <h2 className="font-serif text-xl font-medium text-text mb-4">Course Description</h2>
+              <h2 className="font-sans text-xl font-bold text-text mb-4">Course Description</h2>
               <p className="font-sans text-sm text-muted leading-relaxed mb-8">
                 {course.description} This intensive training program provides you with state-of-the-art methodology, intensive practice sessions, and professional kits to launch a profitable cosmetic styling business immediately after graduation.
               </p>
 
-              <h2 className="font-serif text-xl font-medium text-text mb-4">Curriculum Overview</h2>
+              <h2 className="font-sans text-xl font-bold text-text mb-4">Curriculum Overview</h2>
               <ul className="space-y-4 mb-8">
                 {course.curriculum.map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="font-serif text-accent font-medium text-sm mr-4 mt-0.5">0{index + 1}</span>
+                    <span className="font-sans text-accent font-bold text-sm mr-4 mt-0.5">0{index + 1}</span>
                     <span className="font-sans text-sm text-muted leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -193,7 +193,7 @@ export default function CourseDetailPage({ params }: PageProps) {
               <div className="bg-card-bg border border-muted-light/60 p-8 shadow-sm">
                 {!success ? (
                   <form onSubmit={handleSubmit} className="flex flex-col">
-                    <h3 className="font-serif text-xl font-medium text-text mb-6">Enrol in Program</h3>
+                    <h3 className="font-sans text-xl font-bold text-text mb-6">Enrol in Program</h3>
                     
                     <div className="mb-4">
                       <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
@@ -346,7 +346,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="font-serif text-2xl text-text font-normal mb-3">Enrolment Confirmed</h3>
+                    <h3 className="font-sans text-2xl text-text font-bold mb-3">Enrolment Confirmed</h3>
                     <p className="font-sans text-xs text-muted leading-relaxed mb-6">
                       Thank you for enrolling, <span className="font-semibold text-text">{formData.name}</span>. A payment confirmation receipt and starter pack guide has been sent to <span className="font-semibold text-text">{formData.email}</span>.
                     </p>

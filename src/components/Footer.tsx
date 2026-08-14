@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo & Tagline */}
           <div className="lg:col-span-4 flex flex-col justify-start">
             <Link href="/" className="flex flex-col group mb-6">
-              <span className="font-serif text-2xl font-bold tracking-wide transition-colors duration-300 group-hover:text-accent">
+              <span className="font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent">
                 GLAM & GO
               </span>
               <span className="text-[10px] uppercase tracking-[0.25em] text-muted -mt-1 font-sans">
