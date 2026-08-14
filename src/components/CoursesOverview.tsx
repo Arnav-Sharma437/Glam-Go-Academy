@@ -5,7 +5,7 @@ interface Course {
   id: string;
   slug: string;
   title: string;
-  category: "nvq" | "aesthetics" | "fast-track";
+  category: "injectables" | "skin" | "wellness" | "foundation";
   level: "Beginner" | "Intermediate" | "Advanced";
   startDate: string;
   description: string;
@@ -14,111 +14,163 @@ interface Course {
 }
 
 const COURSES: Course[] = [
+  // Injectables (5)
   {
     id: "1",
-    slug: "nvq-level-2-beauty-therapy",
-    title: "NVQ Level 2 Beauty Therapy Diploma",
-    category: "nvq",
+    slug: "foundation-injectables",
+    title: "Foundation Injectables",
+    category: "injectables",
     level: "Beginner",
     startDate: "Sept 15, 2026",
-    description: "Gain core beauty therapist qualifications covering luxury facials, skincare, waxing, manicure, and pedicure treatments.",
-    price: 1200,
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=600",
+    description: "Your first supervised injecting day – facial anatomy, analysis and basic upper face technique on live models.",
+    price: 895,
+    image: "https://images.unsplash.com/photo-1614859324967-bdf461fec769?q=80&w=600",
   },
   {
     id: "2",
-    slug: "nvq-level-3-beauty-therapy",
-    title: "NVQ Level 3 Beauty Therapy Diploma",
-    category: "nvq",
-    level: "Intermediate",
+    slug: "dermal-fillers",
+    title: "Dermal Fillers",
+    category: "injectables",
+    level: "Beginner",
     startDate: "Sept 20, 2026",
-    description: "Advance into full body treatments, professional massage styles, electrotherapy facials, and advanced clinical skincare.",
-    price: 1500,
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=600",
+    description: "Lip and nasolabial foundation with live models, full consultation and complication protocols.",
+    price: 895,
+    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600",
   },
   {
     id: "3",
-    slug: "nvq-level-2-nail-technology",
-    title: "NVQ Level 2 Nail Technology Diploma",
-    category: "nvq",
-    level: "Beginner",
-    startDate: "Sept 18, 2026",
-    description: "Master essential nail care, professional manicures, pedicures, acrylic enhancements, and basic nail art designs.",
-    price: 950,
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600",
+    slug: "advanced-injectables",
+    title: "Advanced Injectables",
+    category: "injectables",
+    level: "Advanced",
+    startDate: "Sept 28, 2026",
+    description: "Full face advanced treatments for practicing injectors. Taught in tiny results-focused groups of four.",
+    price: 1095,
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600",
   },
   {
     id: "4",
-    slug: "nvq-level-3-nail-technology",
-    title: "NVQ Level 3 Nail Technology Diploma",
-    category: "nvq",
-    level: "Intermediate",
+    slug: "advanced-fillers-russian-lip",
+    title: "Advanced Fillers & Russian Lip",
+    category: "injectables",
+    level: "Advanced",
     startDate: "Oct 02, 2026",
-    description: "Learn advanced acrylic extensions, tip sculpting, electric filing, custom nail designs, and professional salon operations.",
-    price: 1100,
-    image: "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=600",
+    description: "Advanced lip and mid face techniques including the Russian technique – our most popular module.",
+    price: 1095,
+    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=600",
   },
   {
     id: "5",
-    slug: "vtct-level-4-microneedling",
-    title: "Level 4 Microneedling & Chemical Peels",
-    category: "aesthetics",
-    level: "Advanced",
+    slug: "fat-dissolving-injectables",
+    title: "Fat Dissolving Injectables",
+    category: "injectables",
+    level: "Beginner",
     startDate: "Oct 12, 2026",
-    description: "Advanced clinical cosmetic rejuvenation training covering micro-needling, collagen induction, and acid peel applications.",
-    price: 1800,
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=600",
+    description: "Aqualyx & Desobody treatments – client assessment, injection technique and safety aftercare.",
+    price: 795,
+    image: "https://images.unsplash.com/photo-1579684389782-64d84b5e901a?q=80&w=600",
   },
+  
+  // Skin (3)
   {
     id: "6",
-    slug: "vtct-level-4-laser-ipl",
-    title: "Level 4 Laser & IPL Hair Removal",
-    category: "aesthetics",
-    level: "Advanced",
-    startDate: "Oct 15, 2026",
-    description: "Specialized safety training in Laser and IPL devices for hair reduction, skin typing, and thermal skin treatments.",
-    price: 2200,
+    slug: "microneedling",
+    title: "Microneedling",
+    category: "skin",
+    level: "Beginner",
+    startDate: "Sept 24, 2026",
+    description: "Professional microneedling for face & hair. Skincare theory, protocols and hands-on practice.",
+    price: 595,
     image: "https://images.unsplash.com/photo-1522337360788-8b13edd793be?q=80&w=600",
   },
   {
     id: "7",
-    slug: "lash-extensions-masterclass",
-    title: "Lash Extensions Masterclass",
-    category: "fast-track",
+    slug: "dermaplaning",
+    title: "Dermaplaning",
+    category: "skin",
     level: "Beginner",
-    startDate: "Sept 12, 2026",
-    description: "Master the complete artistry of classic individual and advanced Russian volume lash isolation and fan crafting.",
-    price: 450,
-    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=600",
+    startDate: "Sept 18, 2026",
+    description: "Safe blade work, skin preparation and finishing for instantly smoother and brighter skin.",
+    price: 495,
+    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=600",
   },
   {
     id: "8",
-    slug: "brow-artist-certification",
-    title: "Brow Artist Certification",
-    category: "fast-track",
-    level: "Beginner",
-    startDate: "Sept 24, 2026",
-    description: "Learn symmetrical facial mapping, waxing, styling, tinting, and modern brow lamination chemical treatments.",
-    price: 350,
-    image: "https://images.unsplash.com/photo-1522337060767-14175287dc34?q=80&w=600",
+    slug: "prp-therapy",
+    title: "PRP Therapy",
+    category: "skin",
+    level: "Intermediate",
+    startDate: "Oct 05, 2026",
+    description: "Platelet-Rich Plasma – the full face & scalp treatment for skin rejuvenation and hair stimulation.",
+    price: 795,
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600",
   },
+
+  // Wellness (4)
   {
     id: "9",
-    slug: "makeup-artistry-diploma",
-    title: "Professional Makeup Artistry Diploma",
-    category: "fast-track",
+    slug: "vitamin-injections",
+    title: "Vitamin Injections",
+    category: "wellness",
     level: "Beginner",
     startDate: "Oct 10, 2026",
-    description: "Develop professional makeup skills from base blending and contouring to bridal aesthetics and high-fashion editorial runway looks.",
-    price: 600,
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=600",
+    description: "IM injection techniques, client screening and record-keeping for vitamin therapies.",
+    price: 495,
+    image: "https://images.unsplash.com/photo-1607619056574-7b8f30413b58?q=80&w=600",
+  },
+  {
+    id: "10",
+    slug: "biotin-glutathione",
+    title: "Biotin & Glutathione",
+    category: "wellness",
+    level: "Beginner",
+    startDate: "Oct 18, 2026",
+    description: "Extend your injection menu with hair, skin and antioxidant body support protocols.",
+    price: 495,
+    image: "https://images.unsplash.com/photo-1556229010-aa3f7ff66b24?q=80&w=600",
+  },
+  {
+    id: "11",
+    slug: "iv-nutrition-therapy",
+    title: "IV Nutrition Therapy",
+    category: "wellness",
+    level: "Intermediate",
+    startDate: "Oct 22, 2026",
+    description: "Cannulation refresher, drip bag assembly, vitamin cocktails and safe infusion monitoring.",
+    price: 795,
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600",
+  },
+  {
+    id: "12",
+    slug: "phlebotomy",
+    title: "Phlebotomy",
+    category: "wellness",
+    level: "Beginner",
+    startDate: "Oct 25, 2026",
+    description: "Venepuncture from first draw to safe disposal, with practice training arms and live draws.",
+    price: 595,
+    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=600",
+  },
+
+  // Foundation (1)
+  {
+    id: "13",
+    slug: "anatomy-physiology-aesthetics",
+    title: "Anatomy & Physiology for Aesthetics",
+    category: "foundation",
+    level: "Beginner",
+    startDate: "Self-Paced",
+    description: "The essential theory foundation covering skeletal, muscular, circulatory and skin structures.",
+    price: 395,
+    image: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=600",
   }
 ];
 
 const CATEGORIES = [
-  { id: "nvq", name: "VTCT NVQ Diplomas", count: 4, desc: "Accredited state qualifications for salon employment." },
-  { id: "aesthetics", name: "Aesthetics & Laser", count: 2, desc: "Advanced cosmetic treatments and skin therapy technologies." },
-  { id: "fast-track", name: "Fast-Track Specialty", count: 3, desc: "Intensive training courses for rapid skill certification." }
+  { id: "injectables", name: "Injectables", count: 5, desc: "CPD accredited injectable and cosmetic filler training modules." },
+  { id: "skin", name: "Skin", count: 3, desc: "Skincare treatments, exfoliation methods, and dermis rejuvenation." },
+  { id: "wellness", name: "Wellness", count: 4, desc: "Intramuscular vitamins, venepuncture, and IV therapy infusions." },
+  { id: "foundation", name: "Foundation", count: 1, desc: "Essential biological theory required for cosmetic practice." }
 ];
 
 export default function CoursesOverview() {
@@ -137,7 +189,7 @@ export default function CoursesOverview() {
             </h2>
           </div>
           <p className="font-sans text-xs sm:text-sm text-muted max-w-sm mt-4 md:mt-0 leading-relaxed">
-            Fully accredited qualifications designed for fast-track careers. Gain the confidence, technique, and industry certificates that clients trust.
+            Fully accredited CPD qualifications designed for fast-track careers. Gain the confidence, technique, and industry certificates that clients trust.
           </p>
         </div>
 

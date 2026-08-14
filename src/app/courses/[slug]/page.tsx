@@ -20,175 +20,251 @@ interface Course {
 }
 
 const COURSES: Record<string, Course> = {
-  "nvq-level-2-beauty-therapy": {
-    slug: "nvq-level-2-beauty-therapy",
-    title: "NVQ Level 2 Beauty Therapy Diploma",
+  "foundation-injectables": {
+    slug: "foundation-injectables",
+    title: "Foundation Injectables",
     level: "Beginner",
     startDate: "Sept 15, 2026",
     alternateDates: ["Sept 15, 2026", "Oct 13, 2026", "Nov 10, 2026"],
-    description: "Gain your fundamental professional beauty qualifications covering luxury facial therapies, skincare, waxing, manicure, and pedicure treatments.",
-    price: 1200,
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200",
-    duration: "6 Weeks (Part-time, 2 days/week)",
+    description: "Your first supervised injecting day – facial anatomy, analysis and basic upper face technique on live models.",
+    price: 895,
+    image: "https://images.unsplash.com/photo-1614859324967-bdf461fec769?q=80&w=1200",
+    duration: "1 Day (10:00 - 17:30)",
     curriculum: [
-      "Professional skincare and luxury facial therapies",
-      "Waxing treatments (warm and hot wax methods)",
-      "Eyelash and eyebrow tinting and precision shaping",
-      "Manicure and pedicure nail care techniques",
-      "Salon health, sterilisation safety, and client care protocols",
-      "Basic retail sales and beauty business etiquette"
+      "Facial nerve and muscle anatomy",
+      "Product science and reconstitution",
+      "Upper face injection landmarks",
+      "Live model injection practice",
+      "Complication management and emergency hyaluronidase",
+      "Client consultation and aftercare protocols"
     ]
   },
-  "nvq-level-3-beauty-therapy": {
-    slug: "nvq-level-3-beauty-therapy",
-    title: "NVQ Level 3 Beauty Therapy Diploma",
-    level: "Intermediate",
+  "dermal-fillers": {
+    slug: "dermal-fillers",
+    title: "Dermal Fillers",
+    level: "Beginner",
     startDate: "Sept 20, 2026",
     alternateDates: ["Sept 20, 2026", "Oct 18, 2026", "Nov 15, 2026"],
-    description: "Advance your beauty therapy skills with deep body massage treatments, clinical facial electrotherapy systems, and clinical anatomy.",
-    price: 1500,
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1200",
-    duration: "8 Weeks (Part-time, 2 days/week)",
+    description: "Lip and nasolabial foundation with live models, full consultation and complication protocols.",
+    price: 895,
+    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200",
+    duration: "1 Day (09:30 - 18:00)",
     curriculum: [
-      "Body massage therapies (Swedish and aromatherapy blends)",
-      "Skincare electrotherapy facials (Microcurrent, high frequency, galvanic)",
-      "Anatomy and physiology of the human skeletal/muscular systems",
-      "Traditional Indian head massage treatments",
-      "Thermal hot stone massage techniques",
-      "Spa health management and client consultation protocols"
+      "Lip and nasolabial fold anatomy",
+      "Rheology of hyaluronic acid fillers",
+      "Linear threading and bolus techniques",
+      "Supervised live model lip fillers",
+      "Complication management and vascular occlusion safety",
+      "Hyaluronidase reconstitution and dissolving protocols"
     ]
   },
-  "nvq-level-2-nail-technology": {
-    slug: "nvq-level-2-nail-technology",
-    title: "NVQ Level 2 Nail Technology Diploma",
-    level: "Beginner",
-    startDate: "Sept 18, 2026",
-    alternateDates: ["Sept 18, 2026", "Oct 16, 2026", "Nov 13, 2026"],
-    description: "Master essential professional nail care, manicures, pedicures, acrylic extension overlays, and starter gel tips.",
-    price: 950,
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1200",
-    duration: "4 Weeks (Part-time, 2 days/week)",
+  "advanced-injectables": {
+    slug: "advanced-injectables",
+    title: "Advanced Injectables",
+    level: "Advanced",
+    startDate: "Sept 28, 2026",
+    alternateDates: ["Sept 28, 2026", "Oct 26, 2026", "Nov 23, 2026"],
+    description: "Full face advanced treatments for practicing injectors. Taught in tiny results-focused groups of four.",
+    price: 1095,
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200",
+    duration: "1 Day (10:00 - 17:00)",
     curriculum: [
-      "Manicure and pedicure skin therapies and luxury treatments",
-      "Gel extension systems (tip application and overlays)",
-      "Acrylic extension systems (classic liquid & powder overlays)",
-      "Basic nail art, polish painting, and chrome techniques",
-      "Sanitation, nail diseases, and hygiene protocols",
-      "Nail plate anatomy and growth client health advisory"
+      "Lower face Botox injection points",
+      "Nefertiti neck lift technique",
+      "Hyperhidrosis (excessive sweating) therapy",
+      "Gummy smile and lip flip procedures",
+      "Masseter and jawline slimming injections",
+      "Advanced clinical case evaluations and live practices"
     ]
   },
-  "nvq-level-3-nail-technology": {
-    slug: "nvq-level-3-nail-technology",
-    title: "NVQ Level 3 Nail Technology Diploma",
-    level: "Intermediate",
+  "advanced-fillers-russian-lip": {
+    slug: "advanced-fillers-russian-lip",
+    title: "Advanced Fillers & Russian Lip",
+    level: "Advanced",
     startDate: "Oct 02, 2026",
     alternateDates: ["Oct 02, 2026", "Oct 30, 2026", "Nov 27, 2026"],
-    description: "Advanced tip sculpting, professional electric filing, extension repairs, and salon operations management.",
-    price: 1100,
-    image: "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=1200",
-    duration: "5 Weeks (Part-time, 2 days/week)",
+    description: "Advanced lip and mid face techniques including the Russian technique – our most popular module.",
+    price: 1095,
+    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1200",
+    duration: "1 Day (09:30 - 17:30)",
     curriculum: [
-      "Advanced electric filing (E-file) operations and speed drills",
-      "Nail sculpting with forms (no tip gluing needed)",
-      "Nail art specialisms (3D acrylics, encapsulation, hand-painting)",
-      "Nail damage repair and extension maintenance/infills",
-      "Salon health and safety regulations",
-      "Freelance business building and digital portfolio creation"
+      "The flat-profile Russian lip technique",
+      "Micro-droplet and vertical tenting lip fillers",
+      "Jawline and chin contouring procedures",
+      "Cheek volume restoration landmarks",
+      "Cannula vs. needle application methods",
+      "Live model advanced styling sessions"
     ]
   },
-  "vtct-level-4-microneedling": {
-    slug: "vtct-level-4-microneedling",
-    title: "Level 4 Microneedling & Chemical Peels",
-    level: "Advanced",
+  "fat-dissolving-injectables": {
+    slug: "fat-dissolving-injectables",
+    title: "Fat Dissolving Injectables",
+    level: "Beginner",
     startDate: "Oct 12, 2026",
     alternateDates: ["Oct 12, 2026", "Nov 09, 2026", "Dec 07, 2026"],
-    description: "Learn advanced medical skin rejuvenation treatments including collagen induction and acid peels.",
-    price: 1800,
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1200",
-    duration: "3 Days (Intensive, 10:00 - 17:30)",
+    description: "Aqualyx & Desobody treatments – client assessment, injection technique and safety aftercare.",
+    price: 795,
+    image: "https://images.unsplash.com/photo-1579684389782-64d84b5e901a?q=80&w=1200",
+    duration: "1 Day (10:00 - 16:30)",
     curriculum: [
-      "Advanced skin anatomy, histology, and analysis",
-      "Dermaplaning tools, blade handling, and protocol",
-      "Microneedling (collagen induction) theory and technique",
-      "Superficial and medium-depth chemical peel solutions",
-      "Sterilization, contraindications, and emergency protocols",
-      "Live client clinical practice and marketing guidelines"
+      "Adipose tissue anatomy and lipolysis chemistry",
+      "Aqualyx and Desobody product guidelines",
+      "Submental (double chin) injection patterns",
+      "Abdomen and flank fat-dissolving grids",
+      "Intralipotherapy technique using specialised needles",
+      "Client screening, contraindications, and aftercare"
     ]
   },
-  "vtct-level-4-laser-ipl": {
-    slug: "vtct-level-4-laser-ipl",
-    title: "Level 4 Laser & IPL Hair Removal",
-    level: "Advanced",
-    startDate: "Oct 15, 2026",
-    alternateDates: ["Oct 15, 2026", "Nov 12, 2026", "Dec 10, 2026"],
-    description: "Specialized safety training in Laser and IPL devices for hair reduction, skin typing, and thermal skin treatments.",
-    price: 2200,
-    image: "https://images.unsplash.com/photo-1522337360788-8b13edd793be?q=80&w=1200",
-    duration: "4 Days (Intensive, 09:30 - 18:00)",
-    curriculum: [
-      "Physics of lasers and intense pulsed light (IPL)",
-      "Skin typing and Fitzpatrick classification scales",
-      "Laser safety officer protocols and regulations",
-      "Treatment execution for hair reduction",
-      "Treatment execution for skin rejuvenation",
-      "Patch testing, client consults, and complications management"
-    ]
-  },
-  "lash-extensions-masterclass": {
-    slug: "lash-extensions-masterclass",
-    title: "Lash Extensions Masterclass",
-    level: "Beginner",
-    startDate: "Sept 12, 2026",
-    alternateDates: ["Sept 12, 2026", "Oct 10, 2026", "Nov 07, 2026"],
-    description: "Master the complete artistry of classic individual and advanced Russian volume lashes.",
-    price: 450,
-    image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200",
-    duration: "2 Days (10:00 - 17:00)",
-    curriculum: [
-      "Introduction to lash anatomy, health, and hygiene safety",
-      "Understanding lash styling maps, curls, and diameters",
-      "Isolation and application of individual classic lashes",
-      "Handmade Russian volume fan crafting techniques",
-      "Live model practice and mentor-supervised assessment",
-      "Aftercare, retention secrets, and starting your business"
-    ]
-  },
-  "brow-artist-certification": {
-    slug: "brow-artist-certification",
-    title: "Brow Artist Certification",
+  "microneedling": {
+    slug: "microneedling",
+    title: "Microneedling",
     level: "Beginner",
     startDate: "Sept 24, 2026",
     alternateDates: ["Sept 24, 2026", "Oct 22, 2026", "Nov 19, 2026"],
-    description: "Learn precision brow mapping, waxing, tinting, and modern lamination styling.",
-    price: 350,
-    image: "https://images.unsplash.com/photo-1522337060767-14175287dc34?q=80&w=1200",
-    duration: "1 Day (09:30 - 18:00)",
+    description: "Professional microneedling for face & hair. Skincare theory, protocols and hands-on practice.",
+    price: 595,
+    image: "https://images.unsplash.com/photo-1522337360788-8b13edd793be?q=80&w=1200",
+    duration: "1 Day (10:00 - 17:00)",
     curriculum: [
-      "Symmetry and precision face mapping techniques",
-      "Waxing, threading, and shaping safety procedures",
-      "Tinting formulations, shade selection, and application",
-      "The chemistry and process of Brow Lamination",
-      "Live model treatment execution and troubleshooting",
-      "Photography, client retention, and social media marketing"
+      "Wound healing cascade and skin histology",
+      "Microneedling pen depth guidelines (0.25mm - 2.5mm)",
+      "Serum formulations and vitamin cocktail selections",
+      "Facial treatment protocol on live models",
+      "Scalp/hair needling for hair thinning",
+      "Aftercare, sterilization, and hygiene standards"
     ]
   },
-  "makeup-artistry-diploma": {
-    slug: "makeup-artistry-diploma",
-    title: "Professional Makeup Artistry Diploma",
+  "dermaplaning": {
+    slug: "dermaplaning",
+    title: "Dermaplaning",
+    level: "Beginner",
+    startDate: "Sept 18, 2026",
+    alternateDates: ["Sept 18, 2026", "Oct 16, 2026", "Nov 13, 2026"],
+    description: "Safe blade work, skin preparation and finishing for instantly smoother and brighter skin.",
+    price: 495,
+    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1200",
+    duration: "1 Day (10:00 - 16:00)",
+    curriculum: [
+      "Blade handling, insertion, and angle safety (10R blade)",
+      "Vellus hair (peach fuzz) removal technique",
+      "Skin preparation, peeling, and hydration methods",
+      "Facial dermaplaning on live models",
+      "Combining dermaplaning with chemical peels",
+      "Sterilisation, waste disposal, and safety protocols"
+    ]
+  },
+  "prp-therapy": {
+    slug: "prp-therapy",
+    title: "PRP Therapy",
+    level: "Intermediate",
+    startDate: "Oct 05, 2026",
+    alternateDates: ["Oct 05, 2026", "Nov 02, 2026", "Nov 30, 2026"],
+    description: "Platelet-Rich Plasma – the full face & scalp treatment for skin rejuvenation and hair stimulation.",
+    price: 795,
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200",
+    duration: "1 Day (09:30 - 17:30)",
+    curriculum: [
+      "Autologous platelet-rich plasma chemistry",
+      "Centrifuge operation and platelet separation",
+      "Meso-injection technique for skin rejuvenation",
+      "PRP scalp therapy for hair restoration",
+      "Numbing protocols and patient comfort care",
+      "Vampire facial protocols on live clinical models"
+    ]
+  },
+  "vitamin-injections": {
+    slug: "vitamin-injections",
+    title: "Vitamin Injections",
     level: "Beginner",
     startDate: "Oct 10, 2026",
     alternateDates: ["Oct 10, 2026", "Nov 07, 2026", "Dec 05, 2026"],
-    description: "Develop professional makeup skills from base blending and contouring to bridal aesthetics and high-fashion editorial runway looks.",
-    price: 600,
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200",
-    duration: "4 Days (Part-time, 2 weekends)",
+    description: "IM injection techniques, client screening and record-keeping for vitamin therapies.",
+    price: 495,
+    image: "https://images.unsplash.com/photo-1607619056574-7b8f30413b58?q=80&w=1200",
+    duration: "1 Day (10:00 - 16:30)",
     curriculum: [
-      "Base matching, skin preparation, and color correcting",
-      "Contouring, highlighting, and face sculpting",
-      "Daytime, bridal, and commercial look makeup",
-      "Advanced eye techniques (smokey, cut-crease, wing lines)",
-      "Editorial, fashion, and photoshoot makeup concepts",
-      "Freelance business building and client hygiene safety"
+      "Vitamin B12, C, and D pharmacology",
+      "Intramuscular (IM) injection techniques",
+      "Deltoid and gluteal landmark identification",
+      "Aseptic technique and syringe preparation",
+      "Dosage regulations and customer screening",
+      "Anaphylaxis management and emergency protocols"
+    ]
+  },
+  "biotin-glutathione": {
+    slug: "biotin-glutathione",
+    title: "Biotin & Glutathione",
+    level: "Beginner",
+    startDate: "Oct 18, 2026",
+    alternateDates: ["Oct 18, 2026", "Nov 15, 2026", "Dec 13, 2026"],
+    description: "Extend your injection menu with hair, skin and antioxidant body support protocols.",
+    price: 495,
+    image: "https://images.unsplash.com/photo-1556229010-aa3f7ff66b24?q=80&w=1200",
+    duration: "1 Day (10:00 - 16:00)",
+    curriculum: [
+      "Antioxidant chemistry and cellular benefits",
+      "Biotin (Vitamin H) for hair/nail strengthening",
+      "Glutathione skin brightening and detoxification",
+      "Intramuscular (IM) injection practice",
+      "Vial reconstitution and compounding protocols",
+      "Vitamins menu building for clinic expansion"
+    ]
+  },
+  "iv-nutrition-therapy": {
+    slug: "iv-nutrition-therapy",
+    title: "IV Nutrition Therapy",
+    level: "Intermediate",
+    startDate: "Oct 22, 2026",
+    alternateDates: ["Oct 22, 2026", "Nov 19, 2026", "Dec 17, 2026"],
+    description: "Cannulation refresher, drip bag assembly, vitamin cocktails and safe infusion monitoring.",
+    price: 795,
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200",
+    duration: "1 Day (09:30 - 18:00)",
+    curriculum: [
+      "Intravenous (IV) cannulation and access",
+      "IV drip bag setup, assembly, and flow calculation",
+      "Cocktail mixing (Myers' Cocktail, wellness blends)",
+      "Patient monitoring and infiltration management",
+      "Complications, hematoma, and phlebitis recovery",
+      "Live clinical cannulation practice on model arms"
+    ]
+  },
+  "phlebotomy": {
+    slug: "phlebotomy",
+    title: "Phlebotomy",
+    level: "Beginner",
+    startDate: "Oct 25, 2026",
+    alternateDates: ["Oct 25, 2026", "Nov 22, 2026", "Dec 20, 2026"],
+    description: "Venepuncture from first draw to safe disposal, with practice training arms and live draws.",
+    price: 595,
+    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1200",
+    duration: "1 Day (09:30 - 17:30)",
+    curriculum: [
+      "Venous anatomy and vein selection guidelines",
+      "Vacutainer, butterfly needle, and syringe draw systems",
+      "Skin puncture and sterile blood collection order",
+      "Practice on phantom simulation arms",
+      "Live supervised blood draws",
+      "Biohazard disposal and sharps container safety"
+    ]
+  },
+  "anatomy-physiology-aesthetics": {
+    slug: "anatomy-physiology-aesthetics",
+    title: "Anatomy & Physiology for Aesthetics",
+    level: "Beginner",
+    startDate: "Self-Paced",
+    alternateDates: ["Immediate Access (Online Module)"],
+    description: "The essential theory foundation covering skeletal, muscular, circulatory and skin structures.",
+    price: 395,
+    image: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=1200",
+    duration: "Online Study (Approx. 20 hours)",
+    curriculum: [
+      "Facial musculature (muscles of expression)",
+      "Trigeminal and facial nerve pathways",
+      "Facial blood supply (arterial and venous pathways)",
+      "Skin layers, dermal cells, and wound healing phases",
+      "Lymphatic system and drainage pathways of the neck",
+      "Contraindications and anatomical danger zones"
     ]
   }
 };
