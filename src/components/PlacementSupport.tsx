@@ -79,7 +79,7 @@ export default function PlacementSupport() {
             {partners.map((partner, idx) => (
               <div
                 key={idx}
-                className="p-5 bg-card-bg border border-muted-light/60 flex flex-col justify-between hover:border-accent/40 transition-colors duration-250 shadow-sm"
+                className="p-5 bg-card-bg border border-muted-light/60 flex flex-col justify-between hover:border-accent/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded-xl cursor-pointer"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -87,7 +87,7 @@ export default function PlacementSupport() {
                       {partner.name}
                     </span>
                     {partner.type && (
-                      <span className="px-2 py-0.5 border border-accent/30 text-[8px] uppercase tracking-widest text-accent font-bold font-sans">
+                      <span className="px-2 py-0.5 border border-accent/30 text-[8px] uppercase tracking-widest text-accent font-bold font-sans rounded-md">
                         {partner.type}
                       </span>
                     )}

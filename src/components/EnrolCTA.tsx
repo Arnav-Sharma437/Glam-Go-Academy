@@ -27,13 +27,13 @@ export default function EnrolCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <a
             href="#courses"
-            className="px-8 py-4 bg-accent text-[#FAF7F2] text-xs font-sans tracking-widest uppercase font-semibold hover:bg-[#FAF7F2] hover:text-[#1C1A17] transition-colors duration-300 shadow-md w-full sm:w-auto text-center cursor-pointer"
+            className="px-8 py-4 bg-accent text-[#FAF7F2] text-xs font-sans tracking-widest uppercase font-semibold hover:bg-[#FAF7F2] hover:text-[#1C1A17] transition-all duration-300 shadow-md w-full sm:w-auto text-center cursor-pointer rounded-lg hover:scale-102"
           >
             Enrol Online
           </a>
           <a
             href="#contact"
-            className="px-8 py-4 border border-[#FAF7F2]/20 text-[#FAF7F2] text-xs font-sans tracking-widest uppercase font-semibold hover:bg-[#FAF7F2]/5 hover:border-[#FAF7F2] transition-colors duration-300 w-full sm:w-auto text-center cursor-pointer"
+            className="px-8 py-4 border border-[#FAF7F2]/20 text-[#FAF7F2] text-xs font-sans tracking-widest uppercase font-semibold hover:bg-[#FAF7F2]/5 hover:border-[#FAF7F2] transition-all duration-300 w-full sm:w-auto text-center cursor-pointer rounded-lg hover:scale-102"
           >
             Request Brochure
           </a>

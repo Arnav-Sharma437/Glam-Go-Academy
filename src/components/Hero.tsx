@@ -107,14 +107,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-5">
             <a
               href="#courses"
-              className="px-6 py-3.5 bg-accent text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:bg-white hover:text-text transition-colors duration-300 shadow-md"
+              className="px-6 py-3.5 bg-accent text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:bg-white hover:text-text transition-all duration-300 shadow-md rounded-lg cursor-pointer hover:scale-102"
             >
               Explore Courses
             </a>
             
             <a
               href="#contact"
-              className="px-6 py-3.5 border border-white/30 text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:border-white hover:bg-white/10 transition-all duration-300"
+              className="px-6 py-3.5 border border-white/30 text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:border-white hover:bg-white/10 transition-all duration-300 rounded-lg cursor-pointer hover:scale-102"
             >
               Book Consultation
             </a>
@@ -150,8 +150,8 @@ export default function Hero() {
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
-            className={`h-1 transition-all duration-300 rounded-none ${
-              idx === currentSlide ? "w-6 bg-accent" : "w-2 bg-white/40 hover:bg-white/70"
+            className={`h-1.5 transition-all duration-300 rounded-full cursor-pointer ${
+              idx === currentSlide ? "w-6 bg-accent" : "w-2.5 bg-white/40 hover:bg-white/70"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           ></button>

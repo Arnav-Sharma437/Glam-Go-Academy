@@ -202,7 +202,7 @@ export default function CoursesOverview() {
             <a
               key={cat.id}
               href={`#${cat.id}`}
-              className="px-3.5 py-1.5 border border-muted-light/80 hover:border-accent hover:text-accent font-sans text-[11px] uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer bg-card-bg"
+              className="px-4 py-2 border border-muted-light/80 hover:border-accent hover:text-accent font-sans text-[11px] uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer bg-card-bg rounded-lg"
             >
               {cat.name} ({cat.count})
             </a>
@@ -234,19 +234,19 @@ export default function CoursesOverview() {
                   {categoryCourses.map((course) => (
                     <div
                       key={course.id}
-                      className="group flex flex-col bg-card-bg border border-muted-light/60 overflow-hidden transition-all duration-300 hover:border-accent/40 shadow-sm"
+                      className="group flex flex-col bg-card-bg border border-muted-light/60 rounded-2xl overflow-hidden transition-all duration-300 hover:border-accent/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 cursor-pointer"
                     >
                       {/* Image with Level Badge */}
-                      <div className="relative aspect-[4/3] w-full bg-muted-light overflow-hidden">
+                      <div className="relative aspect-[4/3] w-full bg-muted-light overflow-hidden rounded-t-2xl">
                         <Image
                           src={course.image}
                           alt={course.title}
                           fill
                           sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 400px"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="object-cover transition-transform duration-700 group-hover:scale-103"
                           loading="lazy"
                         />
-                        <span className="absolute top-3 left-3 px-2 py-0.5 bg-bg/90 backdrop-blur-sm text-text text-[8px] uppercase tracking-widest font-semibold font-sans border border-muted-light/40">
+                        <span className="absolute top-3 left-3 px-2.5 py-1 bg-bg/90 backdrop-blur-sm text-text text-[8px] uppercase tracking-widest font-semibold font-sans border border-muted-light/40 rounded-md">
                           {course.level}
                         </span>
                       </div>
@@ -277,7 +277,7 @@ export default function CoursesOverview() {
 
                           <Link
                             href={`/courses/${course.slug}`}
-                            className="text-[10px] font-sans uppercase tracking-widest font-bold text-text group-hover:text-accent transition-colors duration-300 hover-underline-reveal"
+                            className="text-[10px] font-sans uppercase tracking-widest font-bold text-text group-hover:text-accent transition-colors duration-300 hover-underline-reveal cursor-pointer"
                           >
                             View Course →
                           </Link>

@@ -142,7 +142,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Sept 18, 2026", "Oct 16, 2026", "Nov 13, 2026"],
     description: "Safe blade work, skin preparation and finishing for instantly smoother and brighter skin.",
     price: 495,
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200",
+    image: "/images/courses/dermaplaning.jpg",
     duration: "1 Day (10:00 - 16:00)",
     curriculum: [
       "Blade handling, insertion, and angle safety (10R blade)",
@@ -161,7 +161,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Oct 05, 2026", "Nov 02, 2026", "Nov 30, 2026"],
     description: "Platelet-Rich Plasma – the full face & scalp treatment for skin rejuvenation and hair stimulation.",
     price: 795,
-    image: "https://images.unsplash.com/photo-1581091921389-a5c22bb6224f?q=80&w=1200",
+    image: "/images/courses/prp_therapy.jpg",
     duration: "1 Day (09:30 - 17:30)",
     curriculum: [
       "Autologous platelet-rich plasma chemistry",
@@ -180,7 +180,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Oct 10, 2026", "Nov 07, 2026", "Dec 05, 2026"],
     description: "IM injection techniques, client screening and record-keeping for vitamin therapies.",
     price: 495,
-    image: "https://images.unsplash.com/photo-1607619056574-7b8f30413b58?q=80&w=1200",
+    image: "/images/courses/vitamin_injections.jpg",
     duration: "1 Day (10:00 - 16:30)",
     curriculum: [
       "Vitamin B12, C, and D pharmacology",
@@ -199,7 +199,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Oct 18, 2026", "Nov 15, 2026", "Dec 13, 2026"],
     description: "Extend your injection menu with hair, skin and antioxidant body support protocols.",
     price: 495,
-    image: "https://images.unsplash.com/photo-1556229010-aa3f7ff66b24?q=80&w=1200",
+    image: "/images/courses/biotin_glutathione.jpg",
     duration: "1 Day (10:00 - 16:00)",
     curriculum: [
       "Antioxidant chemistry and cellular benefits",
@@ -218,7 +218,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Oct 22, 2026", "Nov 19, 2026", "Dec 17, 2026"],
     description: "Cannulation refresher, drip bag assembly, vitamin cocktails and safe infusion monitoring.",
     price: 795,
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200",
+    image: "/images/courses/iv_nutrition.jpg",
     duration: "1 Day (09:30 - 18:00)",
     curriculum: [
       "Intravenous (IV) cannulation and access",
@@ -256,7 +256,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Immediate Access (Online Module)"],
     description: "The essential theory foundation covering skeletal, muscular, circulatory and skin structures.",
     price: 395,
-    image: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=1200",
+    image: "/images/courses/anatomy_physiology.jpg",
     duration: "Online Study (Approx. 20 hours)",
     curriculum: [
       "Facial musculature (muscles of expression)",
@@ -289,7 +289,7 @@ export default function CourseDetailPage({ params }: PageProps) {
         <main className="min-h-screen flex flex-col items-center justify-center bg-bg text-center px-6">
           <h1 className="font-sans text-3xl font-bold mb-4">Course Not Found</h1>
           <p className="font-sans text-sm text-muted mb-8">The course program you requested does not exist or has been moved.</p>
-          <Link href="/" className="px-6 py-3 bg-text text-bg text-xs tracking-widest uppercase font-semibold hover:bg-accent transition-colors duration-300">
+          <Link href="/" className="px-6 py-3 bg-text text-bg text-xs tracking-widest uppercase font-semibold hover:bg-accent transition-colors duration-300 rounded-lg cursor-pointer">
             Back to Homepage
           </Link>
         </main>
@@ -321,7 +321,7 @@ export default function CourseDetailPage({ params }: PageProps) {
           
           {/* Breadcrumb */}
           <nav className="mb-10 text-xs tracking-widest uppercase font-sans font-semibold text-muted">
-            <Link href="/" className="hover:text-accent transition-colors duration-200">Home</Link>
+            <Link href="/" className="hover:text-accent transition-colors duration-200 cursor-pointer">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-text">{course.title}</span>
           </nav>
@@ -330,7 +330,7 @@ export default function CourseDetailPage({ params }: PageProps) {
             
             {/* Left: Course Details */}
             <div className="lg:col-span-7 flex flex-col">
-              <div className="relative aspect-[16/9] w-full bg-muted-light mb-8 overflow-hidden">
+              <div className="relative aspect-[16/9] w-full bg-muted-light mb-8 overflow-hidden rounded-2xl shadow-sm">
                 <Image
                   src={course.image}
                   alt={course.title}
@@ -338,7 +338,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                   priority
                   className="object-cover"
                 />
-                <span className="absolute top-4 left-4 px-3 py-1 bg-bg/95 backdrop-blur-sm text-text text-[9px] uppercase tracking-widest font-semibold font-sans border border-muted-light/40">
+                <span className="absolute top-4 left-4 px-3 py-1 bg-bg/95 backdrop-blur-sm text-text text-[9px] uppercase tracking-widest font-semibold font-sans border border-muted-light/40 rounded-md">
                   {course.level}
                 </span>
               </div>
@@ -380,7 +380,7 @@ export default function CourseDetailPage({ params }: PageProps) {
 
             {/* Right: Checkout Sidebar */}
             <div className="lg:col-span-5 lg:sticky lg:top-28">
-              <div className="bg-card-bg border border-muted-light/60 p-8 shadow-sm">
+              <div className="bg-card-bg border border-muted-light/60 p-8 shadow-sm rounded-2xl">
                 {!success ? (
                   <form onSubmit={handleSubmit} className="flex flex-col">
                     <h3 className="font-sans text-xl font-bold text-text mb-6">Enrol in Program</h3>
@@ -393,7 +393,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                         name="cohort"
                         value={selectedDate}
                         onChange={(e) => setSelectedDate(e.target.value)}
-                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg cursor-pointer"
                         required
                       >
                         {course.alternateDates.map((date) => (
@@ -414,7 +414,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="E.g., Sarah Jenkins"
-                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
                         required
                       />
                     </div>
@@ -429,7 +429,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="E.g., sarah@gmail.com"
-                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
                         required
                       />
                     </div>
@@ -444,7 +444,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="E.g., +44 7946 0958"
-                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
                         required
                       />
                     </div>
@@ -465,7 +465,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                           value={formData.cardNumber}
                           onChange={handleInputChange}
                           placeholder="4242 •••• •••• 4242"
-                          className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent"
+                          className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
                           maxLength={19}
                           required
                         />
@@ -482,7 +482,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                             value={formData.expiry}
                             onChange={handleInputChange}
                             placeholder="MM / YY"
-                            className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent"
+                            className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
                             maxLength={5}
                             required
                           />
@@ -497,7 +497,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                             value={formData.cvc}
                             onChange={handleInputChange}
                             placeholder="•••"
-                            className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent"
+                            className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
                             maxLength={4}
                             required
                           />
@@ -505,7 +505,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                       </div>
                     </div>
 
-                    <div className="bg-muted-light/30 p-4 border border-muted-light/40 flex items-center justify-between mb-6">
+                    <div className="bg-muted-light/30 p-4 border border-muted-light/40 flex items-center justify-between mb-6 rounded-lg">
                       <span className="text-xs font-sans text-muted">Total Tuition Fee:</span>
                       <span className="text-lg font-bold text-text">£{course.price}</span>
                     </div>
@@ -513,7 +513,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-4 bg-text text-bg text-xs font-sans tracking-widest uppercase font-semibold hover:bg-accent transition-colors duration-300 shadow-md flex items-center justify-center space-x-2"
+                      className="w-full py-4 bg-text text-bg text-xs font-sans tracking-widest uppercase font-semibold hover:bg-accent transition-all duration-300 rounded-lg shadow-md flex items-center justify-center space-x-2 cursor-pointer hover:scale-102"
                     >
                       {loading ? (
                         <>
@@ -545,7 +545,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                     </p>
                     <Link
                       href="/"
-                      className="inline-block px-6 py-3 border border-text/20 text-text text-xs tracking-widest uppercase font-semibold hover:bg-text hover:text-bg transition-colors duration-300"
+                      className="inline-block px-6 py-3 border border-text/20 text-text text-xs tracking-widest uppercase font-semibold hover:bg-text hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer"
                     >
                       Return to Home
                     </Link>

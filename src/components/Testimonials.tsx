@@ -35,7 +35,7 @@ export default function Testimonials() {
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="p-6 bg-card-bg border border-muted-light/60 flex flex-col justify-between shadow-sm"
+              className="p-6 bg-card-bg border border-muted-light/60 flex flex-col justify-between shadow-sm rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/30 cursor-pointer"
             >
               {/* Quote Mark SVG */}
               <svg

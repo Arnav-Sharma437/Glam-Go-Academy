@@ -47,29 +47,29 @@ export default function Header() {
   const logoTextClass = isScrolled ? "text-text" : "text-white";
   const logoSubTextClass = isScrolled ? "text-muted" : "text-white/70";
   
-  const navLinkClass = `text-xs uppercase font-sans tracking-widest font-semibold transition-colors duration-200 hover-underline-reveal ${
+  const navLinkClass = `text-xs uppercase font-sans tracking-widest font-semibold transition-colors duration-200 cursor-pointer hover-underline-reveal ${
     isScrolled ? "text-text/80 hover:text-text" : "text-white/80 hover:text-white"
   }`;
 
-  const toggleBtnClass = `p-2 border rounded-none transition-colors duration-200 focus:outline-none ${
+  const toggleBtnClass = `p-2 border transition-colors duration-200 focus:outline-none rounded-lg cursor-pointer ${
     isScrolled
       ? "border-muted-light/60 text-text hover:text-accent hover:border-accent/40"
       : "border-white/20 text-white hover:text-accent hover:border-accent/40"
   }`;
 
-  const visitSalonClass = `px-5 py-3 border text-xs font-sans tracking-widest uppercase font-semibold transition-all duration-300 ${
+  const visitSalonClass = `px-5 py-3 border text-xs font-sans tracking-widest uppercase font-semibold transition-all duration-300 rounded-lg cursor-pointer hover:scale-102 ${
     isScrolled
       ? "border-text/15 text-text hover:bg-text/5 hover:border-text"
       : "border-white/20 text-white hover:bg-white/10 hover:border-white"
   }`;
 
-  const enquireClass = `px-6 py-3 text-xs font-sans tracking-widest uppercase font-semibold transition-colors duration-300 shadow-sm ${
+  const enquireClass = `px-6 py-3 text-xs font-sans tracking-widest uppercase font-semibold transition-all duration-300 shadow-sm rounded-lg cursor-pointer hover:scale-102 ${
     isScrolled
       ? "bg-text text-bg hover:bg-accent hover:text-bg"
       : "bg-white text-black hover:bg-accent hover:text-white"
   }`;
 
-  const burgerClass = `p-2 focus:outline-none transition-colors duration-200 ${
+  const burgerClass = `p-2 focus:outline-none transition-colors duration-200 cursor-pointer ${
     isScrolled ? "text-text" : "text-white"
   }`;
 
@@ -83,7 +83,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex flex-col group">
+        <Link href="/" className="flex flex-col group cursor-pointer">
           <span className={`font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent ${logoTextClass}`}>
             GLAM & GO
           </span>
@@ -117,7 +117,6 @@ export default function Header() {
             aria-label="Toggle light and dark mode"
           >
             {theme === "light" ? (
-              /* Moon Icon */
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -133,7 +132,6 @@ export default function Header() {
                 />
               </svg>
             ) : (
-              /* Sun Icon */
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -174,7 +172,7 @@ export default function Header() {
         <div className="flex items-center space-x-3 md:hidden">
           <button
             onClick={toggleTheme}
-            className={`p-2 border rounded-none transition-colors duration-200 focus:outline-none ${
+            className={`p-2 border rounded-lg transition-colors duration-200 focus:outline-none cursor-pointer ${
               isScrolled ? "border-muted-light/60 text-text" : "border-white/20 text-white"
             }`}
             aria-label="Toggle theme"
@@ -263,28 +261,28 @@ export default function Header() {
             <Link
               href="/"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200"
+              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               Home
             </Link>
             <a
               href="#courses"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200"
+              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               Courses
             </a>
             <a
               href="#why-us"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200"
+              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               About
             </a>
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200"
+              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               Contact
             </a>
@@ -295,14 +293,14 @@ export default function Header() {
               href="https://glamandgolondon.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-center px-6 py-4 border border-text/15 text-text text-xs font-sans tracking-widest uppercase font-semibold hover:bg-text/5 hover:border-text transition-all duration-300"
+              className="w-full text-center px-6 py-4 border border-text/15 text-text text-xs font-sans tracking-widest uppercase font-semibold hover:bg-text/5 hover:border-text transition-all duration-300 rounded-lg cursor-pointer"
             >
               Visit Salon
             </a>
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-full text-center px-6 py-4 bg-text text-bg text-xs font-sans tracking-widest uppercase font-semibold hover:bg-accent hover:text-bg transition-colors duration-300"
+              className="w-full text-center px-6 py-4 bg-text text-bg text-xs font-sans tracking-widest uppercase font-semibold hover:bg-accent hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer shadow-sm"
             >
               Enquire Now
             </a>
