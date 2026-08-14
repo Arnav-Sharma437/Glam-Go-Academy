@@ -1,34 +1,46 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-bg border-t border-muted-light/60 pt-20 pb-10">
+    <footer id="contact" className="bg-bg border-t border-muted-light/60 pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-muted-light/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-muted-light/60 items-start">
           
+          {/* Cosmetics vertical card on the left (Desktop only) */}
+          <div className="hidden lg:block lg:col-span-3 relative aspect-[3/4] overflow-hidden bg-muted-light border border-muted-light/50">
+            <Image
+              src="/images/footer_cosmetics.jpg"
+              alt="Premium Cosmetics - Glam & Go London Salon Aesthetics"
+              fill
+              className="object-cover opacity-85 hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
+          </div>
+
           {/* Logo & Tagline */}
-          <div className="lg:col-span-4 flex flex-col justify-start">
-            <Link href="/" className="flex flex-col group mb-6">
+          <div className="lg:col-span-3 lg:col-start-4 flex flex-col justify-start">
+            <Link href="/" className="flex flex-col group mb-4">
               <span className="font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent">
                 GLAM & GO
               </span>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-muted -mt-1 font-sans">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-muted -mt-1 font-sans font-semibold">
                 Academy
               </span>
             </Link>
-            <p className="font-sans text-xs text-muted leading-relaxed max-w-sm">
-              London’s premier beauty education hub. We train aspiring practitioners and salon staff in professional lash, brow, and facial treatments.
+            <p className="font-sans text-xs text-muted leading-relaxed max-w-xs">
+              London’s premier beauty education hub. We train aspiring practitioners and salon staff in professional aesthetics, injectables, and skin therapies.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2 lg:col-start-6 flex flex-col">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-text font-bold font-sans mb-4">
+          <div className="lg:col-span-2 flex flex-col">
+            <h4 className="text-[10px] uppercase tracking-[0.25em] text-text font-bold font-sans mb-3.5">
               Explore
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               <li>
                 <Link href="/" className="text-xs text-muted hover:text-accent transition-colors duration-200">
                   Home
@@ -41,7 +53,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#why-us" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Why Train With Us
+                  Why Train Us
                 </a>
               </li>
               <li>
@@ -53,16 +65,16 @@ export default function Footer() {
           </div>
 
           {/* Address & Info */}
-          <div className="lg:col-span-3 flex flex-col">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-text font-bold font-sans mb-4">
+          <div className="lg:col-span-2 flex flex-col">
+            <h4 className="text-[10px] uppercase tracking-[0.25em] text-text font-bold font-sans mb-3.5">
               London Studio
             </h4>
-            <address className="not-italic font-sans text-xs text-muted leading-relaxed space-y-3">
+            <address className="not-italic font-sans text-xs text-muted leading-relaxed space-y-2.5">
               <p>
                 Suite 4, 12 Old Compton Street<br />
                 Soho, London, W1D 4TQ
               </p>
-              <p className="pt-2">
+              <p className="pt-1.5">
                 <span className="font-semibold text-text">Phone:</span> +44 7946 0958<br />
                 <span className="font-semibold text-text">Email:</span> info@glamandgoacademy.com
               </p>
@@ -70,11 +82,11 @@ export default function Footer() {
           </div>
 
           {/* Socials & Parent Brand */}
-          <div className="lg:col-span-3 flex flex-col">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-text font-bold font-sans mb-4">
+          <div className="lg:col-span-2 flex flex-col">
+            <h4 className="text-[10px] uppercase tracking-[0.25em] text-text font-bold font-sans mb-3.5">
               Follow Us
             </h4>
-            <div className="flex items-center space-x-4 mb-6">
+            <div className="flex items-center space-x-3.5 mb-5">
               <a
                 href="https://instagram.com"
                 target="_blank"
@@ -118,9 +130,9 @@ export default function Footer() {
         </div>
 
         {/* Legal & Copyright */}
-        <div className="flex flex-col sm:flex-row items-center justify-between pt-10 text-[10px] text-muted uppercase tracking-wider font-sans">
+        <div className="flex flex-col sm:flex-row items-center justify-between pt-8 text-[10px] text-muted uppercase tracking-wider font-sans">
           <span>&copy; {currentYear} Glam and Go Academy. All rights reserved.</span>
-          <div className="flex items-center space-x-6 mt-4 sm:mt-0">
+          <div className="flex items-center space-x-6 mt-3 sm:mt-0">
             <Link href="/" className="hover:text-accent transition-colors duration-200">
               Privacy Policy
             </Link>

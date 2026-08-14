@@ -24,7 +24,7 @@ const COURSES: Course[] = [
     startDate: "Sept 15, 2026",
     description: "Your first supervised injecting day – facial anatomy, analysis and basic upper face technique on live models.",
     price: 895,
-    image: "https://images.unsplash.com/photo-1614859324967-bdf461fec769?q=80&w=600",
+    image: "/images/courses/foundation_injectables.jpg",
   },
   {
     id: "2",
@@ -35,7 +35,7 @@ const COURSES: Course[] = [
     startDate: "Sept 20, 2026",
     description: "Lip and nasolabial foundation with live models, full consultation and complication protocols.",
     price: 895,
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600",
+    image: "/images/courses/dermal_fillers.jpg",
   },
   {
     id: "3",
@@ -46,7 +46,7 @@ const COURSES: Course[] = [
     startDate: "Sept 28, 2026",
     description: "Full face advanced treatments for practicing injectors. Taught in tiny results-focused groups of four.",
     price: 1095,
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600",
+    image: "/images/courses/advanced_injectables.jpg",
   },
   {
     id: "4",
@@ -57,7 +57,7 @@ const COURSES: Course[] = [
     startDate: "Oct 02, 2026",
     description: "Advanced lip and mid face techniques including the Russian technique – our most popular module.",
     price: 1095,
-    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=600",
+    image: "/images/courses/russian_lip.jpg",
   },
   {
     id: "5",
@@ -68,7 +68,7 @@ const COURSES: Course[] = [
     startDate: "Oct 12, 2026",
     description: "Aqualyx & Desobody treatments – client assessment, injection technique and safety aftercare.",
     price: 795,
-    image: "https://images.unsplash.com/photo-1579684389782-64d84b5e901a?q=80&w=600",
+    image: "/images/courses/fat_dissolving.jpg",
   },
   
   // Skin (3)
@@ -81,7 +81,7 @@ const COURSES: Course[] = [
     startDate: "Sept 24, 2026",
     description: "Professional microneedling for face & hair. Skincare theory, protocols and hands-on practice.",
     price: 595,
-    image: "https://images.unsplash.com/photo-1522337360788-8b13edd793be?q=80&w=600",
+    image: "/images/courses/microneedling.jpg",
   },
   {
     id: "7",
@@ -92,7 +92,7 @@ const COURSES: Course[] = [
     startDate: "Sept 18, 2026",
     description: "Safe blade work, skin preparation and finishing for instantly smoother and brighter skin.",
     price: 495,
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=600",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600",
   },
   {
     id: "8",
@@ -103,7 +103,7 @@ const COURSES: Course[] = [
     startDate: "Oct 05, 2026",
     description: "Platelet-Rich Plasma – the full face & scalp treatment for skin rejuvenation and hair stimulation.",
     price: 795,
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600",
+    image: "https://images.unsplash.com/photo-1581091921389-a5c22bb6224f?q=80&w=600",
   },
 
   // Wellness (4)

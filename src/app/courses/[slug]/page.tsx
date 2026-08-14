@@ -28,7 +28,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Sept 15, 2026", "Oct 13, 2026", "Nov 10, 2026"],
     description: "Your first supervised injecting day – facial anatomy, analysis and basic upper face technique on live models.",
     price: 895,
-    image: "https://images.unsplash.com/photo-1614859324967-bdf461fec769?q=80&w=1200",
+    image: "/images/courses/foundation_injectables.jpg",
     duration: "1 Day (10:00 - 17:30)",
     curriculum: [
       "Facial nerve and muscle anatomy",
@@ -47,7 +47,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Sept 20, 2026", "Oct 18, 2026", "Nov 15, 2026"],
     description: "Lip and nasolabial foundation with live models, full consultation and complication protocols.",
     price: 895,
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200",
+    image: "/images/courses/dermal_fillers.jpg",
     duration: "1 Day (09:30 - 18:00)",
     curriculum: [
       "Lip and nasolabial fold anatomy",
@@ -66,7 +66,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Sept 28, 2026", "Oct 26, 2026", "Nov 23, 2026"],
     description: "Full face advanced treatments for practicing injectors. Taught in tiny results-focused groups of four.",
     price: 1095,
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200",
+    image: "/images/courses/advanced_injectables.jpg",
     duration: "1 Day (10:00 - 17:00)",
     curriculum: [
       "Lower face Botox injection points",
@@ -85,7 +85,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Oct 02, 2026", "Oct 30, 2026", "Nov 27, 2026"],
     description: "Advanced lip and mid face techniques including the Russian technique – our most popular module.",
     price: 1095,
-    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1200",
+    image: "/images/courses/russian_lip.jpg",
     duration: "1 Day (09:30 - 17:30)",
     curriculum: [
       "The flat-profile Russian lip technique",
@@ -104,7 +104,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Oct 12, 2026", "Nov 09, 2026", "Dec 07, 2026"],
     description: "Aqualyx & Desobody treatments – client assessment, injection technique and safety aftercare.",
     price: 795,
-    image: "https://images.unsplash.com/photo-1579684389782-64d84b5e901a?q=80&w=1200",
+    image: "/images/courses/fat_dissolving.jpg",
     duration: "1 Day (10:00 - 16:30)",
     curriculum: [
       "Adipose tissue anatomy and lipolysis chemistry",
@@ -123,7 +123,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Sept 24, 2026", "Oct 22, 2026", "Nov 19, 2026"],
     description: "Professional microneedling for face & hair. Skincare theory, protocols and hands-on practice.",
     price: 595,
-    image: "https://images.unsplash.com/photo-1522337360788-8b13edd793be?q=80&w=1200",
+    image: "/images/courses/microneedling.jpg",
     duration: "1 Day (10:00 - 17:00)",
     curriculum: [
       "Wound healing cascade and skin histology",
@@ -142,7 +142,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Sept 18, 2026", "Oct 16, 2026", "Nov 13, 2026"],
     description: "Safe blade work, skin preparation and finishing for instantly smoother and brighter skin.",
     price: 495,
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200",
     duration: "1 Day (10:00 - 16:00)",
     curriculum: [
       "Blade handling, insertion, and angle safety (10R blade)",
@@ -161,7 +161,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Oct 05, 2026", "Nov 02, 2026", "Nov 30, 2026"],
     description: "Platelet-Rich Plasma – the full face & scalp treatment for skin rejuvenation and hair stimulation.",
     price: 795,
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1581091921389-a5c22bb6224f?q=80&w=1200",
     duration: "1 Day (09:30 - 17:30)",
     curriculum: [
       "Autologous platelet-rich plasma chemistry",
@@ -237,7 +237,7 @@ const COURSES: Record<string, Course> = {
     alternateDates: ["Oct 25, 2026", "Nov 22, 2026", "Dec 20, 2026"],
     description: "Venepuncture from first draw to safe disposal, with practice training arms and live draws.",
     price: 595,
-    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1200",
+    image: "/images/courses/phlebotomy.jpg",
     duration: "1 Day (09:30 - 17:30)",
     curriculum: [
       "Venous anatomy and vein selection guidelines",
