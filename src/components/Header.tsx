@@ -30,6 +30,18 @@ export default function Header() {
     }
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   // Toggle theme handler
   const toggleTheme = () => {
     if (theme === "light") {
@@ -208,53 +220,53 @@ export default function Header() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="M12 3v2.25m0 13.5V21M4.95 4.95l1.59 1.59m10.92 10.92l1.59 1.59M3 12h2.25m13.5 0H21M6.54 17.46l-1.59 1.59m12.36-12.36l-1.59 1.59M12 7.5a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"
-                />
-              </svg>
-            )}
-          </button>
-          
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={burgerClass}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 8h16M4 16h16"
-                />
-              </svg>
-            )}
-          </button>
+                  />
+                </svg>
+              )}
+            </button>
+            
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={burgerClass}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M4 8h16M4 16h16"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    {/* Mobile Drawer (Moved outside header element to bypass Safari fixed blur compositing bug) */}
+      {/* Mobile Drawer (Moved outside header element to bypass Safari fixed blur compositing bug) */}
       <div
         className={`md:hidden fixed inset-0 top-[72px] z-40 transition-transform duration-300 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"

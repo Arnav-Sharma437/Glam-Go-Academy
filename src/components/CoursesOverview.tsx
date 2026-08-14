@@ -106,7 +106,7 @@ const COURSES: Course[] = [
     image: "/images/courses/prp_therapy.jpg",
   },
 
-  // Wellness (4)
+  // Wellness (3)
   {
     id: "9",
     slug: "vitamin-injections",
@@ -140,19 +140,19 @@ const COURSES: Course[] = [
     price: 795,
     image: "/images/courses/iv_nutrition.jpg",
   },
+
+  // Foundation (2)
   {
     id: "12",
     slug: "phlebotomy",
     title: "Phlebotomy",
-    category: "wellness",
+    category: "foundation",
     level: "Beginner",
     startDate: "Oct 25, 2026",
     description: "Venepuncture from first draw to safe disposal, with practice training arms and live draws.",
     price: 595,
     image: "/images/courses/phlebotomy.jpg",
   },
-
-  // Foundation (1)
   {
     id: "13",
     slug: "anatomy-physiology-aesthetics",
@@ -169,8 +169,8 @@ const COURSES: Course[] = [
 const CATEGORIES = [
   { id: "injectables", name: "Injectables", count: 5, desc: "CPD accredited injectable and cosmetic filler training modules." },
   { id: "skin", name: "Skin", count: 3, desc: "Skincare treatments, exfoliation methods, and dermis rejuvenation." },
-  { id: "wellness", name: "Wellness", count: 4, desc: "Intramuscular vitamins, venepuncture, and IV therapy infusions." },
-  { id: "foundation", name: "Foundation", count: 1, desc: "Essential biological theory required for cosmetic practice." }
+  { id: "wellness", name: "Wellness", count: 3, desc: "Intramuscular vitamins and IV therapy infusions." },
+  { id: "foundation", name: "Foundation", count: 2, desc: "Essential biological theory and phlebotomy practices required for cosmetic training." }
 ];
 
 export default function CoursesOverview() {
@@ -194,7 +194,7 @@ export default function CoursesOverview() {
         </div>
 
         {/* Categories Sticky Quick-Nav Menu */}
-        <div className="flex flex-wrap gap-2 pb-4 border-b border-muted-light/60 mb-8 sticky top-[68px] bg-bg/95 backdrop-blur-md z-40 py-3 shadow-[0_2px_4px_rgba(0,0,0,0.01)]">
+        <div className="flex flex-wrap gap-2 pb-4 border-b border-muted-light/60 mb-8 sticky top-[68px] bg-bg/95 backdrop-blur-md z-20 py-3 shadow-[0_2px_4px_rgba(0,0,0,0.01)]">
           <span className="text-[10px] uppercase tracking-widest font-bold text-muted mr-3 self-center">
             Jump to:
           </span>
