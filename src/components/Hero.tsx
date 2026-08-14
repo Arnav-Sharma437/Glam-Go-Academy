@@ -52,7 +52,7 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative min-h-[90vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-text"
+      className="relative min-h-[75vh] lg:min-h-[85vh] w-full flex items-center justify-center overflow-hidden bg-text"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -82,24 +82,24 @@ export default function Hero() {
       ))}
 
       {/* Slide Content */}
-      <div className="relative z-30 max-w-7xl mx-auto px-6 md:px-12 w-full text-left pt-20">
-        <div className="max-w-3xl flex flex-col justify-center">
+      <div className="relative z-30 max-w-7xl mx-auto px-6 md:px-12 w-full text-left pt-12">
+        <div className="max-w-2xl flex flex-col justify-center">
           
           {/* Subheading category */}
-          <div className="inline-flex items-center space-x-2 mb-6 animate-slide-in">
-            <span className="h-px w-8 bg-accent"></span>
+          <div className="inline-flex items-center space-x-2 mb-4 animate-slide-in">
+            <span className="h-px w-6 bg-accent"></span>
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-accent font-bold font-sans">
               {SLIDES[currentSlide].category}
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.08] tracking-tight text-white mb-6 animate-slide-in-up">
+          <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-4 animate-slide-in-up">
             {SLIDES[currentSlide].title}
           </h1>
 
           {/* Description */}
-          <p className="font-sans text-sm sm:text-base md:text-lg text-white/80 max-w-xl leading-relaxed mb-10">
+          <p className="font-sans text-xs sm:text-sm md:text-base text-white/80 max-w-lg leading-relaxed mb-8">
             {SLIDES[currentSlide].description}
           </p>
 
@@ -107,14 +107,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-5">
             <a
               href="#courses"
-              className="px-8 py-4 bg-accent text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:bg-white hover:text-text transition-colors duration-300 shadow-md"
+              className="px-6 py-3.5 bg-accent text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:bg-white hover:text-text transition-colors duration-300 shadow-md"
             >
               Explore Courses
             </a>
             
             <a
               href="#contact"
-              className="px-8 py-4 border border-white/30 text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:border-white hover:bg-white/10 transition-all duration-300"
+              className="px-6 py-3.5 border border-white/30 text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:border-white hover:bg-white/10 transition-all duration-300"
             >
               Book Consultation
             </a>
@@ -145,13 +145,13 @@ export default function Hero() {
       </button>
 
       {/* Dot Indicators */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-35 flex items-center space-x-3">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-35 flex items-center space-x-3">
         {SLIDES.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
-            className={`h-1.5 transition-all duration-300 rounded-none ${
-              idx === currentSlide ? "w-8 bg-accent" : "w-2.5 bg-white/40 hover:bg-white/70"
+            className={`h-1 transition-all duration-300 rounded-none ${
+              idx === currentSlide ? "w-6 bg-accent" : "w-2 bg-white/40 hover:bg-white/70"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           ></button>
@@ -169,7 +169,7 @@ const styleInjections = (
     @keyframes slideInUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px);
       }
       to {
         opacity: 1;
@@ -179,7 +179,7 @@ const styleInjections = (
     @keyframes slideIn {
       from {
         opacity: 0;
-        transform: translateX(-10px);
+        transform: translateX(-8px);
       }
       to {
         opacity: 1;

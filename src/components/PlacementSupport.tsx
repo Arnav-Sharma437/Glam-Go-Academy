@@ -27,33 +27,33 @@ export default function PlacementSupport() {
   ];
 
   return (
-    <section className="py-24 bg-bg border-t border-muted-light/60">
+    <section className="py-16 bg-bg border-t border-muted-light/60">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div className="max-w-xl">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-3 block">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-2 block">
               Career & Placements
             </span>
-            <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-text">
+            <h2 className="font-sans text-2xl md:text-3xl font-bold tracking-tight text-text">
               Direct Placement Partners & Support
             </h2>
           </div>
-          <p className="font-sans text-xs sm:text-sm text-muted max-w-sm mt-4 md:mt-0 leading-relaxed">
+          <p className="font-sans text-xs text-muted max-w-sm mt-3 md:mt-0 leading-relaxed">
             We don't just train you—we launch your career. Our placement cell connects graduates directly with London's luxury salons and department store cosmetic counters.
           </p>
         </div>
 
         {/* How Support Works Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 border-b border-muted-light/60 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 border-b border-muted-light/60 pb-10">
           {steps.map((step, idx) => (
-            <div key={idx} className="flex space-x-5">
-              <span className="font-sans text-3xl font-bold text-accent/30 mt-1 select-none">
+            <div key={idx} className="flex space-x-4">
+              <span className="font-sans text-2xl font-bold text-accent/30 mt-0.5 select-none">
                 {step.num}
               </span>
               <div className="flex flex-col">
-                <h3 className="font-sans text-base font-bold text-text mb-2">
+                <h3 className="font-sans text-sm font-bold text-text mb-1.5">
                   {step.title}
                 </h3>
                 <p className="font-sans text-xs text-muted leading-relaxed">
@@ -66,8 +66,8 @@ export default function PlacementSupport() {
 
         {/* Placement Partners Section */}
         <div>
-          <div className="mb-10 text-center md:text-left">
-            <h3 className="font-sans text-xs uppercase tracking-widest font-bold text-text mb-2">
+          <div className="mb-8 text-center md:text-left">
+            <h3 className="font-sans text-xs uppercase tracking-widest font-bold text-text mb-1">
               Where Our Graduates Work
             </h3>
             <p className="font-sans text-xs text-muted">
@@ -79,11 +79,11 @@ export default function PlacementSupport() {
             {partners.map((partner, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-card-bg border border-muted-light/60 flex flex-col justify-between hover:border-accent/40 transition-colors duration-250 shadow-sm"
+                className="p-5 bg-card-bg border border-muted-light/60 flex flex-col justify-between hover:border-accent/40 transition-colors duration-250 shadow-sm"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-sans text-base font-bold text-text tracking-tight">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="font-sans text-sm font-bold text-text tracking-tight">
                       {partner.name}
                     </span>
                     {partner.type && (
@@ -97,12 +97,12 @@ export default function PlacementSupport() {
                   </p>
                 </div>
                 
-                <div className="mt-4 pt-3 border-t border-muted-light/40 flex items-center justify-between">
+                <div className="mt-4 pt-2.5 border-t border-muted-light/40 flex items-center justify-between">
                   <span className="text-[9px] uppercase tracking-widest text-accent font-semibold font-sans">
                     Placement Partner
                   </span>
                   <svg
-                    className="w-3.5 h-3.5 text-muted"
+                    className="w-3 h-3 text-muted"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={2}

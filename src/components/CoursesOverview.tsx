@@ -175,34 +175,34 @@ const CATEGORIES = [
 
 export default function CoursesOverview() {
   return (
-    <section id="courses" className="py-24 bg-bg">
+    <section id="courses" className="py-16 md:py-20 bg-bg">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
           <div className="max-w-xl">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-3 block">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-2 block">
               Our Training Programs
             </span>
-            <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-text">
+            <h2 className="font-sans text-2xl md:text-3xl font-bold tracking-tight text-text">
               Transform Passion Into A Professional Career
             </h2>
           </div>
-          <p className="font-sans text-xs sm:text-sm text-muted max-w-sm mt-4 md:mt-0 leading-relaxed">
+          <p className="font-sans text-xs text-muted max-w-sm mt-3 md:mt-0 leading-relaxed">
             Fully accredited CPD qualifications designed for fast-track careers. Gain the confidence, technique, and industry certificates that clients trust.
           </p>
         </div>
 
         {/* Categories Sticky Quick-Nav Menu */}
-        <div className="flex flex-wrap gap-2.5 pb-5 border-b border-muted-light/60 mb-10 sticky top-[72px] bg-bg/95 backdrop-blur-md z-40 py-4 shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
-          <span className="text-[10px] uppercase tracking-widest font-bold text-muted mr-4 self-center">
+        <div className="flex flex-wrap gap-2 pb-4 border-b border-muted-light/60 mb-8 sticky top-[68px] bg-bg/95 backdrop-blur-md z-40 py-3 shadow-[0_2px_4px_rgba(0,0,0,0.01)]">
+          <span className="text-[10px] uppercase tracking-widest font-bold text-muted mr-3 self-center">
             Jump to:
           </span>
           {CATEGORIES.map((cat) => (
             <a
               key={cat.id}
               href={`#${cat.id}`}
-              className="px-4 py-2 border border-muted-light/80 hover:border-accent hover:text-accent font-sans text-xs uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer bg-card-bg"
+              className="px-3.5 py-1.5 border border-muted-light/80 hover:border-accent hover:text-accent font-sans text-[11px] uppercase tracking-wider font-semibold transition-all duration-200 cursor-pointer bg-card-bg"
             >
               {cat.name} ({cat.count})
             </a>
@@ -210,27 +210,27 @@ export default function CoursesOverview() {
         </div>
 
         {/* Grouped Courses Lists */}
-        <div className="space-y-16">
+        <div className="space-y-12">
           {CATEGORIES.map((category) => {
             const categoryCourses = COURSES.filter((c) => c.category === category.id);
             return (
               <div
                 key={category.id}
                 id={category.id}
-                className="scroll-mt-28 border-b border-muted-light/60 pb-16 last:border-0 last:pb-0"
+                className="scroll-mt-24 border-b border-muted-light/60 pb-12 last:border-0 last:pb-0"
               >
                 {/* Category Header */}
-                <div className="mb-8">
-                  <h3 className="font-sans text-xl font-bold text-text uppercase tracking-wider">
+                <div className="mb-6">
+                  <h3 className="font-sans text-lg font-bold text-text uppercase tracking-wider">
                     {category.name}
                   </h3>
-                  <p className="font-sans text-xs text-muted mt-1">
+                  <p className="font-sans text-xs text-muted mt-0.5">
                     {category.desc}
                   </p>
                 </div>
 
                 {/* Course Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                   {categoryCourses.map((course) => (
                     <div
                       key={course.id}
@@ -246,38 +246,38 @@ export default function CoursesOverview() {
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
                         />
-                        <span className="absolute top-4 left-4 px-3 py-1 bg-bg/90 backdrop-blur-sm text-text text-[9px] uppercase tracking-widest font-semibold font-sans border border-muted-light/40">
+                        <span className="absolute top-3 left-3 px-2 py-0.5 bg-bg/90 backdrop-blur-sm text-text text-[8px] uppercase tracking-widest font-semibold font-sans border border-muted-light/40">
                           {course.level}
                         </span>
                       </div>
 
                       {/* Card Body */}
-                      <div className="p-6 flex-grow flex flex-col">
-                        <h4 className="font-sans text-base font-bold text-text mb-2 group-hover:text-accent transition-colors duration-300 min-h-[48px] line-clamp-2">
+                      <div className="p-5 flex-grow flex flex-col">
+                        <h4 className="font-sans text-sm font-bold text-text mb-1.5 group-hover:text-accent transition-colors duration-300 min-h-[40px] line-clamp-2">
                           {course.title}
                         </h4>
                         
-                        <span className="text-[11px] font-sans font-medium text-accent tracking-wider mb-4 block">
+                        <span className="text-[10px] font-sans font-medium text-accent tracking-wider mb-3 block">
                           Next Start Date | {course.startDate}
                         </span>
                         
-                        <p className="font-sans text-xs text-muted leading-relaxed mb-6 flex-grow line-clamp-3">
+                        <p className="font-sans text-xs text-muted leading-relaxed mb-4 flex-grow line-clamp-3">
                           {course.description}
                         </p>
 
-                        <div className="pt-5 border-t border-muted-light/60 flex items-center justify-between mt-auto">
+                        <div className="pt-4 border-t border-muted-light/60 flex items-center justify-between mt-auto">
                           <div className="flex flex-col">
-                            <span className="text-[10px] uppercase tracking-wider text-muted font-sans font-semibold">
+                            <span className="text-[9px] uppercase tracking-wider text-muted font-sans font-semibold">
                               Tuition Fees
                             </span>
-                            <span className="font-sans font-bold text-text text-sm">
+                            <span className="font-sans font-bold text-text text-xs sm:text-sm">
                               From £{course.price}
                             </span>
                           </div>
 
                           <Link
                             href={`/courses/${course.slug}`}
-                            className="text-[11px] font-sans uppercase tracking-widest font-bold text-text group-hover:text-accent transition-colors duration-300 hover-underline-reveal"
+                            className="text-[10px] font-sans uppercase tracking-widest font-bold text-text group-hover:text-accent transition-colors duration-300 hover-underline-reveal"
                           >
                             View Course →
                           </Link>

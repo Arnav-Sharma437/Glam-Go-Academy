@@ -43,6 +43,36 @@ export default function Header() {
     }
   };
 
+  // Dynamic contrast class mappings
+  const logoTextClass = isScrolled ? "text-text" : "text-white";
+  const logoSubTextClass = isScrolled ? "text-muted" : "text-white/70";
+  
+  const navLinkClass = `text-xs uppercase font-sans tracking-widest font-semibold transition-colors duration-200 hover-underline-reveal ${
+    isScrolled ? "text-text/80 hover:text-text" : "text-white/80 hover:text-white"
+  }`;
+
+  const toggleBtnClass = `p-2 border rounded-none transition-colors duration-200 focus:outline-none ${
+    isScrolled
+      ? "border-muted-light/60 text-text hover:text-accent hover:border-accent/40"
+      : "border-white/20 text-white hover:text-accent hover:border-accent/40"
+  }`;
+
+  const visitSalonClass = `px-5 py-3 border text-xs font-sans tracking-widest uppercase font-semibold transition-all duration-300 ${
+    isScrolled
+      ? "border-text/15 text-text hover:bg-text/5 hover:border-text"
+      : "border-white/20 text-white hover:bg-white/10 hover:border-white"
+  }`;
+
+  const enquireClass = `px-6 py-3 text-xs font-sans tracking-widest uppercase font-semibold transition-colors duration-300 shadow-sm ${
+    isScrolled
+      ? "bg-text text-bg hover:bg-accent hover:text-bg"
+      : "bg-white text-black hover:bg-accent hover:text-white"
+  }`;
+
+  const burgerClass = `p-2 focus:outline-none transition-colors duration-200 ${
+    isScrolled ? "text-text" : "text-white"
+  }`;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -54,66 +84,36 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex flex-col group">
-          <span className="font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent">
+          <span className={`font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent ${logoTextClass}`}>
             GLAM & GO
           </span>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-muted -mt-1 font-sans font-semibold">
+          <span className={`text-[10px] uppercase tracking-[0.25em] -mt-1 font-sans font-semibold transition-colors duration-300 ${logoSubTextClass}`}>
             Academy
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-10">
-          <Link
-            href="/"
-            className="text-xs uppercase font-sans tracking-widest font-semibold text-text/80 hover:text-text transition-colors duration-200 hover-underline-reveal"
-          >
+          <Link href="/" className={navLinkClass}>
             Home
           </Link>
-          <a
-            href="#courses"
-            className="text-xs uppercase font-sans tracking-widest font-semibold text-text/80 hover:text-text transition-colors duration-200 hover-underline-reveal"
-          >
+          <a href="#courses" className={navLinkClass}>
             Courses
           </a>
-          <a
-            href="#why-us"
-            className="text-xs uppercase font-sans tracking-widest font-semibold text-text/80 hover:text-text transition-colors duration-200 hover-underline-reveal"
-          >
+          <a href="#why-us" className={navLinkClass}>
             About
           </a>
-          <a
-            href="#contact"
-            className="text-xs uppercase font-sans tracking-widest font-semibold text-text/80 hover:text-text transition-colors duration-200 hover-underline-reveal"
-          >
+          <a href="#contact" className={navLinkClass}>
             Contact
           </a>
         </nav>
 
-        {/* Action Tray: WhatsApp + Theme Toggle + CTA */}
-        <div className="hidden lg:flex items-center space-x-6">
-          {/* WhatsApp Callout */}
-          <a
-            href="https://wa.me/4479460958"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 text-xs font-sans tracking-wide text-muted hover:text-accent transition-colors duration-300"
-            aria-label="Contact us on WhatsApp"
-          >
-            <svg
-              className="w-4 h-4 fill-current text-[#25D366]"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.419 9.86-9.86.002-2.636-1.02-5.115-2.879-6.979C16.592 1.901 14.118.88 11.488.88c-5.44 0-9.862 4.42-9.865 9.861-.001 1.762.483 3.486 1.4 5.01L2.011 22.07l6.568-1.721z" />
-            </svg>
-            <span className="font-semibold text-text/90">+44 7946 0958</span>
-          </a>
-
+        {/* Action Tray: Theme Toggle + Visit Salon + CTA */}
+        <div className="hidden lg:flex items-center space-x-4">
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="p-2 border border-muted-light/60 text-text hover:text-accent hover:border-accent/40 transition-colors duration-200 focus:outline-none"
+            className={toggleBtnClass}
             aria-label="Toggle light and dark mode"
           >
             {theme === "light" ? (
@@ -156,7 +156,7 @@ export default function Header() {
             href="https://glamandgolondon.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-3 border border-text/15 text-text text-xs font-sans tracking-widest uppercase font-semibold hover:bg-text/5 hover:border-text transition-all duration-300"
+            className={visitSalonClass}
           >
             Visit Salon
           </a>
@@ -164,7 +164,7 @@ export default function Header() {
           {/* Enquire Now Button */}
           <a
             href="#contact"
-            className="px-6 py-3 bg-text text-bg text-xs font-sans tracking-widest uppercase font-semibold hover:bg-accent hover:text-bg transition-colors duration-300 shadow-sm"
+            className={enquireClass}
           >
             Enquire Now
           </a>
@@ -174,7 +174,9 @@ export default function Header() {
         <div className="flex items-center space-x-3 md:hidden">
           <button
             onClick={toggleTheme}
-            className="p-2 border border-muted-light/60 text-text hover:text-accent transition-colors duration-200 focus:outline-none"
+            className={`p-2 border rounded-none transition-colors duration-200 focus:outline-none ${
+              isScrolled ? "border-muted-light/60 text-text" : "border-white/20 text-white"
+            }`}
             aria-label="Toggle theme"
           >
             {theme === "light" ? (
@@ -212,7 +214,7 @@ export default function Header() {
           
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-text focus:outline-none"
+            className={burgerClass}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -289,21 +291,6 @@ export default function Header() {
           </div>
 
           <div className="flex flex-col space-y-4">
-            <a
-              href="https://wa.me/4479460958"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-xs font-sans tracking-wide text-muted hover:text-accent transition-colors duration-300"
-            >
-              <svg
-                className="w-5 h-5 fill-current text-[#25D366]"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.419 9.86-9.86.002-2.636-1.02-5.115-2.879-6.979C16.592 1.901 14.118.88 11.488.88c-5.44 0-9.862 4.42-9.865 9.861-.001 1.762.483 3.486 1.4 5.01L2.011 22.07l6.568-1.721z" />
-              </svg>
-              <span>+44 7946 0958</span>
-            </a>
             <a
               href="https://glamandgolondon.com"
               target="_blank"

@@ -18,28 +18,28 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-bg border-t border-muted-light/60">
+    <section className="py-16 bg-bg border-t border-muted-light/60">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Title */}
-        <div className="max-w-xl mb-16">
-          <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-3 block">
+        <div className="max-w-xl mb-12">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-2 block">
             Success Stories
           </span>
-          <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-text">
+          <h2 className="font-sans text-2xl md:text-3xl font-bold tracking-tight text-text">
             Loved by Our Students
           </h2>
         </div>
 
         {/* Testimonial Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="p-8 bg-card-bg border border-muted-light/60 flex flex-col justify-between"
+              className="p-6 bg-card-bg border border-muted-light/60 flex flex-col justify-between shadow-sm"
             >
               {/* Quote Mark SVG */}
               <svg
-                className="w-8 h-8 text-accent/20 mb-6"
+                className="w-6 h-6 text-accent/20 mb-4"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,15 +47,15 @@ export default function Testimonials() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.39 9.39-9.39v2.856c-3.111 0-4.39 2.012-4.39 4.39h4.39v9.535H14.017zm-14 0v-7.391c0-5.704 3.748-9.39 9.407-9.39v2.856c-3.116 0-4.407 2.012-4.407 4.39h4.407v9.535H.017z" />
               </svg>
 
-              <blockquote className="font-sans text-sm italic text-text/80 leading-relaxed mb-8 flex-grow">
+              <blockquote className="font-sans text-xs italic text-text/80 leading-relaxed mb-6 flex-grow">
                 “{t.quote}”
               </blockquote>
 
-              <div className="flex flex-col">
-                <cite className="not-italic font-sans font-semibold text-xs tracking-wider text-text uppercase">
+              <div className="flex flex-col border-t border-muted-light/40 pt-3">
+                <cite className="not-italic font-sans font-bold text-[11px] tracking-wider text-text uppercase">
                   {t.author}
                 </cite>
-                <span className="text-[10px] text-accent uppercase tracking-widest font-sans font-medium mt-1">
+                <span className="text-[9px] text-accent uppercase tracking-widest font-sans font-semibold mt-0.5">
                   {t.course}
                 </span>
               </div>
