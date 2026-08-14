@@ -92,7 +92,7 @@ const COURSES: Course[] = [
     startDate: "Sept 18, 2026",
     description: "Safe blade work, skin preparation and finishing for instantly smoother and brighter skin.",
     price: 495,
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600",
+    image: "/images/courses/dermaplaning.jpg",
   },
   {
     id: "8",
@@ -103,7 +103,7 @@ const COURSES: Course[] = [
     startDate: "Oct 05, 2026",
     description: "Platelet-Rich Plasma – the full face & scalp treatment for skin rejuvenation and hair stimulation.",
     price: 795,
-    image: "https://images.unsplash.com/photo-1581091921389-a5c22bb6224f?q=80&w=600",
+    image: "/images/courses/prp_therapy.jpg",
   },
 
   // Wellness (4)
@@ -116,7 +116,7 @@ const COURSES: Course[] = [
     startDate: "Oct 10, 2026",
     description: "IM injection techniques, client screening and record-keeping for vitamin therapies.",
     price: 495,
-    image: "https://images.unsplash.com/photo-1607619056574-7b8f30413b58?q=80&w=600",
+    image: "/images/courses/vitamin_injections.jpg",
   },
   {
     id: "10",
@@ -127,7 +127,7 @@ const COURSES: Course[] = [
     startDate: "Oct 18, 2026",
     description: "Extend your injection menu with hair, skin and antioxidant body support protocols.",
     price: 495,
-    image: "https://images.unsplash.com/photo-1556229010-aa3f7ff66b24?q=80&w=600",
+    image: "/images/courses/biotin_glutathione.jpg",
   },
   {
     id: "11",
@@ -138,7 +138,7 @@ const COURSES: Course[] = [
     startDate: "Oct 22, 2026",
     description: "Cannulation refresher, drip bag assembly, vitamin cocktails and safe infusion monitoring.",
     price: 795,
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600",
+    image: "/images/courses/iv_nutrition.jpg",
   },
   {
     id: "12",
@@ -149,7 +149,7 @@ const COURSES: Course[] = [
     startDate: "Oct 25, 2026",
     description: "Venepuncture from first draw to safe disposal, with practice training arms and live draws.",
     price: 595,
-    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=600",
+    image: "/images/courses/phlebotomy.jpg",
   },
 
   // Foundation (1)
@@ -162,7 +162,7 @@ const COURSES: Course[] = [
     startDate: "Self-Paced",
     description: "The essential theory foundation covering skeletal, muscular, circulatory and skin structures.",
     price: 395,
-    image: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=600",
+    image: "/images/courses/anatomy_physiology.jpg",
   }
 ];
 

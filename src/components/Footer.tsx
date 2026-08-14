@@ -5,132 +5,167 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-bg border-t border-muted-light/60 pt-16 pb-10">
+    <footer id="contact" className="bg-[#0D0C0B] text-white pt-16 pb-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-muted-light/60 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/5 items-stretch">
           
-          {/* Cosmetics vertical card on the left (Desktop only) */}
-          <div className="hidden lg:block lg:col-span-3 relative aspect-[3/4] overflow-hidden bg-muted-light border border-muted-light/50">
-            <Image
-              src="/images/footer_cosmetics.jpg"
-              alt="Premium Cosmetics - Glam & Go London Salon Aesthetics"
-              fill
-              className="object-cover opacity-85 hover:scale-105 transition-transform duration-700"
-              loading="lazy"
-            />
-          </div>
-
-          {/* Logo & Tagline */}
-          <div className="lg:col-span-3 lg:col-start-4 flex flex-col justify-start">
-            <Link href="/" className="flex flex-col group mb-4">
-              <span className="font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent">
-                GLAM & GO
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-muted -mt-1 font-sans font-semibold">
-                Academy
-              </span>
-            </Link>
-            <p className="font-sans text-xs text-muted leading-relaxed max-w-xs">
-              London’s premier beauty education hub. We train aspiring practitioners and salon staff in professional aesthetics, injectables, and skin therapies.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div className="lg:col-span-2 flex flex-col">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-text font-bold font-sans mb-3.5">
-              Explore
-            </h4>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href="/" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <a href="#courses" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Courses
-                </a>
-              </li>
-              <li>
-                <a href="#why-us" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Why Train Us
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Contact Info
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Address & Info */}
-          <div className="lg:col-span-2 flex flex-col">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-text font-bold font-sans mb-3.5">
-              London Studio
-            </h4>
-            <address className="not-italic font-sans text-xs text-muted leading-relaxed space-y-2.5">
-              <p>
-                Suite 4, 12 Old Compton Street<br />
-                Soho, London, W1D 4TQ
-              </p>
-              <p className="pt-1.5">
-                <span className="font-semibold text-text">Phone:</span> +44 7946 0958<br />
-                <span className="font-semibold text-text">Email:</span> info@glamandgoacademy.com
-              </p>
-            </address>
-          </div>
-
-          {/* Socials & Parent Brand */}
-          <div className="lg:col-span-2 flex flex-col">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-text font-bold font-sans mb-3.5">
-              Follow Us
-            </h4>
-            <div className="flex items-center space-x-3.5 mb-5">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted hover:text-accent transition-colors duration-200"
-                aria-label="Follow us on Instagram"
-              >
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                </svg>
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted hover:text-accent transition-colors duration-200"
-                aria-label="Follow us on Facebook"
-              >
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-              </a>
+          {/* Left Side: Mockup Image overlay CTA Card (5 columns) */}
+          <div className="lg:col-span-5 relative overflow-hidden bg-black flex flex-col justify-end p-8 md:p-10 min-h-[300px] border border-white/5 shadow-2xl">
+            {/* Background image of beauty cosmetics flatlay (dark organizor) */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/footer_cosmetics.jpg"
+                alt="Luxury Cosmetics & Makeup Organizer Tray"
+                fill
+                className="object-cover opacity-35 hover:scale-103 transition-transform duration-1000"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             </div>
-            
-            {/* Connection text */}
-            <div className="pt-2 border-t border-muted-light/60">
-              <span className="text-[10px] text-muted font-sans tracking-wide">
-                Part of{" "}
+
+            {/* Overlay Content */}
+            <div className="relative z-10">
+              <h3 className="font-sans text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">
+                Ready to Glow?
+              </h3>
+              <p className="font-sans text-xs text-white/80 leading-relaxed mb-6 max-w-sm">
+                Start your aesthetics career or book your next luxury clinical appointment with our expert practitioners.
+              </p>
+              
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-3">
                 <a
                   href="https://glamandgolondon.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-text hover:text-accent transition-colors duration-200"
+                  className="px-5 py-2.5 bg-accent hover:bg-white hover:text-black text-[10px] font-sans tracking-widest uppercase font-bold text-white transition-all duration-300 shadow-md inline-block"
                 >
-                  Glam & Go London
+                  Book Salon
                 </a>
-              </span>
+                <a
+                  href="#courses"
+                  className="px-5 py-2.5 border border-accent text-accent hover:bg-accent hover:text-white text-[10px] font-sans tracking-widest uppercase font-bold transition-all duration-300 inline-block"
+                >
+                  Book Aesthetics
+                </a>
+              </div>
             </div>
+          </div>
+
+          {/* Right Side: Mockup Columns (7 columns) */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:pl-6 pt-4 lg:pt-0">
+            
+            {/* Column 1: QUICK LINKS */}
+            <div className="flex flex-col">
+              <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-bold font-sans mb-5 border-b border-white/5 pb-2">
+                Quick Links
+              </h4>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <a href="#why-us" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#courses" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    Academy Courses
+                  </a>
+                </li>
+                <li>
+                  <a href="#courses" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    Special Offers
+                  </a>
+                </li>
+                <li>
+                  <a href="https://glamandgolondon.com" target="_blank" rel="noopener noreferrer" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    Visit Salon
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 2: OUR SERVICES */}
+            <div className="flex flex-col">
+              <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-bold font-sans mb-5 border-b border-white/5 pb-2">
+                Our Academy
+              </h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#courses" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    Injectables (5)
+                  </a>
+                </li>
+                <li>
+                  <a href="#courses" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    Skin Treatments (3)
+                  </a>
+                </li>
+                <li>
+                  <a href="#courses" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    Wellness Infusions (4)
+                  </a>
+                </li>
+                <li>
+                  <a href="#courses" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    Foundation Anatomy (1)
+                  </a>
+                </li>
+                <li>
+                  <a href="#why-us" className="text-xs text-white/70 hover:text-accent font-sans transition-colors duration-200 block">
+                    Student Placements
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: CONTACT US */}
+            <div className="flex flex-col">
+              <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-bold font-sans mb-5 border-b border-white/5 pb-2">
+                Contact Us
+              </h4>
+              
+              <ul className="space-y-4">
+                {/* Phone */}
+                <li className="flex items-start space-x-3 text-xs text-white/70">
+                  <svg className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span>+44 7946 0958</span>
+                </li>
+
+                {/* Email */}
+                <li className="flex items-start space-x-3 text-xs text-white/70">
+                  <svg className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span className="break-all">info@glamandgoacademy.com</span>
+                </li>
+
+                {/* Address */}
+                <li className="flex items-start space-x-3 text-xs text-white/70">
+                  <svg className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span>
+                    Suite 4, 12 Old Compton Street<br />
+                    Soho, London, W1D 4TQ
+                  </span>
+                </li>
+              </ul>
+            </div>
+
           </div>
 
         </div>
 
         {/* Legal & Copyright */}
-        <div className="flex flex-col sm:flex-row items-center justify-between pt-8 text-[10px] text-muted uppercase tracking-wider font-sans">
+        <div className="flex flex-col sm:flex-row items-center justify-between pt-8 text-[10px] text-white/40 uppercase tracking-wider font-sans">
           <span>&copy; {currentYear} Glam and Go Academy. All rights reserved.</span>
           <div className="flex items-center space-x-6 mt-3 sm:mt-0">
             <Link href="/" className="hover:text-accent transition-colors duration-200">
