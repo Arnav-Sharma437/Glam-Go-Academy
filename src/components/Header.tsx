@@ -151,6 +151,16 @@ export default function Header() {
             )}
           </button>
 
+          {/* Visit Salon Button */}
+          <a
+            href="https://glamandgolondon.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-3 border border-text/15 text-text text-xs font-sans tracking-widest uppercase font-semibold hover:bg-text/5 hover:border-text transition-all duration-300"
+          >
+            Visit Salon
+          </a>
+
           {/* Enquire Now Button */}
           <a
             href="#contact"
@@ -293,6 +303,14 @@ export default function Header() {
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.419 9.86-9.86.002-2.636-1.02-5.115-2.879-6.979C16.592 1.901 14.118.88 11.488.88c-5.44 0-9.862 4.42-9.865 9.861-.001 1.762.483 3.486 1.4 5.01L2.011 22.07l6.568-1.721z" />
               </svg>
               <span>+44 7946 0958</span>
+            </a>
+            <a
+              href="https://glamandgolondon.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center px-6 py-4 border border-text/15 text-text text-xs font-sans tracking-widest uppercase font-semibold hover:bg-text/5 hover:border-text transition-all duration-300"
+            >
+              Visit Salon
             </a>
             <a
               href="#contact"
