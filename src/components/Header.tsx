@@ -43,40 +43,42 @@ export default function Header() {
     }
   };
 
-  // Dynamic contrast class mappings
-  const logoTextClass = isScrolled ? "text-text" : "text-white";
-  const logoSubTextClass = isScrolled ? "text-muted" : "text-white/70";
+  // Dynamic contrast class mappings (solid when scrolled OR when mobile menu is open)
+  const isSolid = isScrolled || isMobileMenuOpen;
+  
+  const logoTextClass = isSolid ? "text-text" : "text-white";
+  const logoSubTextClass = isSolid ? "text-muted" : "text-white/70";
   
   const navLinkClass = `text-xs uppercase font-sans tracking-widest font-semibold transition-colors duration-200 cursor-pointer hover-underline-reveal ${
-    isScrolled ? "text-text/80 hover:text-text" : "text-white/80 hover:text-white"
+    isSolid ? "text-text/80 hover:text-text" : "text-white/80 hover:text-white"
   }`;
 
   const toggleBtnClass = `p-2 border transition-colors duration-200 focus:outline-none rounded-lg cursor-pointer ${
-    isScrolled
+    isSolid
       ? "border-muted-light/60 text-text hover:text-accent hover:border-accent/40"
       : "border-white/20 text-white hover:text-accent hover:border-accent/40"
   }`;
 
   const visitSalonClass = `px-5 py-3 border text-xs font-sans tracking-widest uppercase font-semibold transition-all duration-300 rounded-lg cursor-pointer hover:scale-102 ${
-    isScrolled
+    isSolid
       ? "border-text/15 text-text hover:bg-text/5 hover:border-text"
       : "border-white/20 text-white hover:bg-white/10 hover:border-white"
   }`;
 
   const enquireClass = `px-6 py-3 text-xs font-sans tracking-widest uppercase font-semibold transition-all duration-300 shadow-sm rounded-lg cursor-pointer hover:scale-102 ${
-    isScrolled
+    isSolid
       ? "bg-text text-bg hover:bg-accent hover:text-bg"
       : "bg-white text-black hover:bg-accent hover:text-white"
   }`;
 
   const burgerClass = `p-2 focus:outline-none transition-colors duration-200 cursor-pointer ${
-    isScrolled ? "text-text" : "text-white"
+    isSolid ? "text-text" : "text-white"
   }`;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+        isSolid
           ? "bg-bg/95 backdrop-blur-md py-4 border-b border-muted-light/60 shadow-sm"
           : "bg-transparent py-6"
       }`}
@@ -173,7 +175,7 @@ export default function Header() {
           <button
             onClick={toggleTheme}
             className={`p-2 border rounded-lg transition-colors duration-200 focus:outline-none cursor-pointer ${
-              isScrolled ? "border-muted-light/60 text-text" : "border-white/20 text-white"
+              isSolid ? "border-muted-light/60 text-text" : "border-white/20 text-white"
             }`}
             aria-label="Toggle theme"
           >
@@ -255,6 +257,7 @@ export default function Header() {
         className={`md:hidden fixed inset-0 top-[72px] z-40 bg-bg transition-transform duration-300 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{ backgroundColor: "var(--bg)" }}
       >
         <div className="flex flex-col p-8 space-y-6 border-t border-muted-light/60 h-[calc(100vh-72px)] justify-between pb-24">
           <div className="flex flex-col space-y-6">

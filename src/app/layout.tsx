@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -55,6 +56,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-bg text-text font-body selection:bg-accent selection:text-bg">
         {children}
+        <CustomCursor />
       </body>
     </html>
   );
