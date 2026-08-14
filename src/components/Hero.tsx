@@ -52,7 +52,7 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative min-h-[75vh] lg:min-h-[85vh] w-full flex items-center justify-center overflow-hidden bg-text"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-text"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
