@@ -20,6 +20,120 @@ interface Course {
 }
 
 const COURSES: Record<string, Course> = {
+  "nvq-level-2-beauty-therapy": {
+    slug: "nvq-level-2-beauty-therapy",
+    title: "NVQ Level 2 Beauty Therapy Diploma",
+    level: "Beginner",
+    startDate: "Sept 15, 2026",
+    alternateDates: ["Sept 15, 2026", "Oct 13, 2026", "Nov 10, 2026"],
+    description: "Gain your fundamental professional beauty qualifications covering luxury facial therapies, skincare, waxing, manicure, and pedicure treatments.",
+    price: 1200,
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200",
+    duration: "6 Weeks (Part-time, 2 days/week)",
+    curriculum: [
+      "Professional skincare and luxury facial therapies",
+      "Waxing treatments (warm and hot wax methods)",
+      "Eyelash and eyebrow tinting and precision shaping",
+      "Manicure and pedicure nail care techniques",
+      "Salon health, sterilisation safety, and client care protocols",
+      "Basic retail sales and beauty business etiquette"
+    ]
+  },
+  "nvq-level-3-beauty-therapy": {
+    slug: "nvq-level-3-beauty-therapy",
+    title: "NVQ Level 3 Beauty Therapy Diploma",
+    level: "Intermediate",
+    startDate: "Sept 20, 2026",
+    alternateDates: ["Sept 20, 2026", "Oct 18, 2026", "Nov 15, 2026"],
+    description: "Advance your beauty therapy skills with deep body massage treatments, clinical facial electrotherapy systems, and clinical anatomy.",
+    price: 1500,
+    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1200",
+    duration: "8 Weeks (Part-time, 2 days/week)",
+    curriculum: [
+      "Body massage therapies (Swedish and aromatherapy blends)",
+      "Skincare electrotherapy facials (Microcurrent, high frequency, galvanic)",
+      "Anatomy and physiology of the human skeletal/muscular systems",
+      "Traditional Indian head massage treatments",
+      "Thermal hot stone massage techniques",
+      "Spa health management and client consultation protocols"
+    ]
+  },
+  "nvq-level-2-nail-technology": {
+    slug: "nvq-level-2-nail-technology",
+    title: "NVQ Level 2 Nail Technology Diploma",
+    level: "Beginner",
+    startDate: "Sept 18, 2026",
+    alternateDates: ["Sept 18, 2026", "Oct 16, 2026", "Nov 13, 2026"],
+    description: "Master essential professional nail care, manicures, pedicures, acrylic extension overlays, and starter gel tips.",
+    price: 950,
+    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1200",
+    duration: "4 Weeks (Part-time, 2 days/week)",
+    curriculum: [
+      "Manicure and pedicure skin therapies and luxury treatments",
+      "Gel extension systems (tip application and overlays)",
+      "Acrylic extension systems (classic liquid & powder overlays)",
+      "Basic nail art, polish painting, and chrome techniques",
+      "Sanitation, nail diseases, and hygiene protocols",
+      "Nail plate anatomy and growth client health advisory"
+    ]
+  },
+  "nvq-level-3-nail-technology": {
+    slug: "nvq-level-3-nail-technology",
+    title: "NVQ Level 3 Nail Technology Diploma",
+    level: "Intermediate",
+    startDate: "Oct 02, 2026",
+    alternateDates: ["Oct 02, 2026", "Oct 30, 2026", "Nov 27, 2026"],
+    description: "Advanced tip sculpting, professional electric filing, extension repairs, and salon operations management.",
+    price: 1100,
+    image: "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=1200",
+    duration: "5 Weeks (Part-time, 2 days/week)",
+    curriculum: [
+      "Advanced electric filing (E-file) operations and speed drills",
+      "Nail sculpting with forms (no tip gluing needed)",
+      "Nail art specialisms (3D acrylics, encapsulation, hand-painting)",
+      "Nail damage repair and extension maintenance/infills",
+      "Salon health and safety regulations",
+      "Freelance business building and digital portfolio creation"
+    ]
+  },
+  "vtct-level-4-microneedling": {
+    slug: "vtct-level-4-microneedling",
+    title: "Level 4 Microneedling & Chemical Peels",
+    level: "Advanced",
+    startDate: "Oct 12, 2026",
+    alternateDates: ["Oct 12, 2026", "Nov 09, 2026", "Dec 07, 2026"],
+    description: "Learn advanced medical skin rejuvenation treatments including collagen induction and acid peels.",
+    price: 1800,
+    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1200",
+    duration: "3 Days (Intensive, 10:00 - 17:30)",
+    curriculum: [
+      "Advanced skin anatomy, histology, and analysis",
+      "Dermaplaning tools, blade handling, and protocol",
+      "Microneedling (collagen induction) theory and technique",
+      "Superficial and medium-depth chemical peel solutions",
+      "Sterilization, contraindications, and emergency protocols",
+      "Live client clinical practice and marketing guidelines"
+    ]
+  },
+  "vtct-level-4-laser-ipl": {
+    slug: "vtct-level-4-laser-ipl",
+    title: "Level 4 Laser & IPL Hair Removal",
+    level: "Advanced",
+    startDate: "Oct 15, 2026",
+    alternateDates: ["Oct 15, 2026", "Nov 12, 2026", "Dec 10, 2026"],
+    description: "Specialized safety training in Laser and IPL devices for hair reduction, skin typing, and thermal skin treatments.",
+    price: 2200,
+    image: "https://images.unsplash.com/photo-1522337360788-8b13edd793be?q=80&w=1200",
+    duration: "4 Days (Intensive, 09:30 - 18:00)",
+    curriculum: [
+      "Physics of lasers and intense pulsed light (IPL)",
+      "Skin typing and Fitzpatrick classification scales",
+      "Laser safety officer protocols and regulations",
+      "Treatment execution for hair reduction",
+      "Treatment execution for skin rejuvenation",
+      "Patch testing, client consults, and complications management"
+    ]
+  },
   "lash-extensions-masterclass": {
     slug: "lash-extensions-masterclass",
     title: "Lash Extensions Masterclass",
@@ -58,23 +172,23 @@ const COURSES: Record<string, Course> = {
       "Photography, client retention, and social media marketing"
     ]
   },
-  "aesthetics-practitioner-course": {
-    slug: "aesthetics-practitioner-course",
-    title: "Aesthetics Practitioner Course",
-    level: "Advanced",
-    startDate: "Oct 05, 2026",
-    alternateDates: ["Oct 05, 2026", "Nov 02, 2026", "Nov 30, 2026"],
-    description: "Advanced skin needling, professional dermaplaning, and chemical peel techniques.",
-    price: 799,
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1200",
-    duration: "3 Days (10:00 - 17:30)",
+  "makeup-artistry-diploma": {
+    slug: "makeup-artistry-diploma",
+    title: "Professional Makeup Artistry Diploma",
+    level: "Beginner",
+    startDate: "Oct 10, 2026",
+    alternateDates: ["Oct 10, 2026", "Nov 07, 2026", "Dec 05, 2026"],
+    description: "Develop professional makeup skills from base blending and contouring to bridal aesthetics and high-fashion editorial runway looks.",
+    price: 600,
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200",
+    duration: "4 Days (Part-time, 2 weekends)",
     curriculum: [
-      "Advanced skin anatomy, histology, and analysis",
-      "Dermaplaning tools, blade handling, and protocol",
-      "Microneedling (collagen induction) theory and technique",
-      "Superficial and medium-depth chemical peel solutions",
-      "Sterilization, contraindications, and emergency protocols",
-      "Live client clinical practice and marketing guidelines"
+      "Base matching, skin preparation, and color correcting",
+      "Contouring, highlighting, and face sculpting",
+      "Daytime, bridal, and commercial look makeup",
+      "Advanced eye techniques (smokey, cut-crease, wing lines)",
+      "Editorial, fashion, and photoshoot makeup concepts",
+      "Freelance business building and client hygiene safety"
     ]
   }
 };
@@ -130,7 +244,7 @@ export default function CourseDetailPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           {/* Breadcrumb */}
-          <nav className="mb-10 text-xs tracking-widest uppercase font-sans font-medium text-muted">
+          <nav className="mb-10 text-xs tracking-widest uppercase font-sans font-semibold text-muted">
             <Link href="/" className="hover:text-accent transition-colors duration-200">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-text">{course.title}</span>

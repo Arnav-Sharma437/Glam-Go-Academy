@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import CoursesOverview from "@/components/CoursesOverview";
 import WhyTrain from "@/components/WhyTrain";
+import PlacementSupport from "@/components/PlacementSupport";
 import Testimonials from "@/components/Testimonials";
 import EnrolCTA from "@/components/EnrolCTA";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
         <TrustStrip />
         <CoursesOverview />
         <WhyTrain />
+        <PlacementSupport />
         <Testimonials />
         <EnrolCTA />
       </main>
