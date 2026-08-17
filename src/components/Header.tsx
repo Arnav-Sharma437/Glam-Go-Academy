@@ -3,9 +3,17 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+const COURSE_CATEGORIES = [
+  { id: "injectables", name: "Injectables" },
+  { id: "skin", name: "Skin" },
+  { id: "wellness", name: "Wellness" },
+  { id: "foundation", name: "Foundation" }
+];
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileCoursesOpen, setIsMobileCoursesOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   // Track scroll position
@@ -61,7 +69,7 @@ export default function Header() {
   const logoTextClass = isSolid ? "text-text" : "text-white";
   const logoSubTextClass = isSolid ? "text-muted" : "text-white/70";
   
-  const navLinkClass = `text-xs uppercase font-sans tracking-widest font-semibold transition-colors duration-200 cursor-pointer hover-underline-reveal ${
+  const navLinkClass = `text-xs uppercase font-sans tracking-wider font-semibold transition-colors duration-200 cursor-pointer hover-underline-reveal ${
     isSolid ? "text-text/80 hover:text-text" : "text-white/80 hover:text-white"
   }`;
 
@@ -71,13 +79,13 @@ export default function Header() {
       : "border-white/20 text-white hover:text-accent hover:border-accent/40"
   }`;
 
-  const visitSalonClass = `px-5 py-3 border text-xs font-sans tracking-widest uppercase font-semibold transition-all duration-300 rounded-lg cursor-pointer hover:scale-102 ${
+  const visitSalonClass = `px-5 py-3 border text-xs font-sans tracking-wider uppercase font-semibold transition-all duration-300 rounded-lg cursor-pointer hover:scale-102 ${
     isSolid
       ? "border-text/15 text-text hover:bg-text/5 hover:border-text"
       : "border-white/20 text-white hover:bg-white/10 hover:border-white"
   }`;
 
-  const enquireClass = `px-6 py-3 text-xs font-sans tracking-widest uppercase font-semibold transition-all duration-300 shadow-sm rounded-lg cursor-pointer hover:scale-102 ${
+  const enquireClass = `px-6 py-3 text-xs font-sans tracking-wider uppercase font-semibold transition-all duration-300 shadow-sm rounded-lg cursor-pointer hover:scale-102 ${
     isSolid
       ? "bg-text text-bg hover:bg-accent hover:text-bg"
       : "bg-white text-black hover:bg-accent hover:text-white"
@@ -102,7 +110,7 @@ export default function Header() {
             <span className={`font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent ${logoTextClass}`}>
               GLAM & GO
             </span>
-            <span className={`text-[10px] uppercase tracking-[0.25em] -mt-1 font-sans font-semibold transition-colors duration-300 ${logoSubTextClass}`}>
+            <span className={`text-[10px] uppercase tracking-[0.2em] -mt-1 font-sans font-semibold transition-colors duration-300 ${logoSubTextClass}`}>
               Academy
             </span>
           </Link>
@@ -112,9 +120,40 @@ export default function Header() {
             <Link href="/" className={navLinkClass}>
               Home
             </Link>
-            <a href="#courses" className={navLinkClass}>
-              Courses
-            </a>
+            
+            {/* Courses Dropdown Link */}
+            <div className="relative group py-2">
+              <Link
+                href="/courses"
+                className={`${navLinkClass} flex items-center gap-1.5 cursor-pointer`}
+              >
+                Courses
+                <svg
+                  className="w-3 h-3 opacity-60 group-hover:rotate-180 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+              
+              {/* Dropdown Card */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-card-bg border border-muted-light/60 shadow-xl rounded-xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                {COURSE_CATEGORIES.map((cat) => (
+                  <Link
+                    key={cat.id}
+                    href={`/courses?category=${cat.id}`}
+                    className="block px-5 py-2 text-xs text-text/80 hover:text-accent hover:bg-muted-light/35 transition-colors duration-200 font-sans tracking-wide font-semibold"
+                  >
+                    {cat.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <a href="#why-us" className={navLinkClass}>
               About
             </a>
@@ -280,28 +319,61 @@ export default function Header() {
             <Link
               href="/"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
+              className="text-xl uppercase font-sans tracking-wide font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               Home
             </Link>
-            <a
-              href="#courses"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
-            >
-              Courses
-            </a>
+            
+            {/* Mobile Accordion for Courses */}
+            <div className="flex flex-col">
+              <button
+                onClick={() => setIsMobileCoursesOpen(!isMobileCoursesOpen)}
+                className="flex items-center justify-between w-full text-xl uppercase font-sans tracking-wide font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
+              >
+                <span>Courses</span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-300 ${isMobileCoursesOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div
+                className={`flex flex-col pl-4 mt-3 space-y-3 overflow-hidden transition-all duration-300 ${
+                  isMobileCoursesOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                {COURSE_CATEGORIES.map((cat) => (
+                  <Link
+                    key={cat.id}
+                    href={`/courses?category=${cat.id}`}
+                    onClick={() => {
+                      setIsMobileCoursesOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="text-base font-sans tracking-wide font-semibold text-text/80 hover:text-accent transition-colors duration-200 cursor-pointer"
+                  >
+                    {cat.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <a
               href="#why-us"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
+              className="text-xl uppercase font-sans tracking-wide font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               About
             </a>
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-xl uppercase font-sans tracking-widest font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
+              className="text-xl uppercase font-sans tracking-wide font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               Contact
             </a>
@@ -312,14 +384,14 @@ export default function Header() {
               href="https://glamandgolondon.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-center px-6 py-4 border border-text/15 text-text text-xs font-sans tracking-widest uppercase font-semibold hover:bg-text/5 hover:border-text transition-all duration-300 rounded-lg cursor-pointer"
+              className="w-full text-center px-6 py-4 border border-text/15 text-text text-xs font-sans tracking-wide uppercase font-semibold hover:bg-text/5 hover:border-text transition-all duration-300 rounded-lg cursor-pointer"
             >
               Visit Salon
             </a>
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-full text-center px-6 py-4 bg-text text-bg text-xs font-sans tracking-widest uppercase font-semibold hover:bg-accent hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer shadow-sm"
+              className="w-full text-center px-6 py-4 bg-text text-bg text-xs font-sans tracking-wide uppercase font-semibold hover:bg-accent hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer shadow-sm"
             >
               Enquire Now
             </a>

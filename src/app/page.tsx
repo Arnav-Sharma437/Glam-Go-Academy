@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
-import CoursesOverview from "@/components/CoursesOverview";
+import FeaturedCourses from "@/components/FeaturedCourses";
 import WhyTrain from "@/components/WhyTrain";
 import PlacementSupport from "@/components/PlacementSupport";
 import Testimonials from "@/components/Testimonials";
@@ -16,7 +16,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <TrustStrip />
-        <CoursesOverview />
+        <FeaturedCourses />
         <WhyTrain />
         <PlacementSupport />
         <Testimonials />
