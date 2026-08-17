@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-sans text-2xl font-bold tracking-tight text-text transition-colors duration-300 group-hover:text-accent">
                 GLAM & GO
               </span>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-muted -mt-1 font-sans font-semibold">
+              <span className="text-[10px] uppercase tracking-wider text-muted -mt-1 font-sans font-semibold">
                 Academy
               </span>
             </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
 
           {/* Column 2: Explore */}
           <div className="lg:col-span-2 flex flex-col">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-bold font-sans mb-4">
+            <h4 className="text-[10px] uppercase tracking-wider text-accent font-bold font-sans mb-4">
               Explore
             </h4>
             <ul className="space-y-2.5">
@@ -61,55 +61,55 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#courses" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                <Link href="/courses" className="text-xs text-muted hover:text-accent transition-colors duration-200">
                   Courses
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#why-us" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                <Link href="/#why-us" className="text-xs text-muted hover:text-accent transition-colors duration-200">
                   Why Train With Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                <Link href="/#contact" className="text-xs text-muted hover:text-accent transition-colors duration-200">
                   Contact Info
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Column 3: Academy Programs */}
           <div className="lg:col-span-3 flex flex-col">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-bold font-sans mb-4">
+            <h4 className="text-[10px] uppercase tracking-wider text-accent font-bold font-sans mb-4">
               Our Programs
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <a href="#courses" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Injectable Modules (5 Courses)
-                </a>
+                <Link href="/courses?category=injectables" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                  Injectables (5 Courses)
+                </Link>
               </li>
               <li>
-                <a href="#courses" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Advanced Skin (3 Courses)
-                </a>
+                <Link href="/courses?category=skin" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                  Skin Care (3 Courses)
+                </Link>
               </li>
               <li>
-                <a href="#courses" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Wellness Infusions (4 Courses)
-                </a>
+                <Link href="/courses?category=wellness" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                  Wellness Infusions (3 Courses)
+                </Link>
               </li>
               <li>
-                <a href="#courses" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Anatomy & Physiology (1 Course)
-                </a>
+                <Link href="/courses?category=foundation" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                  Foundation Science (2 Courses)
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Column 4: London Studio Address & Info */}
           <div className="lg:col-span-3 flex flex-col">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-bold font-sans mb-4">
+            <h4 className="text-[10px] uppercase tracking-wider text-accent font-bold font-sans mb-4">
               London Studio
             </h4>
             <address className="not-italic font-sans text-xs text-muted leading-relaxed space-y-2.5">
