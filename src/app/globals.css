@@ -106,3 +106,9 @@ div, header, footer, section, button, a, select, input {
   background-color: var(--accent);
   color: var(--bg);
 }
+
+/* Touch optimizations for native app feel */
+a, button, select, input, textarea, [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}

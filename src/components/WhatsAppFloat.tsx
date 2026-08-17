@@ -6,7 +6,7 @@ export default function WhatsAppFloat() {
       href="https://wa.me/4479460958"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-30 bg-[#25D366] hover:bg-[#22c35e] text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group cursor-pointer"
+      className="fixed bottom-20 md:bottom-6 right-6 z-30 bg-[#25D366] hover:bg-[#22c35e] text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group cursor-pointer"
       aria-label="Chat with a course advisor on WhatsApp"
     >
       {/* Tooltip */}

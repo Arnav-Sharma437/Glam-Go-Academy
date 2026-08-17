@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-bg border-t border-muted-light/60 pt-16 pb-10 text-text transition-colors duration-300">
+    <footer id="contact" className="bg-bg border-t border-muted-light/60 pt-16 pb-24 md:pb-10 text-text transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-muted-light/60 items-start">
           
