@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const COURSE_CATEGORIES = [
   { id: "injectables", name: "Injectables" },
@@ -11,6 +12,9 @@ const COURSE_CATEGORIES = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHomepage = pathname === "/";
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileCoursesOpen, setIsMobileCoursesOpen] = useState(false);
@@ -63,8 +67,8 @@ export default function Header() {
     }
   };
 
-  // Dynamic contrast class mappings (solid when scrolled OR when mobile menu is open)
-  const isSolid = isScrolled || isMobileMenuOpen;
+  // Dynamic contrast class mappings (solid when scrolled OR when mobile menu is open OR on an inner sub-route)
+  const isSolid = !isHomepage || isScrolled || isMobileMenuOpen;
   
   const logoTextClass = isSolid ? "text-text" : "text-white";
   const logoSubTextClass = isSolid ? "text-muted" : "text-white/70";
@@ -110,7 +114,7 @@ export default function Header() {
             <span className={`font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent ${logoTextClass}`}>
               GLAM & GO
             </span>
-            <span className={`text-[10px] uppercase tracking-[0.2em] -mt-1 font-sans font-semibold transition-colors duration-300 ${logoSubTextClass}`}>
+            <span className={`text-[10px] uppercase tracking-[0.25em] -mt-1 font-sans font-semibold transition-colors duration-300 ${logoSubTextClass}`}>
               Academy
             </span>
           </Link>
