@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const COURSE_CATEGORIES = [
@@ -19,6 +20,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileCoursesOpen, setIsMobileCoursesOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [logoError, setLogoError] = useState(false);
 
   // Track scroll position
   useEffect(() => {
@@ -110,13 +112,30 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex flex-col group cursor-pointer">
-            <span className={`font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent ${logoTextClass}`}>
-              GLAM & GO
-            </span>
-            <span className={`text-[10px] uppercase tracking-[0.25em] -mt-1 font-sans font-semibold transition-colors duration-300 ${logoSubTextClass}`}>
-              Academy
-            </span>
+          <Link href="/" className="flex items-center group cursor-pointer">
+            {!logoError ? (
+              <div className="relative h-8 w-32 md:h-10 md:w-40">
+                <Image
+                  src="/images/logo/Glam-Go-logo.webp"
+                  alt="GLAM & GO Academy"
+                  fill
+                  className={`object-contain transition-all duration-300 ${
+                    isSolid ? "" : "brightness-0 invert"
+                  }`}
+                  priority
+                  onError={() => setLogoError(true)}
+                />
+              </div>
+            ) : (
+              <div className="flex flex-col">
+                <span className={`font-sans text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent ${logoTextClass}`}>
+                  GLAM & GO
+                </span>
+                <span className={`text-[10px] uppercase tracking-[0.25em] -mt-1 font-sans font-semibold transition-colors duration-300 ${logoSubTextClass}`}>
+                  Academy
+                </span>
+              </div>
+            )}
           </Link>
 
           {/* Desktop Navigation */}

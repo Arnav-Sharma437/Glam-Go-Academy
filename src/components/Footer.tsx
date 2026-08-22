@@ -1,7 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [logoError, setLogoError] = useState(false);
 
   return (
     <footer id="contact" className="bg-bg border-t border-muted-light/60 pt-16 pb-24 md:pb-10 text-text transition-colors duration-300">
@@ -11,12 +16,26 @@ export default function Footer() {
           {/* Column 1: Brand Logo, Tagline & Socials */}
           <div className="lg:col-span-4 flex flex-col justify-start">
             <Link href="/" className="flex flex-col group mb-4">
-              <span className="font-sans text-2xl font-bold tracking-tight text-text transition-colors duration-300 group-hover:text-accent">
-                GLAM & GO
-              </span>
-              <span className="text-[10px] uppercase tracking-wider text-muted -mt-1 font-sans font-semibold">
-                Academy
-              </span>
+              {!logoError ? (
+                <div className="relative h-10 w-40 mb-2">
+                  <Image
+                    src="/images/logo/Glam-Go-logo.webp"
+                    alt="GLAM & GO Academy Logo"
+                    fill
+                    className="object-contain object-left dark:brightness-0 dark:invert"
+                    onError={() => setLogoError(true)}
+                  />
+                </div>
+              ) : (
+                <>
+                  <span className="font-sans text-2xl font-bold tracking-tight text-text transition-colors duration-300 group-hover:text-accent">
+                    GLAM & GO
+                  </span>
+                  <span className="text-[10px] uppercase tracking-wider text-muted -mt-1 font-sans font-semibold">
+                    Academy
+                  </span>
+                </>
+              )}
             </Link>
             <p className="font-sans text-xs text-muted leading-relaxed max-w-sm mb-6">
               London’s premier beauty education hub. We train aspiring practitioners and salon staff in professional aesthetics, injectables, and advanced skin therapies.
