@@ -5,269 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-interface Course {
-  slug: string;
-  title: string;
-  level: "Beginner" | "Intermediate" | "Advanced";
-  startDate: string;
-  alternateDates: string[];
-  description: string;
-  price: number;
-  image: string;
-  duration: string;
-  curriculum: string[];
-}
-
-const COURSES: Record<string, Course> = {
-  "foundation-injectables": {
-    slug: "foundation-injectables",
-    title: "Foundation Injectables",
-    level: "Beginner",
-    startDate: "Sept 15, 2026",
-    alternateDates: ["Sept 15, 2026", "Oct 13, 2026", "Nov 10, 2026"],
-    description: "Your first supervised injecting day – facial anatomy, analysis and basic upper face technique on live models.",
-    price: 895,
-    image: "/images/courses/foundation_injectables.jpg",
-    duration: "1 Day (10:00 - 17:30)",
-    curriculum: [
-      "Facial nerve and muscle anatomy",
-      "Product science and reconstitution",
-      "Upper face injection landmarks",
-      "Live model injection practice",
-      "Complication management and emergency hyaluronidase",
-      "Client consultation and aftercare protocols"
-    ]
-  },
-  "dermal-fillers": {
-    slug: "dermal-fillers",
-    title: "Dermal Fillers",
-    level: "Beginner",
-    startDate: "Sept 20, 2026",
-    alternateDates: ["Sept 20, 2026", "Oct 18, 2026", "Nov 15, 2026"],
-    description: "Lip and nasolabial foundation with live models, full consultation and complication protocols.",
-    price: 895,
-    image: "/images/courses/dermal_fillers.jpg",
-    duration: "1 Day (09:30 - 18:00)",
-    curriculum: [
-      "Lip and nasolabial fold anatomy",
-      "Rheology of hyaluronic acid fillers",
-      "Linear threading and bolus techniques",
-      "Supervised live model lip fillers",
-      "Complication management and vascular occlusion safety",
-      "Hyaluronidase reconstitution and dissolving protocols"
-    ]
-  },
-  "advanced-injectables": {
-    slug: "advanced-injectables",
-    title: "Advanced Injectables",
-    level: "Advanced",
-    startDate: "Sept 28, 2026",
-    alternateDates: ["Sept 28, 2026", "Oct 26, 2026", "Nov 23, 2026"],
-    description: "Full face advanced treatments for practicing injectors. Taught in tiny results-focused groups of four.",
-    price: 1095,
-    image: "/images/courses/advanced_injectables.jpg",
-    duration: "1 Day (10:00 - 17:00)",
-    curriculum: [
-      "Lower face Botox injection points",
-      "Nefertiti neck lift technique",
-      "Hyperhidrosis (excessive sweating) therapy",
-      "Gummy smile and lip flip procedures",
-      "Masseter and jawline slimming injections",
-      "Advanced clinical case evaluations and live practices"
-    ]
-  },
-  "advanced-fillers-russian-lip": {
-    slug: "advanced-fillers-russian-lip",
-    title: "Advanced Fillers & Russian Lip",
-    level: "Advanced",
-    startDate: "Oct 02, 2026",
-    alternateDates: ["Oct 02, 2026", "Oct 30, 2026", "Nov 27, 2026"],
-    description: "Advanced lip and mid face techniques including the Russian technique – our most popular module.",
-    price: 1095,
-    image: "/images/courses/russian_lip.jpg",
-    duration: "1 Day (09:30 - 17:30)",
-    curriculum: [
-      "The flat-profile Russian lip technique",
-      "Micro-droplet and vertical tenting lip fillers",
-      "Jawline and chin contouring procedures",
-      "Cheek volume restoration landmarks",
-      "Cannula vs. needle application methods",
-      "Live model advanced styling sessions"
-    ]
-  },
-  "fat-dissolving-injectables": {
-    slug: "fat-dissolving-injectables",
-    title: "Fat Dissolving Injectables",
-    level: "Beginner",
-    startDate: "Oct 12, 2026",
-    alternateDates: ["Oct 12, 2026", "Nov 09, 2026", "Dec 07, 2026"],
-    description: "Aqualyx & Desobody treatments – client assessment, injection technique and safety aftercare.",
-    price: 795,
-    image: "/images/courses/fat_dissolving.jpg",
-    duration: "1 Day (10:00 - 16:30)",
-    curriculum: [
-      "Adipose tissue anatomy and lipolysis chemistry",
-      "Aqualyx and Desobody product guidelines",
-      "Submental (double chin) injection patterns",
-      "Abdomen and flank fat-dissolving grids",
-      "Intralipotherapy technique using specialised needles",
-      "Client screening, contraindications, and aftercare"
-    ]
-  },
-  "microneedling": {
-    slug: "microneedling",
-    title: "Microneedling",
-    level: "Beginner",
-    startDate: "Sept 24, 2026",
-    alternateDates: ["Sept 24, 2026", "Oct 22, 2026", "Nov 19, 2026"],
-    description: "Professional microneedling for face & hair. Skincare theory, protocols and hands-on practice.",
-    price: 595,
-    image: "/images/courses/microneedling.jpg",
-    duration: "1 Day (10:00 - 17:00)",
-    curriculum: [
-      "Wound healing cascade and skin histology",
-      "Microneedling pen depth guidelines (0.25mm - 2.5mm)",
-      "Serum formulations and vitamin cocktail selections",
-      "Facial treatment protocol on live models",
-      "Scalp/hair needling for hair thinning",
-      "Aftercare, sterilization, and hygiene standards"
-    ]
-  },
-  "dermaplaning": {
-    slug: "dermaplaning",
-    title: "Dermaplaning",
-    level: "Beginner",
-    startDate: "Sept 18, 2026",
-    alternateDates: ["Sept 18, 2026", "Oct 16, 2026", "Nov 13, 2026"],
-    description: "Safe blade work, skin preparation and finishing for instantly smoother and brighter skin.",
-    price: 495,
-    image: "/images/courses/dermaplaning.jpg",
-    duration: "1 Day (10:00 - 16:00)",
-    curriculum: [
-      "Blade handling, insertion, and angle safety (10R blade)",
-      "Vellus hair (peach fuzz) removal technique",
-      "Skin preparation, peeling, and hydration methods",
-      "Facial dermaplaning on live models",
-      "Combining dermaplaning with chemical peels",
-      "Sterilisation, waste disposal, and safety protocols"
-    ]
-  },
-  "prp-therapy": {
-    slug: "prp-therapy",
-    title: "PRP Therapy",
-    level: "Intermediate",
-    startDate: "Oct 05, 2026",
-    alternateDates: ["Oct 05, 2026", "Nov 02, 2026", "Nov 30, 2026"],
-    description: "Platelet-Rich Plasma – the full face & scalp treatment for skin rejuvenation and hair stimulation.",
-    price: 795,
-    image: "/images/courses/prp_therapy.jpg",
-    duration: "1 Day (09:30 - 17:30)",
-    curriculum: [
-      "Autologous platelet-rich plasma chemistry",
-      "Centrifuge operation and platelet separation",
-      "Meso-injection technique for skin rejuvenation",
-      "PRP scalp therapy for hair restoration",
-      "Numbing protocols and patient comfort care",
-      "Vampire facial protocols on live clinical models"
-    ]
-  },
-  "vitamin-injections": {
-    slug: "vitamin-injections",
-    title: "Vitamin Injections",
-    level: "Beginner",
-    startDate: "Oct 10, 2026",
-    alternateDates: ["Oct 10, 2026", "Nov 07, 2026", "Dec 05, 2026"],
-    description: "IM injection techniques, client screening and record-keeping for vitamin therapies.",
-    price: 495,
-    image: "/images/courses/vitamin_injections.jpg",
-    duration: "1 Day (10:00 - 16:30)",
-    curriculum: [
-      "Vitamin B12, C, and D pharmacology",
-      "Intramuscular (IM) injection techniques",
-      "Deltoid and gluteal landmark identification",
-      "Aseptic technique and syringe preparation",
-      "Dosage regulations and customer screening",
-      "Anaphylaxis management and emergency protocols"
-    ]
-  },
-  "biotin-glutathione": {
-    slug: "biotin-glutathione",
-    title: "Biotin & Glutathione",
-    level: "Beginner",
-    startDate: "Oct 18, 2026",
-    alternateDates: ["Oct 18, 2026", "Nov 15, 2026", "Dec 13, 2026"],
-    description: "Extend your injection menu with hair, skin and antioxidant body support protocols.",
-    price: 495,
-    image: "/images/courses/biotin_glutathione.jpg",
-    duration: "1 Day (10:00 - 16:00)",
-    curriculum: [
-      "Antioxidant chemistry and cellular benefits",
-      "Biotin (Vitamin H) for hair/nail strengthening",
-      "Glutathione skin brightening and detoxification",
-      "Intramuscular (IM) injection practice",
-      "Vial reconstitution and compounding protocols",
-      "Vitamins menu building for clinic expansion"
-    ]
-  },
-  "iv-nutrition-therapy": {
-    slug: "iv-nutrition-therapy",
-    title: "IV Nutrition Therapy",
-    level: "Intermediate",
-    startDate: "Oct 22, 2026",
-    alternateDates: ["Oct 22, 2026", "Nov 19, 2026", "Dec 17, 2026"],
-    description: "Cannulation refresher, drip bag assembly, vitamin cocktails and safe infusion monitoring.",
-    price: 795,
-    image: "/images/courses/iv_nutrition.jpg",
-    duration: "1 Day (09:30 - 18:00)",
-    curriculum: [
-      "Intravenous (IV) cannulation and access",
-      "IV drip bag setup, assembly, and flow calculation",
-      "Cocktail mixing (Myers' Cocktail, wellness blends)",
-      "Patient monitoring and infiltration management",
-      "Complications, hematoma, and phlebitis recovery",
-      "Live clinical cannulation practice on model arms"
-    ]
-  },
-  "phlebotomy": {
-    slug: "phlebotomy",
-    title: "Phlebotomy",
-    level: "Beginner",
-    startDate: "Oct 25, 2026",
-    alternateDates: ["Oct 25, 2026", "Nov 22, 2026", "Dec 20, 2026"],
-    description: "Venepuncture from first draw to safe disposal, with practice training arms and live draws.",
-    price: 595,
-    image: "/images/courses/phlebotomy.jpg",
-    duration: "1 Day (09:30 - 17:30)",
-    curriculum: [
-      "Venous anatomy and vein selection guidelines",
-      "Vacutainer, butterfly needle, and syringe draw systems",
-      "Skin puncture and sterile blood collection order",
-      "Practice on phantom simulation arms",
-      "Live supervised blood draws",
-      "Biohazard disposal and sharps container safety"
-    ]
-  },
-  "anatomy-physiology-aesthetics": {
-    slug: "anatomy-physiology-aesthetics",
-    title: "Anatomy & Physiology for Aesthetics",
-    level: "Beginner",
-    startDate: "Self-Paced",
-    alternateDates: ["Immediate Access (Online Module)"],
-    description: "The essential theory foundation covering skeletal, muscular, circulatory and skin structures.",
-    price: 395,
-    image: "/images/courses/anatomy_physiology.jpg",
-    duration: "Online Study (Approx. 20 hours)",
-    curriculum: [
-      "Facial musculature (muscles of expression)",
-      "Trigeminal and facial nerve pathways",
-      "Facial blood supply (arterial and venous pathways)",
-      "Skin layers, dermal cells, and wound healing phases",
-      "Lymphatic system and drainage pathways of the neck",
-      "Contraindications and anatomical danger zones"
-    ]
-  }
-};
+import { COURSES } from "@/data/courses";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -275,7 +13,9 @@ interface PageProps {
 
 export default function CourseDetailPage({ params }: PageProps) {
   const { slug } = use(params);
-  const course = COURSES[slug];
+  
+  // Find matching course from unified database
+  const course = COURSES.find(c => c.slug === slug);
 
   const [selectedDate, setSelectedDate] = useState(course?.startDate || "");
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", cardNumber: "", expiry: "", cvc: "" });
@@ -338,7 +78,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                   priority
                   className="object-cover"
                 />
-                <span className="absolute top-4 left-4 px-3 py-1 bg-bg/95 backdrop-blur-sm text-text text-[9px] uppercase tracking-widest font-semibold font-sans border border-muted-light/40 rounded-md">
+                <span className="absolute top-4 left-4 px-3 py-1 bg-bg/95 backdrop-blur-sm text-text text-[9px] uppercase tracking-wider font-bold font-sans border border-muted-light/40 rounded-md">
                   {course.level}
                 </span>
               </div>
@@ -349,16 +89,33 @@ export default function CourseDetailPage({ params }: PageProps) {
 
               <div className="flex flex-wrap gap-y-4 gap-x-8 pb-6 border-b border-muted-light/60 mb-8 font-sans text-xs tracking-wide text-muted">
                 <div>
-                  <span className="block font-semibold text-text uppercase text-[10px] tracking-widest mb-1">Duration</span>
+                  <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Duration</span>
                   <span>{course.duration}</span>
                 </div>
                 <div>
-                  <span className="block font-semibold text-text uppercase text-[10px] tracking-widest mb-1">Location</span>
+                  <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Location</span>
                   <span>Central London Studio (Soho)</span>
                 </div>
                 <div>
-                  <span className="block font-semibold text-text uppercase text-[10px] tracking-widest mb-1">Requirements</span>
-                  <span>No prior experience needed</span>
+                  <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Age Limit</span>
+                  <span>{course.prerequisites.minAge}+</span>
+                </div>
+              </div>
+
+              {/* Prerequisites and Eligibility Section */}
+              <h2 className="font-sans text-xl font-bold text-text mb-4">Prerequisites & Eligibility</h2>
+              <div className="bg-card-bg border border-muted-light/60 rounded-xl p-5 mb-8 font-sans text-xs space-y-3 shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <span className="font-bold text-text uppercase tracking-wider text-[9px]">Prior Qualifications:</span>
+                  <span className="text-muted sm:text-right">{course.prerequisites.qualification}</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-t border-muted-light/40 pt-3">
+                  <span className="font-bold text-text uppercase tracking-wider text-[9px]">Minimum Age Limit:</span>
+                  <span className="text-muted sm:text-right">{course.prerequisites.minAge} years or older</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-t border-muted-light/40 pt-3">
+                  <span className="font-bold text-text uppercase tracking-wider text-[9px]">Insurance Coverage:</span>
+                  <span className="text-muted sm:text-right">{course.prerequisites.insurance}</span>
                 </div>
               </div>
 
@@ -451,7 +208,7 @@ export default function CourseDetailPage({ params }: PageProps) {
 
                     {/* Stripe Simulation Fields */}
                     <div className="border-t border-muted-light/60 pt-6 mt-2 mb-6">
-                      <h4 className="text-[10px] uppercase tracking-widest text-text font-bold font-sans mb-4">
+                      <h4 className="text-[10px] uppercase tracking-wider text-text font-bold font-sans mb-4">
                         Secure Payment Info
                       </h4>
                       
@@ -513,7 +270,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-4 bg-text text-bg text-xs font-sans tracking-widest uppercase font-semibold hover:bg-accent transition-all duration-300 rounded-lg shadow-md flex items-center justify-center space-x-2 cursor-pointer hover:scale-102"
+                      className="w-full py-4 bg-text text-bg text-xs font-sans tracking-wider uppercase font-semibold hover:bg-accent transition-all duration-300 rounded-lg shadow-md flex items-center justify-center space-x-2 cursor-pointer hover:scale-102"
                     >
                       {loading ? (
                         <>
@@ -545,7 +302,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                     </p>
                     <Link
                       href="/"
-                      className="inline-block px-6 py-3 border border-text/20 text-text text-xs tracking-widest uppercase font-semibold hover:bg-text hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer"
+                      className="inline-block px-6 py-3 border border-text/20 text-text text-xs tracking-wider uppercase font-semibold hover:bg-text hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer"
                     >
                       Return to Home
                     </Link>

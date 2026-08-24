@@ -3,171 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-interface Course {
-  id: string;
-  slug: string;
-  title: string;
-  category: "injectables" | "skin" | "wellness" | "foundation";
-  level: "Beginner" | "Intermediate" | "Advanced";
-  startDate: string;
-  description: string;
-  price: number;
-  image: string;
-}
-
-const COURSES: Course[] = [
-  // Injectables (5)
-  {
-    id: "1",
-    slug: "foundation-injectables",
-    title: "Foundation Injectables",
-    category: "injectables",
-    level: "Beginner",
-    startDate: "Sept 15, 2026",
-    description: "Your first supervised injecting day – facial anatomy, analysis and basic upper face technique on live models.",
-    price: 895,
-    image: "/images/courses/foundation_injectables.jpg",
-  },
-  {
-    id: "2",
-    slug: "dermal-fillers",
-    title: "Dermal Fillers",
-    category: "injectables",
-    level: "Beginner",
-    startDate: "Sept 20, 2026",
-    description: "Lip and nasolabial foundation with live models, full consultation and complication protocols.",
-    price: 895,
-    image: "/images/courses/dermal_fillers.jpg",
-  },
-  {
-    id: "3",
-    slug: "advanced-injectables",
-    title: "Advanced Injectables",
-    category: "injectables",
-    level: "Advanced",
-    startDate: "Sept 28, 2026",
-    description: "Full face advanced treatments for practicing injectors. Taught in tiny results-focused groups of four.",
-    price: 1095,
-    image: "/images/courses/advanced_injectables.jpg",
-  },
-  {
-    id: "4",
-    slug: "advanced-fillers-russian-lip",
-    title: "Advanced Fillers & Russian Lip",
-    category: "injectables",
-    level: "Advanced",
-    startDate: "Oct 02, 2026",
-    description: "Advanced lip and mid face techniques including the Russian technique – our most popular module.",
-    price: 1095,
-    image: "/images/courses/russian_lip.jpg",
-  },
-  {
-    id: "5",
-    slug: "fat-dissolving-injectables",
-    title: "Fat Dissolving Injectables",
-    category: "injectables",
-    level: "Beginner",
-    startDate: "Oct 12, 2026",
-    description: "Aqualyx & Desobody treatments – client assessment, injection technique and safety aftercare.",
-    price: 795,
-    image: "/images/courses/fat_dissolving.jpg",
-  },
-  
-  // Skin (3)
-  {
-    id: "6",
-    slug: "microneedling",
-    title: "Microneedling",
-    category: "skin",
-    level: "Beginner",
-    startDate: "Sept 24, 2026",
-    description: "Professional microneedling for face & hair. Skincare theory, protocols and hands-on practice.",
-    price: 595,
-    image: "/images/courses/microneedling.jpg",
-  },
-  {
-    id: "7",
-    slug: "dermaplaning",
-    title: "Dermaplaning",
-    category: "skin",
-    level: "Beginner",
-    startDate: "Sept 18, 2026",
-    description: "Safe blade work, skin preparation and finishing for instantly smoother and brighter skin.",
-    price: 495,
-    image: "/images/courses/dermaplaning.jpg",
-  },
-  {
-    id: "8",
-    slug: "prp-therapy",
-    title: "PRP Therapy",
-    category: "skin",
-    level: "Intermediate",
-    startDate: "Oct 05, 2026",
-    description: "Platelet-Rich Plasma – the full face & scalp treatment for skin rejuvenation and hair stimulation.",
-    price: 795,
-    image: "/images/courses/prp_therapy.jpg",
-  },
-
-  // Wellness (3)
-  {
-    id: "9",
-    slug: "vitamin-injections",
-    title: "Vitamin Injections",
-    category: "wellness",
-    level: "Beginner",
-    startDate: "Oct 10, 2026",
-    description: "IM injection techniques, client screening and record-keeping for vitamin therapies.",
-    price: 495,
-    image: "/images/courses/vitamin_injections.jpg",
-  },
-  {
-    id: "10",
-    slug: "biotin-glutathione",
-    title: "Biotin & Glutathione",
-    category: "wellness",
-    level: "Beginner",
-    startDate: "Oct 18, 2026",
-    description: "Extend your injection menu with hair, skin and antioxidant body support protocols.",
-    price: 495,
-    image: "/images/courses/biotin_glutathione.jpg",
-  },
-  {
-    id: "11",
-    slug: "iv-nutrition-therapy",
-    title: "IV Nutrition Therapy",
-    category: "wellness",
-    level: "Intermediate",
-    startDate: "Oct 22, 2026",
-    description: "Cannulation refresher, drip bag assembly, vitamin cocktails and safe infusion monitoring.",
-    price: 795,
-    image: "/images/courses/iv_nutrition.jpg",
-  },
-
-  // Foundation (2)
-  {
-    id: "12",
-    slug: "phlebotomy",
-    title: "Phlebotomy",
-    category: "foundation",
-    level: "Beginner",
-    startDate: "Oct 25, 2026",
-    description: "Venepuncture from first draw to safe disposal, with practice training arms and live draws.",
-    price: 595,
-    image: "/images/courses/phlebotomy.jpg",
-  },
-  {
-    id: "13",
-    slug: "anatomy-physiology-aesthetics",
-    title: "Anatomy & Physiology for Aesthetics",
-    category: "foundation",
-    level: "Beginner",
-    startDate: "Self-Paced",
-    description: "The essential theory foundation covering skeletal, muscular, circulatory and skin structures.",
-    price: 395,
-    image: "/images/courses/anatomy_physiology.jpg",
-  }
-];
+import { COURSES } from "@/data/courses";
 
 const CATEGORIES = [
   { id: "injectables", name: "Injectables", count: 5, desc: "CPD accredited injectable and cosmetic filler training modules." },
@@ -189,7 +25,7 @@ export default function CoursesOverview() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
           <div className="max-w-xl">
-            <span className="text-[11px] uppercase tracking-[0.25em] text-accent font-semibold font-sans mb-2 block">
+            <span className="text-[11px] uppercase tracking-wider text-accent font-semibold font-sans mb-2 block">
               Our Training Programs
             </span>
             <h2 className="font-sans text-2xl md:text-3xl font-bold tracking-tight text-text">
@@ -254,7 +90,7 @@ export default function CoursesOverview() {
                     className="object-cover transition-transform duration-700 group-hover:scale-103"
                     loading="lazy"
                   />
-                  <span className="absolute top-3 left-3 px-2.5 py-1 bg-bg/90 backdrop-blur-sm text-text text-[8px] uppercase tracking-widest font-semibold font-sans border border-muted-light/40 rounded-md">
+                  <span className="absolute top-3 left-3 px-2.5 py-1 bg-bg/90 backdrop-blur-sm text-text text-[8px] uppercase tracking-wider font-bold font-sans border border-muted-light/40 rounded-md">
                     {course.level}
                   </span>
                 </div>
@@ -285,7 +121,7 @@ export default function CoursesOverview() {
 
                     <Link
                       href={`/courses/${course.slug}`}
-                      className="text-[10px] font-sans uppercase tracking-widest font-bold text-text group-hover:text-accent transition-colors duration-300 hover-underline-reveal cursor-pointer"
+                      className="text-[10px] font-sans uppercase tracking-wider font-bold text-text group-hover:text-accent transition-colors duration-300 hover-underline-reveal cursor-pointer"
                     >
                       View Course →
                     </Link>

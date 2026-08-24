@@ -1,49 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { COURSES } from "@/data/courses";
 
-interface Course {
-  id: string;
-  slug: string;
-  title: string;
-  level: "Beginner" | "Intermediate" | "Advanced";
-  startDate: string;
-  description: string;
-  price: number;
-  image: string;
-}
-
-const FEATURED_COURSES: Course[] = [
-  {
-    id: "1",
-    slug: "foundation-injectables",
-    title: "Foundation Injectables",
-    level: "Beginner",
-    startDate: "Sept 15, 2026",
-    description: "Your first supervised injecting day – facial anatomy, analysis and basic upper face technique on live models.",
-    price: 895,
-    image: "/images/courses/foundation_injectables.jpg",
-  },
-  {
-    id: "6",
-    slug: "microneedling",
-    title: "Microneedling",
-    level: "Beginner",
-    startDate: "Sept 24, 2026",
-    description: "Professional microneedling for face & hair. Skincare theory, protocols and hands-on practice.",
-    price: 595,
-    image: "/images/courses/microneedling.jpg",
-  },
-  {
-    id: "10",
-    slug: "biotin-glutathione",
-    title: "Biotin & Glutathione",
-    level: "Beginner",
-    startDate: "Oct 18, 2026",
-    description: "Extend your injection menu with hair, skin and antioxidant body support protocols.",
-    price: 495,
-    image: "/images/courses/biotin_glutathione.jpg",
-  }
-];
+// Pull the 3 specific courses by their unique IDs from the unified database
+const FEATURED_COURSES = COURSES.filter(c => 
+  ["foundation-injectables", "microneedling", "biotin-glutathione"].includes(c.id)
+);
 
 export default function FeaturedCourses() {
   return (
@@ -129,7 +91,7 @@ export default function FeaturedCourses() {
             href="/courses"
             className="inline-flex px-8 py-4 bg-text text-bg text-xs font-sans tracking-wider uppercase font-semibold hover:bg-accent hover:text-white transition-all duration-300 rounded-lg shadow-md hover:scale-102 cursor-pointer"
           >
-            Explore All Academy Courses ({13}) →
+            Explore All Academy Courses ({COURSES.length}) →
           </Link>
         </div>
 
