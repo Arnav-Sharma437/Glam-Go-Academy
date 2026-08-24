@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const FORBIDDEN_WORDS_REGEX = /\b(botox|botulinum|bocouture|azzalure|dysport|xeomin|anti-wrinkle|wrinkle-relaxing|brotox|baby\s+botox|tox|toxin|hyaluronidase)\b/gi;
+const FORBIDDEN_WORDS_REGEX = /\b(botox|botulinum|bocouture|azzalure|dysport|xeomin|anti-wrinkle|wrinkle-relaxing|brotox|baby\s+botox|tox|toxin|hyaluronidase)\b|profitable\s+cosmetic\s+styling\s+business|London['’]s\s+(leading|premier)/gi;
 
 const IGNORED_PATHS = [
   "node_modules",

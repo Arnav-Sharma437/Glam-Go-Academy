@@ -136,9 +136,14 @@ function CoursesPageContent() {
                 className="object-cover transition-transform duration-700 group-hover:scale-103"
                 priority
               />
-              <span className="absolute top-3 left-3 px-2.5 py-1 bg-bg/90 backdrop-blur-sm text-text text-[8px] uppercase tracking-wider font-bold font-sans border border-muted-light/40 rounded-md">
-                {course.level}
-              </span>
+              <div className="absolute top-3 left-3 flex gap-1.5">
+                <span className="px-2.5 py-1 bg-bg/90 backdrop-blur-sm text-text text-[8px] uppercase tracking-wider font-bold font-sans border border-muted-light/40 rounded-md">
+                  {course.level}
+                </span>
+                <span className="px-2 py-1 bg-accent text-white text-[8px] uppercase tracking-wider font-bold font-sans rounded-md shadow-sm">
+                  {course.accreditation}
+                </span>
+              </div>
             </div>
 
             {/* Card Body */}

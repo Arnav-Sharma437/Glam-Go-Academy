@@ -18,10 +18,10 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Glam & Go Academy | London's Leading Beauty & Hair Academy",
-  description: "Train with London's leading beauty and hair academy. Professional, hands-on cosmetic, hair, and beauty training courses. Enquire now and start your career.",
-  keywords: ["beauty academy london", "hair training london", "makeup course london", "beauty therapy school", "glam & go academy"],
-  authors: [{ name: "Glam & Go Academy" }],
+  title: "Glam and Go London | Professional Beauty Academy",
+  description: "Train with Glam and Go London. Professional, hands-on cosmetic, hair, and beauty training courses. Enquire now and start your career.",
+  keywords: ["beauty academy london", "hair training london", "makeup course london", "beauty therapy school", "glam and go london"],
+  authors: [{ name: "Glam and Go London" }],
 };
 
 export default function RootLayout({

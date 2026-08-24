@@ -14,7 +14,7 @@ const SLIDES: Slide[] = [
   {
     image: "/images/hero_lashes.jpg",
     category: "Lash Masterclasses",
-    title: "Train With London’s Leading Beauty Academy",
+    title: "Train With Glam and Go London",
     description: "Master the classic and Russian volume eyelash techniques. Gain hands-on practice on live models under expert supervision."
   },
   {

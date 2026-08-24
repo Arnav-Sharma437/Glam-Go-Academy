@@ -18,6 +18,8 @@ export default function CourseDetailPage({ params }: PageProps) {
   const course = COURSES.find(c => c.slug === slug);
 
   const [selectedDate, setSelectedDate] = useState(course?.startDate || "");
+  const [paymentOption, setPaymentOption] = useState("full");
+  const [ageCertified, setAgeCertified] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", cardNumber: "", expiry: "", cvc: "" });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -45,6 +47,10 @@ export default function CourseDetailPage({ params }: PageProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!ageCertified) {
+      alert(`You must certify that you satisfy the minimum age policy (${course.prerequisites.minAge}+) to book this course.`);
+      return;
+    }
     setLoading(true);
     // Simulate premium payment processing
     setTimeout(() => {
@@ -53,6 +59,10 @@ export default function CourseDetailPage({ params }: PageProps) {
     }, 2000);
   };
 
+  // Calculate pricing values dynamically
+  const installment3Val = (course.price / 3).toFixed(0);
+  const installment4Val = (course.price / 4).toFixed(0);
+
   return (
     <>
       <Header />
@@ -60,7 +70,7 @@ export default function CourseDetailPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           {/* Breadcrumb */}
-          <nav className="mb-10 text-xs tracking-widest uppercase font-sans font-semibold text-muted">
+          <nav className="mb-10 text-xs tracking-wider uppercase font-sans font-semibold text-muted">
             <Link href="/" className="hover:text-accent transition-colors duration-200 cursor-pointer">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-text">{course.title}</span>
@@ -78,9 +88,14 @@ export default function CourseDetailPage({ params }: PageProps) {
                   priority
                   className="object-cover"
                 />
-                <span className="absolute top-4 left-4 px-3 py-1 bg-bg/95 backdrop-blur-sm text-text text-[9px] uppercase tracking-wider font-bold font-sans border border-muted-light/40 rounded-md">
-                  {course.level}
-                </span>
+                <div className="absolute top-4 left-4 flex gap-2">
+                  <span className="px-3 py-1 bg-bg/95 backdrop-blur-sm text-text text-[9px] uppercase tracking-wider font-bold font-sans border border-muted-light/40 rounded-md">
+                    {course.level}
+                  </span>
+                  <span className="px-3 py-1 bg-accent text-white text-[9px] uppercase tracking-wider font-bold font-sans rounded-md">
+                    {course.accreditation} ACCREDITED
+                  </span>
+                </div>
               </div>
 
               <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-text mb-6">
@@ -102,29 +117,51 @@ export default function CourseDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Prerequisites and Eligibility Section */}
-              <h2 className="font-sans text-xl font-bold text-text mb-4">Prerequisites & Eligibility</h2>
-              <div className="bg-card-bg border border-muted-light/60 rounded-xl p-5 mb-8 font-sans text-xs space-y-3 shadow-sm">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                  <span className="font-bold text-text uppercase tracking-wider text-[9px]">Prior Qualifications:</span>
-                  <span className="text-muted sm:text-right">{course.prerequisites.qualification}</span>
+              {/* Prerequisites & Eligibility Section */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <h2 className="font-sans text-lg font-bold text-text mb-3">Prerequisites & Eligibility</h2>
+                  <div className="bg-card-bg border border-muted-light/60 rounded-xl p-5 font-sans text-xs space-y-3 shadow-sm h-full">
+                    <div>
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Prior Qualifications</span>
+                      <span className="text-muted">{course.prerequisites.qualification}</span>
+                    </div>
+                    <div className="border-t border-muted-light/40 pt-2.5">
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Minimum Age Limit</span>
+                      <span className="text-muted">{course.prerequisites.minAge} years or older</span>
+                    </div>
+                    <div className="border-t border-muted-light/40 pt-2.5">
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Insurance Coverage</span>
+                      <span className="text-muted">{course.prerequisites.insurance}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-t border-muted-light/40 pt-3">
-                  <span className="font-bold text-text uppercase tracking-wider text-[9px]">Minimum Age Limit:</span>
-                  <span className="text-muted sm:text-right">{course.prerequisites.minAge} years or older</span>
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-t border-muted-light/40 pt-3">
-                  <span className="font-bold text-text uppercase tracking-wider text-[9px]">Insurance Coverage:</span>
-                  <span className="text-muted sm:text-right">{course.prerequisites.insurance}</span>
+
+                <div>
+                  <h2 className="font-sans text-lg font-bold text-text mb-3">Accreditation Info</h2>
+                  <div className="bg-card-bg border border-muted-light/60 rounded-xl p-5 font-sans text-xs space-y-3 shadow-sm h-full">
+                    <div>
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Accrediting Body</span>
+                      <span className="text-muted">{course.accreditation} Certified Academy</span>
+                    </div>
+                    <div className="border-t border-muted-light/40 pt-2.5">
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Certificate Issued</span>
+                      <span className="text-muted">Accredited Certificate in {course.title}</span>
+                    </div>
+                    <div className="border-t border-muted-light/40 pt-2.5">
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Underwriter Approved</span>
+                      <span className="text-muted">Eligible for cosmetic practitioner insurance</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <h2 className="font-sans text-xl font-bold text-text mb-4">Course Description</h2>
+              <h2 className="font-sans text-lg font-bold text-text mb-3">Course Description</h2>
               <p className="font-sans text-sm text-muted leading-relaxed mb-8">
-                {course.description} This intensive training program provides you with state-of-the-art methodology, intensive practice sessions, and professional kits to launch a profitable cosmetic styling business immediately after graduation.
+                {course.description}
               </p>
 
-              <h2 className="font-sans text-xl font-bold text-text mb-4">Curriculum Overview</h2>
+              <h2 className="font-sans text-lg font-bold text-text mb-3">Curriculum Overview</h2>
               <ul className="space-y-4 mb-8">
                 {course.curriculum.map((item, index) => (
                   <li key={index} className="flex items-start">
@@ -163,6 +200,24 @@ export default function CourseDetailPage({ params }: PageProps) {
 
                     <div className="mb-4">
                       <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
+                        Payment Option
+                      </label>
+                      <select
+                        name="paymentOption"
+                        value={paymentOption}
+                        onChange={(e) => setPaymentOption(e.target.value)}
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg cursor-pointer"
+                        required
+                      >
+                        <option value="full">Pay in Full (£{course.price})</option>
+                        <option value="installments3">3 Interest-Free Installments (£{installment3Val}/mo)</option>
+                        <option value="installments4">4 Interest-Free Installments (£{installment4Val}/mo)</option>
+                        <option value="deposit">Secure Place with a Deposit (£150)</option>
+                      </select>
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
                         Full Name
                       </label>
                       <input
@@ -191,7 +246,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                       />
                     </div>
 
-                    <div className="mb-6">
+                    <div className="mb-4">
                       <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
                         Phone Number
                       </label>
@@ -262,15 +317,35 @@ export default function CourseDetailPage({ params }: PageProps) {
                       </div>
                     </div>
 
+                    {/* Age and Terms policy tickbox required by user */}
+                    <div className="mb-6 flex items-start gap-2.5">
+                      <input
+                        type="checkbox"
+                        id="ageCertified"
+                        checked={ageCertified}
+                        onChange={(e) => setAgeCertified(e.target.checked)}
+                        className="mt-0.5 h-4 w-4 border border-muted-light bg-bg rounded accent-accent cursor-pointer"
+                        required
+                      />
+                      <label htmlFor="ageCertified" className="font-sans text-[10px] text-muted leading-tight cursor-pointer select-none">
+                        I certify that I am at least {course.prerequisites.minAge} years old and agree to the booking policies, clinical screening terms, and model consent guidelines.
+                      </label>
+                    </div>
+
                     <div className="bg-muted-light/30 p-4 border border-muted-light/40 flex items-center justify-between mb-6 rounded-lg">
-                      <span className="text-xs font-sans text-muted">Total Tuition Fee:</span>
-                      <span className="text-lg font-bold text-text">£{course.price}</span>
+                      <span className="text-xs font-sans text-muted">Total Due:</span>
+                      <span className="text-lg font-bold text-text">
+                        {paymentOption === "full" && `£${course.price}`}
+                        {paymentOption === "installments3" && `£${installment3Val} (1st of 3)`}
+                        {paymentOption === "installments4" && `£${installment4Val} (1st of 4)`}
+                        {paymentOption === "deposit" && "£150 (Deposit)"}
+                      </span>
                     </div>
 
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-4 bg-text text-bg text-xs font-sans tracking-wider uppercase font-semibold hover:bg-accent transition-all duration-300 rounded-lg shadow-md flex items-center justify-center space-x-2 cursor-pointer hover:scale-102"
+                      className="w-full py-4 bg-text text-bg text-xs font-sans tracking-wider uppercase font-semibold hover:bg-accent hover:text-white transition-all duration-300 rounded-lg shadow-md flex items-center justify-center space-x-2 cursor-pointer hover:scale-102"
                     >
                       {loading ? (
                         <>
@@ -284,6 +359,16 @@ export default function CourseDetailPage({ params }: PageProps) {
                         <span>Confirm Enrolment</span>
                       )}
                     </button>
+
+                    {/* Data Use & placeholders */}
+                    <p className="text-[10px] text-muted leading-relaxed text-center mt-3">
+                      By enrolling, you consent to Glam and Go London storing your registration details to manage your training in accordance with our Privacy Policy.
+                    </p>
+
+                    <div className="mt-4 text-[9px] text-muted space-y-1 bg-muted-light/10 p-3 rounded-lg border border-muted-light/30">
+                      <p><strong>[TODO] VAT Status:</strong> Inclusive/Exclusive pricing terms to be confirmed by client.</p>
+                      <p><strong>[TODO] What's Included:</strong> Inclusions regarding kit, course materials, and physical certificates to be confirmed by client.</p>
+                    </div>
                   </form>
                 ) : (
                   <div className="text-center py-8">

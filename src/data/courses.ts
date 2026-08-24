@@ -197,7 +197,7 @@ export const COURSES: Course[] = [
     accreditation: "CPD",
     prerequisites: {
       qualification: "Level 3 Beauty Therapy OR Anatomy & Physiology Level 3 with needle experience",
-      minAge: 18,
+      minAge: 21,
       insurance: "Required (specialist clinical aesthetic cover)"
     },
     curriculum: [

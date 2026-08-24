@@ -117,7 +117,7 @@ export default function Header() {
               <div className="relative h-8 w-32 md:h-10 md:w-40">
                 <Image
                   src="/images/logo/Glam-Go-logo.webp"
-                  alt="GLAM & GO Academy"
+                  alt="Glam and Go London Logo"
                   fill
                   className={`object-contain transition-all duration-300 ${
                     isSolid ? "" : "brightness-0 invert"
@@ -132,7 +132,7 @@ export default function Header() {
                   GLAM & GO
                 </span>
                 <span className={`text-[10px] uppercase tracking-[0.25em] -mt-1 font-sans font-semibold transition-colors duration-300 ${logoSubTextClass}`}>
-                  Academy
+                  London
                 </span>
               </div>
             )}
@@ -177,12 +177,12 @@ export default function Header() {
               </div>
             </div>
 
-            <a href="#why-us" className={navLinkClass}>
+            <Link href="/about" className={navLinkClass}>
               About
-            </a>
-            <a href="#contact" className={navLinkClass}>
+            </Link>
+            <Link href="/contact" className={navLinkClass}>
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* Action Tray: Theme Toggle + Visit Salon + CTA */}
@@ -237,12 +237,12 @@ export default function Header() {
             </a>
 
             {/* Enquire Now Button */}
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className={enquireClass}
             >
               Enquire Now
-            </a>
+            </Link>
           </div>
 
           {/* Mobile controls: Theme toggle + Menu trigger */}
@@ -386,20 +386,20 @@ export default function Header() {
               </div>
             </div>
 
-            <a
-              href="#why-us"
+            <Link
+              href="/about"
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-xl uppercase font-sans tracking-wide font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               About
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-xl uppercase font-sans tracking-wide font-bold text-text hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               Contact
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-col space-y-4">
@@ -411,13 +411,13 @@ export default function Header() {
             >
               Visit Salon
             </a>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="w-full text-center px-6 py-4 bg-text text-bg text-xs font-sans tracking-wide uppercase font-semibold hover:bg-accent hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer shadow-sm"
             >
               Enquire Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>

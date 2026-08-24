@@ -13,14 +13,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-muted-light/60 items-start">
           
-          {/* Column 1: Brand Logo, Tagline & Socials */}
+          {/* Column 1: Brand Logo, Tagline & Socials & Accreditation Logos */}
           <div className="lg:col-span-4 flex flex-col justify-start">
             <Link href="/" className="flex flex-col group mb-4">
               {!logoError ? (
                 <div className="relative h-10 w-40 mb-2">
                   <Image
                     src="/images/logo/Glam-Go-logo.webp"
-                    alt="GLAM & GO Academy Logo"
+                    alt="Glam and Go London Logo"
                     fill
                     className="object-contain object-left dark:brightness-0 dark:invert"
                     onError={() => setLogoError(true)}
@@ -32,17 +32,17 @@ export default function Footer() {
                     GLAM & GO
                   </span>
                   <span className="text-[10px] uppercase tracking-wider text-muted -mt-1 font-sans font-semibold">
-                    Academy
+                    London
                   </span>
                 </>
               )}
             </Link>
             <p className="font-sans text-xs text-muted leading-relaxed max-w-sm mb-6">
-              London’s premier beauty education hub. We train aspiring practitioners and salon staff in professional aesthetics, injectables, and advanced skin therapies.
+              Professional beauty education hub based in Central London. We train aspiring practitioners and salon staff in professional aesthetics, injectables, and advanced skin therapies.
             </p>
             
             {/* Social Icons */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 mb-6">
               <a
                 href="https://instagram.com"
                 target="_blank"
@@ -66,6 +66,20 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+
+            {/* VTCT and CPD Badges/Logos inside footer */}
+            <div className="flex items-center gap-3">
+              {/* CPD Badge */}
+              <div className="flex flex-col items-center justify-center border border-muted-light/60 bg-card-bg rounded-lg py-1 px-3 shadow-sm select-none">
+                <span className="text-[10px] font-sans font-extrabold tracking-widest text-text">CPD</span>
+                <span className="text-[6px] font-sans uppercase font-bold text-muted tracking-wide -mt-0.5">Accredited</span>
+              </div>
+              {/* VTCT Badge */}
+              <div className="flex flex-col items-center justify-center border border-muted-light/60 bg-card-bg rounded-lg py-1 px-3 shadow-sm select-none">
+                <span className="text-[10px] font-sans font-extrabold tracking-widest text-text">VTCT</span>
+                <span className="text-[6px] font-sans uppercase font-bold text-muted tracking-wide -mt-0.5">Approved</span>
+              </div>
+            </div>
           </div>
 
           {/* Column 2: Explore */}
@@ -85,12 +99,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#why-us" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                <Link href="/about" className="text-xs text-muted hover:text-accent transition-colors duration-200">
                   Why Train With Us
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                <Link href="/contact" className="text-xs text-muted hover:text-accent transition-colors duration-200">
                   Contact Info
                 </Link>
               </li>
@@ -147,8 +161,8 @@ export default function Footer() {
 
         {/* Legal & Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 text-[10px] text-muted uppercase tracking-wider font-sans">
-          <span>&copy; {currentYear} Glam and Go Academy. All rights reserved.</span>
-          <div className="flex items-center space-x-6 mt-3 sm:mt-0">
+          <span>&copy; {currentYear} Glam and Go London. All rights reserved.</span>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-3 sm:mt-0">
             <span className="text-muted lowercase">
               Part of{" "}
               <a
@@ -160,8 +174,17 @@ export default function Footer() {
                 Glam & Go London
               </a>
             </span>
-            <Link href="/" className="hover:text-accent transition-colors duration-200">
+            <Link href="/privacy" className="hover:text-accent transition-colors duration-200">
               Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-accent transition-colors duration-200">
+              Terms & Conditions
+            </Link>
+            <Link href="/cookies" className="hover:text-accent transition-colors duration-200">
+              Cookie Policy
+            </Link>
+            <Link href="/refunds" className="hover:text-accent transition-colors duration-200">
+              Refund Policy
             </Link>
           </div>
         </div>
