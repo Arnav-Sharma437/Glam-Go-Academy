@@ -9,28 +9,52 @@ export default function AboutPage() {
       <Header />
       <main className="bg-bg text-text min-h-screen pt-28 pb-20 font-sans transition-colors duration-300">
         
-        {/* Section 1: Hero */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12 pt-10 pb-16">
-          <div className="max-w-3xl mb-12">
-            <span className="text-[10px] uppercase tracking-[0.25em] text-accent font-semibold mb-3 block animate-fade-in">
-              London Academy
-            </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-              Glam and Go London
-            </h1>
-            <p className="text-sm md:text-base text-muted leading-relaxed">
-              We specialize in delivering intensive, clinically-led aesthetics and cosmetic training. Based in the heart of London, our programs bridge classroom theory with supervised hands-on practice.
-            </p>
-          </div>
-          
-          <div className="relative aspect-[16/9] w-full bg-muted-light rounded-2xl overflow-hidden shadow-sm">
-            <Image
-              src="/images/hero_aesthetics.jpg"
-              alt="Glam and Go London Academy Studio"
-              fill
-              priority
-              className="object-cover"
-            />
+        {/* Section 1: Hero (Redesigned Editorial Split Grid) */}
+        <section className="max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left: Text & Info */}
+            <div className="lg:col-span-5 space-y-6">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-accent font-semibold block animate-fade-in">
+                London Academy
+              </span>
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight text-text">
+                Glam and Go London
+              </h1>
+              
+              <div className="w-12 h-[2px] bg-accent/60 my-6"></div>
+              
+              <p className="text-sm text-muted leading-relaxed">
+                We specialize in delivering intensive, clinically-led aesthetics and cosmetic training. Based in the heart of London, our programs bridge classroom theory with supervised hands-on practice.
+              </p>
+              
+              {/* Highlights grid */}
+              <div className="grid grid-cols-2 gap-6 pt-6 border-t border-muted-light/60">
+                <div>
+                  <span className="block text-[9px] uppercase tracking-wider text-muted font-bold mb-1">Academy Studio</span>
+                  <span className="text-xs text-text font-semibold">Soho, London</span>
+                </div>
+                <div>
+                  <span className="block text-[9px] uppercase tracking-wider text-muted font-bold mb-1">Accreditation</span>
+                  <span className="text-xs text-text font-semibold">CPD & VTCT Framework</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Immersive Image Layout */}
+            <div className="lg:col-span-7 relative">
+              <div className="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-accent/10 to-transparent blur-lg"></div>
+              <div className="relative aspect-[16/10] w-full bg-muted-light rounded-2xl overflow-hidden shadow-md border border-muted-light/40">
+                <Image
+                  src="/images/hero_aesthetics.jpg"
+                  alt="Glam and Go London Academy Studio"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
           </div>
         </section>
 
