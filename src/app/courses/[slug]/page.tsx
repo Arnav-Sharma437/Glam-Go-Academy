@@ -9,10 +9,13 @@ import { COURSES, VAT_CONFIG } from "@/data/courses";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ success?: string }>;
 }
 
-export default function CourseDetailPage({ params }: PageProps) {
+export default function CourseDetailPage({ params, searchParams }: PageProps) {
   const { slug } = use(params);
+  const { success: successParam } = use(searchParams);
+  const isSuccess = successParam === "true";
   
   // Find matching course from unified database
   const course = COURSES.find(c => c.slug === slug);
@@ -20,9 +23,9 @@ export default function CourseDetailPage({ params }: PageProps) {
   const [selectedDate, setSelectedDate] = useState(course?.startDate || "");
   const [paymentOption, setPaymentOption] = useState("full");
   const [ageCertified, setAgeCertified] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", cardNumber: "", expiry: "", cvc: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(isSuccess);
 
   if (!course) {
     return (
@@ -45,18 +48,49 @@ export default function CourseDetailPage({ params }: PageProps) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!ageCertified) {
       alert(`You must certify that you satisfy the minimum age policy (${course.prerequisites.minAge}+) to book this course.`);
       return;
     }
     setLoading(true);
-    // Simulate premium payment processing
-    setTimeout(() => {
+
+    try {
+      const response = await fetch("/api/checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          courseId: course.id,
+          paymentOption,
+          selectedDate,
+          customer: {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+          },
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to create checkout session.");
+      }
+
+      if (data.url) {
+        // Redirect the customer to the Stripe Checkout URL returned by the API
+        window.location.href = data.url;
+      } else {
+        throw new Error("No redirection URL returned from Stripe.");
+      }
+    } catch (err: any) {
+      console.error("Enrolment error:", err);
+      alert(err.message || "An unexpected error occurred during checkout setup.");
       setLoading(false);
-      setSuccess(true);
-    }, 2000);
+    }
   };
 
   // Calculate pricing values dynamically
@@ -261,61 +295,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                       />
                     </div>
 
-                    {/* Stripe Simulation Fields */}
-                    <div className="border-t border-muted-light/60 pt-6 mt-2 mb-6">
-                      <h4 className="text-[10px] uppercase tracking-wider text-text font-bold font-sans mb-4">
-                        Secure Payment Info
-                      </h4>
-                      
-                      <div className="mb-4">
-                        <label className="block text-[9px] uppercase tracking-wider text-muted font-sans font-semibold mb-1">
-                          Card Number
-                        </label>
-                        <input
-                          type="text"
-                          name="cardNumber"
-                          value={formData.cardNumber}
-                          onChange={handleInputChange}
-                          placeholder="4242 •••• •••• 4242"
-                          className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
-                          maxLength={19}
-                          required
-                        />
-                      </div>
 
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-[9px] uppercase tracking-wider text-muted font-sans font-semibold mb-1">
-                            Expiry Date
-                          </label>
-                          <input
-                            type="text"
-                            name="expiry"
-                            value={formData.expiry}
-                            onChange={handleInputChange}
-                            placeholder="MM / YY"
-                            className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
-                            maxLength={5}
-                            required
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-[9px] uppercase tracking-wider text-muted font-sans font-semibold mb-1">
-                            CVC Code
-                          </label>
-                          <input
-                            type="password"
-                            name="cvc"
-                            value={formData.cvc}
-                            onChange={handleInputChange}
-                            placeholder="•••"
-                            className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
-                            maxLength={4}
-                            required
-                          />
-                        </div>
-                      </div>
-                    </div>
 
                     {/* Age and Terms policy tickbox required by user */}
                     <div className="mb-6 flex items-start gap-2.5">
@@ -399,7 +379,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                     </div>
                     <h3 className="font-sans text-2xl text-text font-bold mb-3">Enrolment Confirmed</h3>
                     <p className="font-sans text-xs text-muted leading-relaxed mb-6">
-                      Thank you for enrolling, <span className="font-semibold text-text">{formData.name}</span>. A payment confirmation receipt and starter pack guide has been sent to <span className="font-semibold text-text">{formData.email}</span>.
+                      Thank you for enrolling{formData.name ? `, ${formData.name}` : ""}. A payment confirmation receipt and starter pack guide has been sent to your email{formData.email ? ` (${formData.email})` : ""}.
                     </p>
                     <p className="font-sans text-xs text-muted leading-relaxed mb-8">
                       We look forward to seeing you at our Soho studio on <span className="font-semibold text-text">{selectedDate}</span>.

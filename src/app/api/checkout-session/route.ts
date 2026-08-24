@@ -19,10 +19,12 @@ export async function POST(request: NextRequest) {
     });
 
     const body = await request.json();
-    const { courseId, paymentOption, selectedDate } = body;
+    const { courseId, slug, paymentOption, selectedDate } = body;
 
-    // Verify courseId is valid using server-side source of truth database
-    const course = COURSES.find((c) => c.id === courseId);
+    // Verify courseId or slug is valid using server-side source of truth database
+    const course = COURSES.find(
+      (c) => c.id === courseId || c.slug === slug || c.slug === courseId || c.id === slug
+    );
     if (!course) {
       return NextResponse.json(
         { error: "Invalid course program selection." },
