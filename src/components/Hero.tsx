@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Slide {
   image: string;
@@ -105,19 +106,19 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-5">
-            <a
-              href="#courses"
+            <Link
+              href="/courses"
               className="px-6 py-3.5 bg-accent text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:bg-white hover:text-text transition-all duration-300 shadow-md rounded-lg cursor-pointer hover:scale-102"
             >
-              Explore Courses
-            </a>
+              Book
+            </Link>
             
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="px-6 py-3.5 border border-white/30 text-white text-xs font-sans tracking-widest uppercase font-semibold text-center hover:border-white hover:bg-white/10 transition-all duration-300 rounded-lg cursor-pointer hover:scale-102"
             >
-              Book Consultation
-            </a>
+              Contact Us
+            </Link>
           </div>
 
         </div>

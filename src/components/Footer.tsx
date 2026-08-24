@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col justify-start">
             <Link href="/" className="flex flex-col group mb-4">
               {!logoError ? (
-                <div className="relative h-10 w-40 mb-2">
+                <div className="relative h-12 w-48 mb-2">
                   <Image
                     src="/images/logo/Glam-Go-logo.webp"
                     alt="Glam and Go London Logo"

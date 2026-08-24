@@ -114,7 +114,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center group cursor-pointer">
             {!logoError ? (
-              <div className="relative h-8 w-32 md:h-10 md:w-40">
+              <div className="relative h-11 w-44 md:h-14 md:w-56">
                 <Image
                   src="/images/logo/Glam-Go-logo.webp"
                   alt="Glam and Go London Logo"
