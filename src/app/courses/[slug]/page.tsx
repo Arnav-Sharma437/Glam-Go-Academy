@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { COURSES } from "@/data/courses";
+import { COURSES, VAT_CONFIG } from "@/data/courses";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -365,10 +365,29 @@ export default function CourseDetailPage({ params }: PageProps) {
                       By enrolling, you consent to Glam and Go London storing your registration details to manage your training in accordance with our Privacy Policy.
                     </p>
 
-                    <div className="mt-4 text-[9px] text-muted space-y-1 bg-muted-light/10 p-3 rounded-lg border border-muted-light/30">
-                      <p><strong>[TODO] VAT Status:</strong> Inclusive/Exclusive pricing terms to be confirmed by client.</p>
-                      <p><strong>[TODO] What's Included:</strong> Inclusions regarding kit, course materials, and physical certificates to be confirmed by client.</p>
-                    </div>
+                    {/* Render VAT status if configured in VAT_CONFIG */}
+                    {VAT_CONFIG.status === "inclusive" && (
+                      <p className="text-[10px] text-muted text-center mt-2">
+                        * Tuition fee is inclusive of VAT
+                      </p>
+                    )}
+                    {VAT_CONFIG.status === "exclusive" && (
+                      <p className="text-[10px] text-muted text-center mt-2">
+                        * Tuition fee is subject to VAT
+                      </p>
+                    )}
+
+                    {/* Render What's Included list if defined in database */}
+                    {course.whatsIncluded && course.whatsIncluded.length > 0 && (
+                      <div className="mt-4 text-[10px] text-muted space-y-1 bg-muted-light/10 p-3 rounded-lg border border-muted-light/30">
+                        <p className="font-bold text-text mb-1 uppercase tracking-wider text-[9px]">What's Included:</p>
+                        <ul className="list-disc list-inside space-y-0.5">
+                          {course.whatsIncluded.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </form>
                 ) : (
                   <div className="text-center py-8">

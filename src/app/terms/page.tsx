@@ -33,6 +33,17 @@ export default function TermsPage() {
             <p>
               Glam and Go London maintains a strict professional standard inside our clinical training studios. Students are expected to treat instructors, colleagues, and live models with respect. Failure to follow hygiene, sterilization, or safety protocols will result in immediate dismissal without refund.
             </p>
+
+            <h2 className="text-xl font-bold text-text pt-4">4. Training Models Policy</h2>
+            <p>
+              Glam and Go London coordinates training sessions using live practice models. All training models participating in clinical, skin, or cosmetic training sessions must satisfy the following safety rules:
+            </p>
+            <ul className="list-disc list-inside space-y-2 pl-4">
+              <li>Training models must be 18 years of age or older.</li>
+              <li>Models must provide informed written consent before receiving any treatment or participating in training.</li>
+              <li>Models must be appropriately screened for clinical contraindications and suitability prior to participation.</li>
+              <li>Model participation is strictly subject to the academy's safety, suitability, and clinical screening procedures.</li>
+            </ul>
           </div>
         </div>
       </main>

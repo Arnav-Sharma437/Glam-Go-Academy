@@ -17,7 +17,13 @@ export interface Course {
     insurance: string;
   };
   curriculum: string[];
+  whatsIncluded?: string[];
 }
+
+export const VAT_CONFIG = {
+  // Set to "inclusive" or "exclusive" once confirmed, or leave empty/false for no display
+  status: ""
+};
 
 export const COURSES: Course[] = [
   {
@@ -62,7 +68,7 @@ export const COURSES: Course[] = [
     accreditation: "CPD",
     prerequisites: {
       qualification: "No prior experience required; needle safety is fully taught",
-      minAge: 18,
+      minAge: 21,
       insurance: "Eligible for public liability insurance on completion"
     },
     curriculum: [
@@ -89,7 +95,7 @@ export const COURSES: Course[] = [
     accreditation: "CPD",
     prerequisites: {
       qualification: "Vitamin Injections certificate or prior intramuscular training",
-      minAge: 18,
+      minAge: 21,
       insurance: "Required (specialist wellness insurance add-on)"
     },
     curriculum: [
@@ -170,7 +176,7 @@ export const COURSES: Course[] = [
     accreditation: "CPD",
     prerequisites: {
       qualification: "No prior experience required; full draw safety is taught",
-      minAge: 18,
+      minAge: 21,
       insurance: "Required for live blood draw practices"
     },
     curriculum: [
@@ -224,7 +230,7 @@ export const COURSES: Course[] = [
     accreditation: "CPD",
     prerequisites: {
       qualification: "Phlebotomy certification (venepuncture draw capability is mandatory)",
-      minAge: 18,
+      minAge: 21,
       insurance: "Required (blood-product therapy insurance add-on)"
     },
     curriculum: [
@@ -251,7 +257,7 @@ export const COURSES: Course[] = [
     accreditation: "CPD",
     prerequisites: {
       qualification: "Phlebotomy certification or prior cannula insertion experience",
-      minAge: 18,
+      minAge: 21,
       insurance: "Required (intravenous therapy insurance cover)"
     },
     curriculum: [
