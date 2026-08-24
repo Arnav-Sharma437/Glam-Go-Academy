@@ -434,7 +434,7 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                     </div>
                     <h3 className="font-sans text-2xl text-text font-bold mb-3">Enrolment Confirmed</h3>
                     <p className="font-sans text-xs text-muted leading-relaxed mb-6">
-                      Thank you for enrolling{verifiedName ? `, ${verifiedName}` : formData.name ? `, ${formData.name}` : ""}. A payment confirmation receipt and starter pack guide has been sent to your email{verifiedEmail ? ` (${verifiedEmail})` : formData.email ? ` (${formData.email})` : ""}.
+                      Thank you for enrolling{verifiedName ? `, ${verifiedName}` : formData.name ? `, ${formData.name}` : ""}. Your enrolment has been confirmed. Stripe will provide your payment confirmation.
                     </p>
                     <p className="font-sans text-xs text-muted leading-relaxed mb-8">
                       We look forward to seeing you at our Soho studio on <span className="font-semibold text-text">{selectedDate}</span>.
