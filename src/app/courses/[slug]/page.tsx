@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState } from "react";
+import { use, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
@@ -9,13 +9,12 @@ import { COURSES, VAT_CONFIG } from "@/data/courses";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ success?: string }>;
+  searchParams: Promise<{ success?: string; session_id?: string }>;
 }
 
 export default function CourseDetailPage({ params, searchParams }: PageProps) {
   const { slug } = use(params);
-  const { success: successParam } = use(searchParams);
-  const isSuccess = successParam === "true";
+  const { session_id: sessionId } = use(searchParams);
   
   // Find matching course from unified database
   const course = COURSES.find(c => c.slug === slug);
@@ -25,7 +24,53 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
   const [ageCertified, setAgeCertified] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(isSuccess);
+  
+  // Secure verification states
+  const [success, setSuccess] = useState(false);
+  const [verifying, setVerifying] = useState(!!sessionId);
+  const [verifiedName, setVerifiedName] = useState("");
+  const [verifiedEmail, setVerifiedEmail] = useState("");
+
+  // Trigger payment verification when returning from Stripe with a session_id
+  useEffect(() => {
+    if (!sessionId) return;
+
+    let active = true;
+
+    const verifyStripePayment = async () => {
+      try {
+        const response = await fetch(`/api/verify-session?session_id=${sessionId}`);
+        const data = await response.json();
+
+        if (active) {
+          if (response.ok && data.verified) {
+            setVerifiedName(data.customerName || "");
+            setVerifiedEmail(data.customerEmail || "");
+            setSuccess(true);
+          } else {
+            console.error("Stripe Verification Failed:", data.error);
+            alert("We could not verify your payment with Stripe. Please contact support.");
+            setSuccess(false);
+          }
+        }
+      } catch (error) {
+        console.error("Stripe verification hook error:", error);
+        if (active) {
+          alert("An error occurred while confirming your transaction details with Stripe.");
+        }
+      } finally {
+        if (active) {
+          setVerifying(false);
+        }
+      }
+    };
+
+    verifyStripePayment();
+
+    return () => {
+      active = false;
+    };
+  }, [sessionId]);
 
   if (!course) {
     return (
@@ -81,7 +126,7 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
       }
 
       if (data.url) {
-        // Redirect the customer to the Stripe Checkout URL returned by the API
+        // Redirect the customer to Stripe hosted checkout URL
         window.location.href = data.url;
       } else {
         throw new Error("No redirection URL returned from Stripe.");
@@ -209,7 +254,19 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
             {/* Right: Checkout Sidebar */}
             <div className="lg:col-span-5 lg:sticky lg:top-28">
               <div className="bg-card-bg border border-muted-light/60 p-8 shadow-sm rounded-2xl">
-                {!success ? (
+                {verifying ? (
+                  // Secure loading verification view
+                  <div className="text-center py-12 flex flex-col items-center justify-center">
+                    <svg className="animate-spin h-8 w-8 text-accent mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <h3 className="font-sans text-base font-bold text-text mb-2">Verifying Payment</h3>
+                    <p className="font-sans text-xs text-muted max-w-xs leading-relaxed">
+                      Please wait while we confirm your checkout session securely with Stripe...
+                    </p>
+                  </div>
+                ) : !success ? (
                   <form onSubmit={handleSubmit} className="flex flex-col">
                     <h3 className="font-sans text-xl font-bold text-text mb-6">Enrol in Program</h3>
                     
@@ -295,8 +352,6 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                       />
                     </div>
 
-
-
                     {/* Age and Terms policy tickbox required by user */}
                     <div className="mb-6 flex items-start gap-2.5">
                       <input
@@ -333,7 +388,7 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          <span>Processing...</span>
+                          <span>Redirecting...</span>
                         </>
                       ) : (
                         <span>Confirm Enrolment</span>
@@ -379,7 +434,7 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                     </div>
                     <h3 className="font-sans text-2xl text-text font-bold mb-3">Enrolment Confirmed</h3>
                     <p className="font-sans text-xs text-muted leading-relaxed mb-6">
-                      Thank you for enrolling{formData.name ? `, ${formData.name}` : ""}. A payment confirmation receipt and starter pack guide has been sent to your email{formData.email ? ` (${formData.email})` : ""}.
+                      Thank you for enrolling{verifiedName ? `, ${verifiedName}` : formData.name ? `, ${formData.name}` : ""}. A payment confirmation receipt and starter pack guide has been sent to your email{verifiedEmail ? ` (${verifiedEmail})` : formData.email ? ` (${formData.email})` : ""}.
                     </p>
                     <p className="font-sans text-xs text-muted leading-relaxed mb-8">
                       We look forward to seeing you at our Soho studio on <span className="font-semibold text-text">{selectedDate}</span>.
