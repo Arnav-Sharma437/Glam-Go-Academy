@@ -22,7 +22,7 @@ export default function Footer() {
                     src="/images/logo/Glam-Go-logo.webp"
                     alt="Glam and Go London Logo"
                     fill
-                    className="object-contain object-left dark:brightness-0 dark:invert"
+                    className="object-contain object-left brightness-0 dark:brightness-100"
                     onError={() => setLogoError(true)}
                   />
                 </div>

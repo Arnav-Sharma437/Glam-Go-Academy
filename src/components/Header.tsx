@@ -120,7 +120,7 @@ export default function Header() {
                   alt="Glam and Go London Logo"
                   fill
                   className={`object-contain transition-all duration-300 ${
-                    isSolid ? "" : "brightness-0 invert"
+                    isSolid ? "brightness-0 dark:brightness-100" : "brightness-0 invert"
                   }`}
                   priority
                   onError={() => setLogoError(true)}
