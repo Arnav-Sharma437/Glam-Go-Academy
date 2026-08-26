@@ -459,5 +459,97 @@ export const COURSES: Course[] = [
       "Cannula vs. needle application methods",
       "Live model advanced styling sessions"
     ]
+  },
+  {
+    id: "vtct-level-2-beauty-therapy",
+    slug: "vtct-level-2-beauty-therapy",
+    title: "VTCT Level 2 Diploma in Beauty Therapy",
+    publicName: "VTCT Level 2 Diploma in Beauty Therapy",
+    certifiedTitle: "VTCT Level 2 Diploma in Beauty Therapy",
+    accreditationType: "VTCT",
+    certificateNumber: "",
+    difficulty: "Beginner",
+    level: "Beginner",
+    category: "foundation",
+    startDate: "Intake Enrolling",
+    alternateDates: ["Intake Enrolling", "Contact Academy for Schedules"],
+    description: "Approved and enrolling regulated beauty therapy qualification. VTCT registration, exam, and certification fees are included.",
+    price: 2200,
+    image: "/images/courses/anatomy_physiology.jpg",
+    duration: "Months-long Program",
+    accreditation: "VTCT",
+    prerequisites: {
+      qualification: "No prior experience required",
+      minAge: 16,
+      insurance: "Provided during academy clinical training"
+    },
+    minimumAge: 16,
+    curriculum: [
+      "Facial skin care treatments and skin analysis",
+      "Eyelash and eyebrow beauty treatments",
+      "Professional makeup application techniques",
+      "Manicure and pedicure nail therapies",
+      "Waxing hair removal techniques",
+      "Client care, consultation, and salon safety"
+    ]
+  },
+  {
+    id: "vtct-level-3-beauty-therapy-treatments",
+    slug: "vtct-level-3-beauty-therapy-treatments",
+    title: "VTCT Level 3 Diploma in Beauty Therapy Treatments",
+    publicName: "VTCT Level 3 Diploma in Beauty Therapy Treatments",
+    certifiedTitle: "VTCT Level 3 Diploma in Beauty Therapy Treatments",
+    accreditationType: "VTCT",
+    certificateNumber: "",
+    difficulty: "Intermediate",
+    level: "Intermediate",
+    category: "skin",
+    startDate: "Awaiting Awarding-Body Approval (Waitlist)",
+    alternateDates: ["Waitlist Registration Open"],
+    description: "Awaiting awarding-body approval (Qualification No. 500/8964/X). Enrolling on waitlist only. VTCT registration, exam, and certification fees are included.",
+    price: 2200,
+    image: "/images/courses/microneedling.jpg",
+    duration: "Months-long Program",
+    accreditation: "VTCT",
+    prerequisites: {
+      qualification: "VTCT Level 2 Beauty Therapy or equivalent beauty diploma",
+      minAge: 16,
+      insurance: "Awaiting final approval"
+    },
+    minimumAge: 16,
+    curriculum: [
+      "VTCT Level 3 Beauty Therapy treatments modules",
+      "Advanced skin therapies and analysis",
+      "Client wellness assessment guidelines"
+    ]
+  },
+  {
+    id: "vtct-level-4-beauty-therapy",
+    slug: "vtct-level-4-beauty-therapy",
+    title: "VTCT Level 4 Beauty Therapy",
+    publicName: "VTCT Level 4 Beauty Therapy",
+    certifiedTitle: "VTCT Level 4 Beauty Therapy",
+    accreditationType: "VTCT",
+    certificateNumber: "",
+    difficulty: "Advanced",
+    level: "Advanced",
+    category: "injectables",
+    startDate: "Coming Soon (Register Interest)",
+    alternateDates: ["Pre-registration Open"],
+    description: "Coming soon regulated qualification. Register interest today to receive updates. VTCT registration, exam, and certification fees are included.",
+    price: 0,
+    image: "/images/courses/advanced_injectables.jpg",
+    duration: "Coming Soon",
+    accreditation: "VTCT",
+    prerequisites: {
+      qualification: "VTCT Level 3 Beauty Therapy or equivalent",
+      minAge: 18,
+      insurance: "Not required for register interest"
+    },
+    minimumAge: 18,
+    curriculum: [
+      "VTCT Level 4 Beauty Therapy modules",
+      "Advanced cosmetic consultation and practices"
+    ]
   }
 ];

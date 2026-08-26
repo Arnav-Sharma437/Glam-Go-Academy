@@ -30,6 +30,7 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
   const [verifying, setVerifying] = useState(!!sessionId);
   const [verifiedName, setVerifiedName] = useState("");
   const [verifiedEmail, setVerifiedEmail] = useState("");
+  const [waitlistSubmitted, setWaitlistSubmitted] = useState(false);
 
   // Trigger payment verification when returning from Stripe with a session_id
   useEffect(() => {
@@ -138,6 +139,15 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
     }
   };
 
+  const handleWaitlistSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setWaitlistSubmitted(true);
+    }, 1200);
+  };
+
   // Calculate pricing values dynamically
   const installment3Val = (course.price / 3).toFixed(0);
   const installment4Val = (course.price / 4).toFixed(0);
@@ -148,18 +158,12 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
       <main className="min-h-screen bg-bg pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
-          {/* Breadcrumb */}
-          <nav className="mb-10 text-xs tracking-wider uppercase font-sans font-semibold text-muted">
-            <Link href="/" className="hover:text-accent transition-colors duration-200 cursor-pointer">Home</Link>
-            <span className="mx-2">/</span>
-            <span className="text-text">{course.title}</span>
-          </nav>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            {/* Left: Course Details */}
-            <div className="lg:col-span-7 flex flex-col">
-              <div className="relative aspect-[16/9] w-full bg-muted-light mb-8 overflow-hidden rounded-2xl shadow-sm">
+            {/* Left: Main details */}
+            <div className="lg:col-span-7">
+              {/* Media Banner */}
+              <div className="relative aspect-[16/9] w-full bg-muted-light overflow-hidden rounded-2xl border border-muted-light/60 mb-8 shadow-sm">
                 <Image
                   src={course.image}
                   alt={course.title}
@@ -208,21 +212,21 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                 </div>
               </div>
 
-              {/* Prerequisites & Eligibility Section */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Course syllabus prerequisites */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                 <div>
-                  <h2 className="font-sans text-lg font-bold text-text mb-3">Prerequisites & Eligibility</h2>
+                  <h2 className="font-sans text-lg font-bold text-text mb-3">Requirements</h2>
                   <div className="bg-card-bg border border-muted-light/60 rounded-xl p-5 font-sans text-xs space-y-3 shadow-sm h-full">
                     <div>
-                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Prior Qualifications</span>
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Qualifications</span>
                       <span className="text-muted">{course.prerequisites.qualification}</span>
                     </div>
                     <div className="border-t border-muted-light/40 pt-2.5">
-                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Minimum Age Limit</span>
-                      <span className="text-muted">{course.prerequisites.minAge} years or older</span>
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Minimum Age</span>
+                      <span className="text-muted">{course.prerequisites.minAge} Years Old</span>
                     </div>
                     <div className="border-t border-muted-light/40 pt-2.5">
-                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Insurance Coverage</span>
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Prerequisite Insurance</span>
                       <span className="text-muted">{course.prerequisites.insurance}</span>
                     </div>
                   </div>
@@ -248,6 +252,14 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                         <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Compliance Notice</span>
                         <p className="text-muted text-[10px] leading-relaxed mt-1 font-sans">
                           This is a one-day CPD course (6.25 hours) for practitioners already working in the sector. It enhances competence and does not replace a regulated qualification. Insurance is always subject to your insurer's own criteria.
+                        </p>
+                      </div>
+                    )}
+                    {course.accreditation === "VTCT" && (
+                      <div className="border-t border-muted-light/40 pt-2.5">
+                        <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Fees Included</span>
+                        <p className="text-muted text-[10px] leading-relaxed mt-1 font-sans">
+                          VTCT registration, exam and certification fees are included.
                         </p>
                       </div>
                     )}
@@ -286,7 +298,209 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                       Please wait while we confirm your checkout session securely with Stripe...
                     </p>
                   </div>
-                ) : !success ? (
+                ) : success ? (
+                  <div className="text-center py-8">
+                    {/* Success Icon */}
+                    <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="font-sans text-2xl text-text font-bold mb-3">Enrolment Confirmed</h3>
+                    <p className="font-sans text-xs text-muted leading-relaxed mb-6">
+                      Thank you for enrolling{verifiedName ? `, ${verifiedName}` : formData.name ? `, ${formData.name}` : ""}. Your enrolment has been confirmed. Stripe will provide your payment confirmation.
+                    </p>
+                    <p className="font-sans text-xs text-muted leading-relaxed mb-8">
+                      We look forward to seeing you at our Soho studio on <span className="font-semibold text-text">{selectedDate}</span>.
+                    </p>
+                    <Link
+                      href="/"
+                      className="inline-block px-6 py-3 border border-text/20 text-text text-xs tracking-wider uppercase font-semibold hover:bg-text hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer"
+                    >
+                      Return to Home
+                    </Link>
+                  </div>
+                ) : waitlistSubmitted ? (
+                  <div className="text-center py-8">
+                    {/* Success Icon */}
+                    <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="font-sans text-xl text-text font-bold mb-3">Request Received</h3>
+                    <p className="font-sans text-xs text-muted leading-relaxed mb-8">
+                      {course.id === "vtct-level-4-beauty-therapy"
+                        ? "Thank you! Your interest has been registered. We will notify you as soon as this qualification launches."
+                        : "Thank you. Your waitlist application has been received. Our registrations team will contact you shortly with intake updates."
+                      }
+                    </p>
+                    <Link
+                      href="/"
+                      className="inline-block px-6 py-3 border border-text/20 text-text text-xs tracking-wider uppercase font-semibold hover:bg-text hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer"
+                    >
+                      Return to Home
+                    </Link>
+                  </div>
+                ) : course.id === "vtct-level-3-beauty-therapy-treatments" ? (
+                  <form onSubmit={handleWaitlistSubmit} className="flex flex-col">
+                    <h3 className="font-sans text-xl font-bold text-text mb-2">Join Program Waitlist</h3>
+                    <p className="text-[10px] text-muted font-sans mb-6 leading-relaxed">
+                      Awaiting awarding-body approval (Qualification No. 500/8964/X). Enrolment is currently waitlist-only.
+                    </p>
+
+                    <div className="mb-4">
+                      <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="E.g., Sarah Jenkins"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
+                        required
+                      />
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="E.g., sarah@gmail.com"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
+                        required
+                      />
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="E.g., +44 7946 0958"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
+                        required
+                      />
+                    </div>
+
+                    <div className="bg-muted-light/30 p-4 border border-muted-light/40 flex justify-between items-center mb-6 rounded-lg font-sans text-xs">
+                      <span className="text-muted">Tuition Price (inclusive of fees):</span>
+                      <span className="font-bold text-text text-sm">£2,200.00</span>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full py-4 bg-text text-bg text-xs font-sans tracking-wider uppercase font-semibold hover:bg-accent hover:text-white transition-all duration-300 rounded-lg shadow-md flex items-center justify-center space-x-2 cursor-pointer hover:scale-102"
+                    >
+                      {loading ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-4 w-4 text-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          <span>Submitting...</span>
+                        </>
+                      ) : (
+                        <span>Join Level 3 Waitlist</span>
+                      )}
+                    </button>
+
+                    <p className="text-[10px] text-muted text-center mt-4 leading-relaxed font-sans">
+                      * VTCT registration, exam, and certification fees are included.
+                    </p>
+                  </form>
+                ) : course.id === "vtct-level-4-beauty-therapy" ? (
+                  <form onSubmit={handleWaitlistSubmit} className="flex flex-col">
+                    <h3 className="font-sans text-xl font-bold text-text mb-2">Register Interest</h3>
+                    <p className="text-[10px] text-muted font-sans mb-6 leading-relaxed">
+                      Regulated Level 4 qualification coming soon. Sign up for intake schedules.
+                    </p>
+
+                    <div className="mb-4">
+                      <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="E.g., Sarah Jenkins"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
+                        required
+                      />
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="E.g., sarah@gmail.com"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
+                        required
+                      />
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="E.g., +44 7946 0958"
+                        className="w-full p-3 border border-muted-light bg-bg font-sans text-xs text-text focus:outline-none focus:border-accent rounded-lg"
+                        required
+                      />
+                    </div>
+
+                    <div className="bg-muted-light/30 p-4 border border-muted-light/40 flex justify-between items-center mb-6 rounded-lg font-sans text-xs">
+                      <span className="text-muted">Tuition Price:</span>
+                      <span className="font-bold text-text text-sm">To Be Confirmed</span>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full py-4 bg-text text-bg text-xs font-sans tracking-wider uppercase font-semibold hover:bg-accent hover:text-white transition-all duration-300 rounded-lg shadow-md flex items-center justify-center space-x-2 cursor-pointer hover:scale-102"
+                    >
+                      {loading ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-4 w-4 text-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          <span>Submitting...</span>
+                        </>
+                      ) : (
+                        <span>Register Interest</span>
+                      )}
+                    </button>
+
+                    <p className="text-[10px] text-muted text-center mt-4 leading-relaxed font-sans">
+                      * VTCT registration, exam, and certification fees are included.
+                    </p>
+                  </form>
+                ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col">
                     <h3 className="font-sans text-xl font-bold text-text mb-6">Enrol in Program</h3>
                     
@@ -425,8 +639,7 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                       )}
                     </button>
 
-                    {/* Data Use & placeholders */}
-                    <p className="text-[10px] text-muted leading-relaxed text-center mt-3">
+                    <p className="text-[10px] text-muted text-center mt-3">
                       By enrolling, you consent to Glam and Go London storing your registration details to manage your training in accordance with our Privacy Policy.
                     </p>
 
@@ -471,28 +684,6 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                       )
                     )}
                   </form>
-                ) : (
-                  <div className="text-center py-8">
-                    {/* Success Icon */}
-                    <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <h3 className="font-sans text-2xl text-text font-bold mb-3">Enrolment Confirmed</h3>
-                    <p className="font-sans text-xs text-muted leading-relaxed mb-6">
-                      Thank you for enrolling{verifiedName ? `, ${verifiedName}` : formData.name ? `, ${formData.name}` : ""}. Your enrolment has been confirmed. Stripe will provide your payment confirmation.
-                    </p>
-                    <p className="font-sans text-xs text-muted leading-relaxed mb-8">
-                      We look forward to seeing you at our Soho studio on <span className="font-semibold text-text">{selectedDate}</span>.
-                    </p>
-                    <Link
-                      href="/"
-                      className="inline-block px-6 py-3 border border-text/20 text-text text-xs tracking-wider uppercase font-semibold hover:bg-text hover:text-bg transition-colors duration-300 rounded-lg cursor-pointer"
-                    >
-                      Return to Home
-                    </Link>
-                  </div>
                 )}
               </div>
             </div>
