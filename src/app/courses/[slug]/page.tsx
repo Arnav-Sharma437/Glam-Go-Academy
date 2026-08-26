@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonicalUrl = `https://academy.glamandgolondon.com/courses/${course.slug}`;
   const ogImage = course.image.startsWith("http")
     ? course.image
-    : `https://academy.glamandgolondon${course.image}`;
+    : `https://academy.glamandgolondon.com${course.image}`;
 
   return {
     title,
