@@ -207,7 +207,7 @@ export default function AboutPage() {
                 <div className="absolute top-4 right-4 text-[9px] uppercase tracking-wider font-bold text-accent">Verified CPD</div>
                 <div className="h-16 w-20 flex flex-col items-center justify-center border border-accent/20 bg-bg rounded-xl shrink-0 select-none shadow-sm">
                   <span className="text-lg font-extrabold tracking-widest text-text">CPD</span>
-                  <span className="text-[6px] uppercase font-bold text-muted -mt-0.5 tracking-wider">Accredited</span>
+                  <span className="text-[6px] uppercase font-bold text-muted -mt-0.5 tracking-wider">Certified</span>
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-sm font-bold text-text">CPD Portfolio Accreditation</h4>

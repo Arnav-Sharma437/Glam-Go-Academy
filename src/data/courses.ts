@@ -37,7 +37,7 @@ export const COURSES: Course[] = [
     description: "The essential theory foundation covering skeletal, muscular, circulatory, and skin systems necessary for clinical cosmetic treatments.",
     price: 435,
     image: "/images/courses/anatomy_physiology.jpg",
-    duration: "Online Study (Approx. 20 hours)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "No prior experience or beauty certificate required",
@@ -64,7 +64,7 @@ export const COURSES: Course[] = [
     description: "Learn intramuscular injection techniques, client screening, and record-keeping for vitamin wellness therapies.",
     price: 545,
     image: "/images/courses/vitamin_injections.jpg",
-    duration: "1 Day (10:00 - 16:30)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "No prior experience required; needle safety is fully taught",
@@ -91,7 +91,7 @@ export const COURSES: Course[] = [
     description: "Extend your injection menu with hair, skin, and antioxidant body support wellness protocols.",
     price: 545,
     image: "/images/courses/biotin_glutathione.jpg",
-    duration: "1 Day (10:00 - 16:00)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "Vitamin Injections certificate or prior intramuscular training",
@@ -118,7 +118,7 @@ export const COURSES: Course[] = [
     description: "Master professional microneedling for skin and hair. Learn skincare theory, pen protocols, and hands-on practice.",
     price: 655,
     image: "/images/courses/microneedling.jpg",
-    duration: "1 Day (10:00 - 17:00)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "Level 3 Beauty Therapy OR Anatomy & Physiology Level 3 equivalent",
@@ -145,7 +145,7 @@ export const COURSES: Course[] = [
     description: "Learn safe blade work, skin preparation, and finishing to deliver instantly smoother and brighter skin for clients.",
     price: 655,
     image: "/images/courses/dermaplaning.jpg",
-    duration: "1 Day (10:00 - 16:00)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "Level 2 Beauty Therapy or equivalent facial certificate",
@@ -172,7 +172,7 @@ export const COURSES: Course[] = [
     description: "Master venepuncture techniques from first draw to safe disposal, practicing on simulated arms and live models.",
     price: 655,
     image: "/images/courses/phlebotomy.jpg",
-    duration: "1 Day (09:30 - 17:30)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "No prior experience required; full draw safety is taught",
@@ -199,7 +199,7 @@ export const COURSES: Course[] = [
     description: "Master localized fat reduction treatments – covering client assessment, injection techniques, and safety aftercare.",
     price: 875,
     image: "/images/courses/fat_dissolving.jpg",
-    duration: "1 Day (10:00 - 16:30)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "Level 3 Beauty Therapy OR Anatomy & Physiology Level 3 with needle experience",
@@ -226,7 +226,7 @@ export const COURSES: Course[] = [
     description: "Learn Platelet-Rich Plasma procedures – the ultimate autologous treatment for skin rejuvenation and hair stimulation.",
     price: 875,
     image: "/images/courses/prp_therapy.jpg",
-    duration: "1 Day (09:30 - 17:30)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "Phlebotomy certification (venepuncture draw capability is mandatory)",
@@ -253,7 +253,7 @@ export const COURSES: Course[] = [
     description: "Master cannulation setups, drip bag assembly, vitamin cocktails, and safe infusion monitoring.",
     price: 875,
     image: "/images/courses/iv_nutrition.jpg",
-    duration: "1 Day (09:30 - 18:00)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "Phlebotomy certification or prior cannula insertion experience",
@@ -307,7 +307,7 @@ export const COURSES: Course[] = [
     description: "Learn lip and nasolabial foundation techniques with live models, full consultation, and complication protocols.",
     price: 985,
     image: "/images/courses/dermal_fillers.jpg",
-    duration: "1 Day (09:30 - 18:00)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "Level 3 Beauty Therapy OR Anatomy & Physiology Level 3 with Phlebotomy or needle experience",
@@ -334,7 +334,7 @@ export const COURSES: Course[] = [
     description: "Master full face advanced needle techniques for experienced practitioners. Taught in small groups of four.",
     price: 1205,
     image: "/images/courses/advanced_injectables.jpg",
-    duration: "1 Day (10:00 - 17:00)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "Foundation Injectables certification with 6+ months injecting experience",
@@ -361,7 +361,7 @@ export const COURSES: Course[] = [
     description: "Master the flat-profile Russian lip style and mid-face volume restoration technique.",
     price: 1315,
     image: "/images/courses/russian_lip.jpg",
-    duration: "1 Day (09:30 - 17:30)",
+    duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
       qualification: "Dermal Fillers certification with 6+ months active injecting experience",

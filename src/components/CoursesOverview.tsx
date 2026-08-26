@@ -6,7 +6,7 @@ import Link from "next/link";
 import { COURSES } from "@/data/courses";
 
 const CATEGORIES = [
-  { id: "injectables", name: "Injectables", count: 5, desc: "CPD accredited injectable and cosmetic filler training modules." },
+  { id: "injectables", name: "Injectables", count: 5, desc: "CPD certified injectable and cosmetic filler training modules." },
   { id: "skin", name: "Skin", count: 3, desc: "Skincare treatments, exfoliation methods, and dermis rejuvenation." },
   { id: "wellness", name: "Wellness", count: 3, desc: "Intramuscular vitamins and IV therapy infusions." },
   { id: "foundation", name: "Foundation", count: 2, desc: "Essential biological theory and phlebotomy practices required for cosmetic training." }
@@ -33,7 +33,7 @@ export default function CoursesOverview() {
             </h2>
           </div>
           <p className="font-sans text-xs text-muted max-w-sm mt-3 md:mt-0 leading-relaxed">
-            Fully accredited CPD qualifications designed for fast-track careers. Gain the confidence, technique, and industry certificates that clients trust.
+            Fully certified CPD qualifications designed for fast-track careers. Gain the confidence, technique, and industry certificates that clients trust.
           </p>
         </div>
 

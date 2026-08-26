@@ -23,7 +23,7 @@ export default function FeaturedCourses() {
             </h2>
           </div>
           <p className="font-sans text-xs text-muted max-w-sm mt-3 md:mt-0 leading-relaxed">
-            Gain certified, accredited CPD qualifications. Learn hands-on in our Central London studio under the supervision of leading clinical practitioners.
+            Gain certified CPD qualifications. Learn hands-on in our Central London studio under the supervision of leading clinical practitioners.
           </p>
         </div>
 

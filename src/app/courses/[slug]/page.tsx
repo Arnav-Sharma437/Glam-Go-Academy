@@ -172,7 +172,7 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                     {course.level}
                   </span>
                   <span className="px-3 py-1 bg-accent text-white text-[9px] uppercase tracking-wider font-bold font-sans rounded-md">
-                    {course.accreditation} ACCREDITED
+                    {course.accreditation === "CPD" ? "CPD CERTIFIED" : `${course.accreditation} CERTIFIED`}
                   </span>
                 </div>
               </div>
@@ -184,8 +184,20 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
               <div className="flex flex-wrap gap-y-4 gap-x-8 pb-6 border-b border-muted-light/60 mb-8 font-sans text-xs tracking-wide text-muted">
                 <div>
                   <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Duration</span>
-                  <span>{course.duration}</span>
+                  <span>{course.accreditation === "CPD" ? "1 Day" : course.duration}</span>
                 </div>
+                {course.accreditation === "CPD" && (
+                  <>
+                    <div>
+                      <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Hours</span>
+                      <span>6.25 CPD Hours</span>
+                    </div>
+                    <div>
+                      <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Schedule</span>
+                      <span>10:00–17:30</span>
+                    </div>
+                  </>
+                )}
                 <div>
                   <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Location</span>
                   <span>Central London Studio (Soho)</span>
@@ -220,17 +232,25 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                   <h2 className="font-sans text-lg font-bold text-text mb-3">Accreditation Info</h2>
                   <div className="bg-card-bg border border-muted-light/60 rounded-xl p-5 font-sans text-xs space-y-3 shadow-sm h-full">
                     <div>
-                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Accrediting Body</span>
-                      <span className="text-muted">{course.accreditation} Certified Academy</span>
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Awarding Body</span>
+                      <span className="text-muted">{course.accreditation === "CPD" ? "CPD Certified Academy" : `${course.accreditation} Approved Centre`}</span>
                     </div>
                     <div className="border-t border-muted-light/40 pt-2.5">
                       <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Certificate Issued</span>
-                      <span className="text-muted">Accredited Certificate in {course.title}</span>
+                      <span className="text-muted">{course.accreditation === "CPD" ? `CPD Certified Certificate in ${course.title}` : `VTCT Accredited Certificate in ${course.title}`}</span>
                     </div>
                     <div className="border-t border-muted-light/40 pt-2.5">
                       <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Underwriter Approved</span>
                       <span className="text-muted">Eligible for cosmetic practitioner insurance</span>
                     </div>
+                    {course.accreditation === "CPD" && (
+                      <div className="border-t border-muted-light/40 pt-2.5">
+                        <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Compliance Notice</span>
+                        <p className="text-muted text-[10px] leading-relaxed mt-1 font-sans">
+                          This is a one-day CPD course (6.25 hours) for practitioners already working in the sector. It enhances competence and does not replace a regulated qualification. Insurance is always subject to your insurer's own criteria.
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -412,16 +432,41 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                       </p>
                     )}
 
-                    {/* Render What's Included list if defined in database */}
-                    {course.whatsIncluded && course.whatsIncluded.length > 0 && (
-                      <div className="mt-4 text-[10px] text-muted space-y-1 bg-muted-light/10 p-3 rounded-lg border border-muted-light/30">
-                        <p className="font-bold text-text mb-1 uppercase tracking-wider text-[9px]">What's Included:</p>
-                        <ul className="list-disc list-inside space-y-0.5">
-                          {course.whatsIncluded.map((item, idx) => (
-                            <li key={idx}>{item}</li>
-                          ))}
-                        </ul>
+                    {/* CPD Inclusions and Exclusions */}
+                    {course.accreditation === "CPD" ? (
+                      <div className="mt-4 space-y-3">
+                        <div className="text-[10px] text-muted bg-muted-light/10 p-3.5 rounded-lg border border-muted-light/30">
+                          <p className="font-bold text-text mb-1.5 uppercase tracking-wider text-[9px]">What's Included:</p>
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Products and consumables used on the day</li>
+                            <li>Course manual and treatment protocols</li>
+                            <li>CPD Certified certificate</li>
+                            <li>Post-course case study review</li>
+                            <li>Refreshments</li>
+                          </ul>
+                        </div>
+                        
+                        <div className="text-[10px] text-muted bg-muted-light/10 p-3.5 rounded-lg border border-muted-light/30">
+                          <p className="font-bold text-text mb-1.5 uppercase tracking-wider text-[9px]">Not Included:</p>
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Optional take-home starter kit</li>
+                            <li>Professional indemnity insurance</li>
+                            <li>Delegate's own model; matching from our model list is not guaranteed</li>
+                            <li>Re-sit/re-assessment fees</li>
+                          </ul>
+                        </div>
                       </div>
+                    ) : (
+                      course.whatsIncluded && course.whatsIncluded.length > 0 && (
+                        <div className="mt-4 text-[10px] text-muted space-y-1 bg-muted-light/10 p-3 rounded-lg border border-muted-light/30">
+                          <p className="font-bold text-text mb-1 uppercase tracking-wider text-[9px]">What's Included:</p>
+                          <ul className="list-disc list-inside space-y-0.5">
+                            {course.whatsIncluded.map((item, idx) => (
+                              <li key={idx}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )
                     )}
                   </form>
                 ) : (

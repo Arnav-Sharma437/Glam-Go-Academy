@@ -9,8 +9,8 @@ import Footer from "@/components/Footer";
 import { COURSES } from "@/data/courses";
 
 const CATEGORIES = [
-  { id: "all", name: "All Programs", desc: "Browse our complete list of CPD-accredited cosmetics, wellness, and clinical training courses." },
-  { id: "injectables", name: "Injectables", desc: "CPD accredited injectables, dermal fillers, and anti-aging technique training modules." },
+  { id: "all", name: "All Programs", desc: "Browse our complete list of CPD-certified cosmetics, wellness, and clinical training courses." },
+  { id: "injectables", name: "Injectables", desc: "CPD certified injectables, dermal fillers, and anti-aging technique training modules." },
   { id: "skin", name: "Skin Care", desc: "Skincare therapies, mechanical peeling methods, and micro-needling rejuvenation." },
   { id: "wellness", name: "Wellness & Infusions", desc: "Intramuscular vitamins, phlebotomy access, and IV therapy infusion certifications." },
   { id: "foundation", name: "Foundation Science", desc: "Essential biological anatomy, physiology, and basic clinical theory for practitioners." }

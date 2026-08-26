@@ -72,7 +72,7 @@ export default function Footer() {
               {/* CPD Badge */}
               <div className="flex flex-col items-center justify-center border border-muted-light/60 bg-card-bg rounded-lg py-1 px-3 shadow-sm select-none">
                 <span className="text-[10px] font-sans font-extrabold tracking-widest text-text">CPD</span>
-                <span className="text-[6px] font-sans uppercase font-bold text-muted tracking-wide -mt-0.5">Accredited</span>
+                <span className="text-[6px] font-sans uppercase font-bold text-muted tracking-wide -mt-0.5">Certified</span>
               </div>
               {/* VTCT Badge */}
               <div className="flex flex-col items-center justify-center border border-muted-light/60 bg-card-bg rounded-lg py-1 px-3 shadow-sm select-none">
