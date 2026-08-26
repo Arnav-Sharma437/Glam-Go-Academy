@@ -26,7 +26,7 @@ export default function PrivacyPage() {
 
             <h2 className="text-xl font-bold text-text pt-4">2. How We Use Your Data</h2>
             <p>
-              We use your contact details exclusively to manage your course booking, send course preparation packs, verify clinical prerequisites, and respond to support enquiries. We will never share or sell your information to third-party marketing companies.
+              We use your contact details exclusively to manage your course booking, verify prerequisites, and respond to support enquiries. We will never share or sell your information to third-party marketing companies.
             </p>
 
             <h2 className="text-xl font-bold text-text pt-4">3. Data Retention and Consent</h2>

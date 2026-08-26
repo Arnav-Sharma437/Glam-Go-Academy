@@ -26,7 +26,7 @@ export default function CookiesPage() {
 
             <h2 className="text-xl font-bold text-text pt-4">2. How We Use Cookies</h2>
             <p>
-              We use first-party, essential cookies to store styling choices (such as preserving your dark mode toggle configuration across page shifts) and coordinate security during credit card booking transactions.
+              We use first-party, essential cookies to store browser preferences, theme/settings (such as preserving your dark mode toggle configuration across page shifts) and support basic checkout session functionality.
             </p>
 
             <h2 className="text-xl font-bold text-text pt-4">3. Managing Cookie Preferences</h2>

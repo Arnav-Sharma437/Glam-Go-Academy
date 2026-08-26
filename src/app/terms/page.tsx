@@ -36,7 +36,7 @@ export default function TermsPage() {
 
             <h2 className="text-xl font-bold text-text pt-4">4. Training Models Policy</h2>
             <p>
-              Glam and Go London coordinates training sessions using live practice models. All training models participating in clinical, skin, or cosmetic training sessions must satisfy the following safety rules:
+              Delegates are expected to provide their own model for live practice training sessions. If the academy attempts to match a delegate with a model from its model list, this is not guaranteed. All training models participating in clinical, skin, or cosmetic training sessions must satisfy the following safety rules:
             </p>
             <ul className="list-disc list-inside space-y-2 pl-4">
               <li>Training models must be 18 years of age or older.</li>
