@@ -46,25 +46,49 @@ export default function ContactPage() {
             {/* Left: Contact Info */}
             <div className="lg:col-span-5 space-y-8">
               <div className="bg-card-bg border border-muted-light/60 p-8 rounded-2xl shadow-sm">
-                <h3 className="text-lg font-bold mb-6 text-text">Studio Information</h3>
+                <h3 className="text-lg font-bold mb-6 text-text">Academy Information</h3>
                 
                 <div className="space-y-6 text-xs text-muted leading-relaxed">
                   <div>
-                    <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Soho Studio Address</span>
+                    <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">London Studio (Training Location)</span>
                     <p>
                       Suite 4, 12 Old Compton Street<br />
                       Soho, London, W1D 4TQ
                     </p>
                   </div>
+
+                  <div className="border-t border-muted-light/40 pt-4">
+                    <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Head Office (Business Address)</span>
+                    <p>
+                      Unit 21, Treaty Centre, Hounslow High Street<br />
+                      Hounslow, TW3 1ES
+                    </p>
+                  </div>
                   
                   <div className="border-t border-muted-light/40 pt-4">
                     <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Phone Number</span>
-                    <a href="tel:+4479460958" className="hover:text-accent transition-colors duration-200">+44 7946 0958</a>
+                    <a href="tel:02085771333" className="hover:text-accent transition-colors duration-200">020 8577 1333</a>
                   </div>
 
                   <div className="border-t border-muted-light/40 pt-4">
                     <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Email Address</span>
-                    <a href="mailto:info@glamandgoacademy.com" className="hover:text-accent transition-colors duration-200">info@glamandgoacademy.com</a>
+                    <a href="mailto:zuhayr@glamandgolondon.com" className="hover:text-accent transition-colors duration-200">zuhayr@glamandgolondon.com</a>
+                  </div>
+
+                  <div className="border-t border-muted-light/40 pt-4">
+                    <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Opening Hours</span>
+                    <p>
+                      Mon–Sat: 09:00–20:00<br />
+                      Sun: 10:00–19:00
+                    </p>
+                  </div>
+
+                  <div className="border-t border-muted-light/40 pt-4">
+                    <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Accreditation & Registry</span>
+                    <p>
+                      CPD Certified by The CPD Certification Service, Member No. 22588<br />
+                      VTCT Approved Centre 4558/001
+                    </p>
                   </div>
                 </div>
               </div>

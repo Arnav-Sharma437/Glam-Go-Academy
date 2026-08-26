@@ -140,19 +140,29 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: London Studio Address & Info */}
+          {/* Column 4: Studio & Head Office Details */}
           <div className="lg:col-span-3 flex flex-col">
             <h4 className="text-[10px] uppercase tracking-wider text-accent font-bold font-sans mb-4">
-              London Studio
+              Studio & Office
             </h4>
             <address className="not-italic font-sans text-xs text-muted leading-relaxed space-y-2.5">
-              <p>
-                Suite 4, 12 Old Compton Street<br />
-                Soho, London, W1D 4TQ
-              </p>
+              <div>
+                <span className="font-semibold text-text uppercase text-[8px] tracking-wider block mb-0.5">London Studio (Training Location)</span>
+                <p>
+                  Suite 4, 12 Old Compton Street<br />
+                  Soho, London, W1D 4TQ
+                </p>
+              </div>
+              <div className="pt-2 border-t border-muted-light/60">
+                <span className="font-semibold text-text uppercase text-[8px] tracking-wider block mb-0.5">Head Office (Business Address)</span>
+                <p>
+                  Unit 21, Treaty Centre<br />
+                  Hounslow High Street,TW3 1ES
+                </p>
+              </div>
               <p className="pt-2 border-t border-muted-light/60">
-                <span className="font-semibold text-text">Phone:</span> +44 7946 0958<br />
-                <span className="font-semibold text-text">Email:</span> info@glamandgoacademy.com
+                <span className="font-semibold text-text">Phone:</span> 020 8577 1333<br />
+                <span className="font-semibold text-text">Email:</span> zuhayr@glamandgolondon.com
               </p>
             </address>
           </div>
@@ -161,7 +171,7 @@ export default function Footer() {
 
         {/* Legal & Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 text-[10px] text-muted uppercase tracking-wider font-sans">
-          <span>&copy; {currentYear} Glam and Go London. All rights reserved.</span>
+          <span>&copy; {currentYear} Glam & Go London — Training Academy. All rights reserved.</span>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-3 sm:mt-0">
             <span className="text-muted lowercase">
               Part of{" "}

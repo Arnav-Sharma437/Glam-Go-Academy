@@ -237,7 +237,7 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                   <div className="bg-card-bg border border-muted-light/60 rounded-xl p-5 font-sans text-xs space-y-3 shadow-sm h-full">
                     <div>
                       <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Awarding Body</span>
-                      <span className="text-muted">{course.accreditation === "CPD" ? "CPD Certified by The CPD Certification Service. Glam & Go Training Academy, Member No. 22588." : `${course.accreditation} Approved Centre`}</span>
+                      <span className="text-muted">{course.accreditation === "CPD" ? "CPD Certified by The CPD Certification Service, Member No. 22588" : "VTCT approved centre 4558/001"}</span>
                     </div>
                     <div className="border-t border-muted-light/40 pt-2.5">
                       <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Certificate Issued</span>
