@@ -12,8 +12,8 @@ export default function PlacementSupport() {
     },
     {
       num: "03",
-      title: "Guaranteed Interviews",
-      desc: "Prepare for success with simulated interview coaching sessions and guaranteed interviews at our active recruitment partners."
+      title: "Interview Preparation",
+      desc: "Prepare for salon hiring processes with simulated interview coaching sessions and direct CV submissions to our active recruitment partners."
     }
   ];
 
