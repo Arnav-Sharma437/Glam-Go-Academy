@@ -53,6 +53,26 @@ export default function RootLayout({
             `,
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EducationalOrganization",
+              "name": "Glam and Go London",
+              "url": "https://academy.glamandgolondon.com",
+              "logo": "https://academy.glamandgolondon.com/images/logo.png",
+              "description": "Professional cosmetics, aesthetics, and regulated beauty qualifications academy in London.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Soho Studio",
+                "addressLocality": "London",
+                "postalCode": "W1D",
+                "addressCountry": "GB"
+              }
+            })
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-bg text-text font-body selection:bg-accent selection:text-bg">
         {children}

@@ -18,8 +18,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  // Generate unique SEO title and description based only on the existing course data
-  // Avoid certifiedTitle or any prescription-only medicine names in public metadata.
   return {
     title: `${course.publicName} Training | Glam and Go London`,
     description: course.description,
@@ -30,5 +28,85 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function Page({ params, searchParams }: PageProps) {
-  return <CourseDetailClient params={params} searchParams={searchParams} />;
+  const { slug } = await params;
+  const course = COURSES.find((c) => c.slug === slug);
+
+  if (!course) {
+    return <CourseDetailClient params={params} searchParams={searchParams} />;
+  }
+
+  // BreadcrumbList JSON-LD Structured Data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://academy.glamandgolondon.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Courses",
+        "item": "https://academy.glamandgolondon.com/courses"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": course.publicName,
+        "item": `https://academy.glamandgolondon.com/courses/${course.slug}`
+      }
+    ]
+  };
+
+  // Course JSON-LD Structured Data using only verified details
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": course.publicName,
+    "description": course.description,
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Glam and Go London",
+      "url": "https://academy.glamandgolondon.com"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "In Person",
+      "location": {
+        "@type": "Place",
+        "name": "Glam & Go London Soho Studio",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Soho Studio",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      }
+    },
+    ...(course.price > 0 ? {
+      "offers": {
+        "@type": "Offer",
+        "price": course.price,
+        "priceCurrency": "GBP",
+        "valueAddedTaxIncluded": true
+      }
+    } : {})
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
+      <CourseDetailClient params={params} searchParams={searchParams} />
+    </>
+  );
 }
