@@ -18,11 +18,40 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const title = `${course.publicName} Training | Glam and Go London`;
+  const description = course.description;
+  const canonicalUrl = `https://academy.glamandgolondon.com/courses/${course.slug}`;
+  const ogImage = course.image.startsWith("http")
+    ? course.image
+    : `https://academy.glamandgolondon${course.image}`;
+
   return {
-    title: `${course.publicName} Training | Glam and Go London`,
-    description: course.description,
+    title,
+    description,
     alternates: {
-      canonical: `https://academy.glamandgolondon.com/courses/${course.slug}`
+      canonical: canonicalUrl
+    },
+    openGraph: {
+      type: "website",
+      locale: "en_GB",
+      url: canonicalUrl,
+      title,
+      description,
+      siteName: "Glam and Go London",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: course.publicName
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage]
     }
   };
 }
