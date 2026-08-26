@@ -387,14 +387,24 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                       </label>
                     </div>
 
-                    <div className="bg-muted-light/30 p-4 border border-muted-light/40 flex items-center justify-between mb-6 rounded-lg">
-                      <span className="text-xs font-sans text-muted">Total Due:</span>
-                      <span className="text-lg font-bold text-text">
-                        {paymentOption === "full" && `£${course.price}`}
-                        {paymentOption === "installments3" && `£${installment3Val} (1st of 3)`}
-                        {paymentOption === "installments4" && `£${installment4Val} (1st of 4)`}
-                        {paymentOption === "deposit" && "£150 (Deposit)"}
-                      </span>
+                    <div className="bg-muted-light/30 p-4 border border-muted-light/40 space-y-3 mb-6 rounded-lg font-sans text-xs">
+                      <div className="flex justify-between items-center text-muted">
+                        <span>Course Price (VAT inclusive):</span>
+                        <span className="font-semibold text-text">£{course.price.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-muted">
+                        <span>VAT Component (20%):</span>
+                        <span className="font-semibold text-text">£{(course.price / 1.2 * 0.2).toFixed(2)}</span>
+                      </div>
+                      <div className="border-t border-muted-light/40 pt-2.5 flex justify-between items-center">
+                        <span className="font-bold text-text">Total Payable:</span>
+                        <span className="text-base font-extrabold text-accent">
+                          {paymentOption === "full" && `£${course.price}`}
+                          {paymentOption === "installments3" && `£${installment3Val} (1st of 3)`}
+                          {paymentOption === "installments4" && `£${installment4Val} (1st of 4)`}
+                          {paymentOption === "deposit" && "£150 (Deposit)"}
+                        </span>
+                      </div>
                     </div>
 
                     <button
@@ -420,17 +430,9 @@ export default function CourseDetailPage({ params, searchParams }: PageProps) {
                       By enrolling, you consent to Glam and Go London storing your registration details to manage your training in accordance with our Privacy Policy.
                     </p>
 
-                    {/* Render VAT status if configured in VAT_CONFIG */}
-                    {VAT_CONFIG.status === "inclusive" && (
-                      <p className="text-[10px] text-muted text-center mt-2">
-                        * Tuition fee is inclusive of VAT
-                      </p>
-                    )}
-                    {VAT_CONFIG.status === "exclusive" && (
-                      <p className="text-[10px] text-muted text-center mt-2">
-                        * Tuition fee is subject to VAT
-                      </p>
-                    )}
+                    <p className="text-[10px] text-muted text-center mt-2">
+                      * Tuition fee is inclusive of VAT
+                    </p>
 
                     {/* CPD Inclusions and Exclusions */}
                     {course.accreditation === "CPD" ? (

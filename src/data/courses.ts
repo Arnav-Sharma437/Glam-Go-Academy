@@ -2,8 +2,19 @@ export interface Course {
   id: string;
   slug: string;
   title: string;
-  category: "injectables" | "skin" | "wellness" | "foundation";
+  publicName: string;
+  certifiedTitle: string;
+  accreditationType: "CPD" | "VTCT";
+  certificateNumber: string;
+  difficulty: "Beginner" | "Intermediate" | "Advanced";
   level: "Beginner" | "Intermediate" | "Advanced";
+  prerequisites: {
+    qualification: string;
+    minAge: number;
+    insurance: string;
+  };
+  minimumAge: number;
+  category: "injectables" | "skin" | "wellness" | "foundation";
   startDate: string;
   alternateDates: string[];
   description: string;
@@ -11,17 +22,11 @@ export interface Course {
   image: string;
   duration: string;
   accreditation: "CPD" | "VTCT";
-  prerequisites: {
-    qualification: string;
-    minAge: number;
-    insurance: string;
-  };
   curriculum: string[];
   whatsIncluded?: string[];
 }
 
 export const VAT_CONFIG = {
-  // Set to "inclusive" or "exclusive" once confirmed, or leave empty/false for no display
   status: ""
 };
 
@@ -30,8 +35,13 @@ export const COURSES: Course[] = [
     id: "anatomy-physiology-aesthetics",
     slug: "anatomy-physiology-aesthetics",
     title: "Anatomy & Physiology for Aesthetics",
-    category: "foundation",
+    publicName: "Anatomy & Physiology for Aesthetics",
+    certifiedTitle: "Level 3 Award in Anatomy and Physiology for Aesthetics",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Beginner",
     level: "Beginner",
+    category: "foundation",
     startDate: "Self-Paced",
     alternateDates: ["Immediate Access (Online Module)"],
     description: "The essential theory foundation covering skeletal, muscular, circulatory, and skin systems necessary for clinical cosmetic treatments.",
@@ -44,6 +54,7 @@ export const COURSES: Course[] = [
       minAge: 18,
       insurance: "Not required for online theory study"
     },
+    minimumAge: 18,
     curriculum: [
       "Facial musculature (muscles of expression)",
       "Trigeminal and facial nerve pathways",
@@ -57,8 +68,13 @@ export const COURSES: Course[] = [
     id: "vitamin-injections",
     slug: "vitamin-injections",
     title: "Vitamin Injections",
-    category: "wellness",
+    publicName: "Vitamin Injections",
+    certifiedTitle: "Intramuscular Vitamin B12 and Vitamin Therapy Certificate",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Beginner",
     level: "Beginner",
+    category: "wellness",
     startDate: "Oct 10, 2026",
     alternateDates: ["Oct 10, 2026", "Nov 07, 2026", "Dec 05, 2026"],
     description: "Learn intramuscular injection techniques, client screening, and record-keeping for vitamin wellness therapies.",
@@ -71,6 +87,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Eligible for public liability insurance on completion"
     },
+    minimumAge: 21,
     curriculum: [
       "Vitamin pharmacology and wellness benefits",
       "Intramuscular (IM) injection techniques",
@@ -84,8 +101,13 @@ export const COURSES: Course[] = [
     id: "biotin-glutathione",
     slug: "biotin-glutathione",
     title: "Biotin & Glutathione",
-    category: "wellness",
+    publicName: "Biotin & Glutathione",
+    certifiedTitle: "Biotin & Glutathione Intramuscular Administration Certification",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Beginner",
     level: "Beginner",
+    category: "wellness",
     startDate: "Oct 18, 2026",
     alternateDates: ["Oct 18, 2026", "Nov 15, 2026", "Dec 13, 2026"],
     description: "Extend your injection menu with hair, skin, and antioxidant body support wellness protocols.",
@@ -98,6 +120,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Required (specialist wellness insurance add-on)"
     },
+    minimumAge: 21,
     curriculum: [
       "Antioxidant chemistry and cellular benefits",
       "Biotin for hair and nail strengthening",
@@ -111,8 +134,13 @@ export const COURSES: Course[] = [
     id: "microneedling",
     slug: "microneedling",
     title: "Microneedling",
-    category: "skin",
+    publicName: "Microneedling",
+    certifiedTitle: "Cosmetic Microneedling and Collagen Induction Therapy Certificate",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Beginner",
     level: "Beginner",
+    category: "skin",
     startDate: "Sept 24, 2026",
     alternateDates: ["Sept 24, 2026", "Oct 22, 2026", "Nov 19, 2026"],
     description: "Master professional microneedling for skin and hair. Learn skincare theory, pen protocols, and hands-on practice.",
@@ -125,6 +153,7 @@ export const COURSES: Course[] = [
       minAge: 18,
       insurance: "Required (specialist facial therapy insurance cover)"
     },
+    minimumAge: 18,
     curriculum: [
       "Wound healing cascade and skin histology",
       "Microneedling pen depth guidelines (0.25mm - 2.5mm)",
@@ -138,8 +167,13 @@ export const COURSES: Course[] = [
     id: "dermaplaning",
     slug: "dermaplaning",
     title: "Dermaplaning",
-    category: "skin",
+    publicName: "Dermaplaning",
+    certifiedTitle: "Professional Dermaplaning Exfoliation Therapy Certificate",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Beginner",
     level: "Beginner",
+    category: "skin",
     startDate: "Sept 18, 2026",
     alternateDates: ["Sept 18, 2026", "Oct 16, 2026", "Nov 13, 2026"],
     description: "Learn safe blade work, skin preparation, and finishing to deliver instantly smoother and brighter skin for clients.",
@@ -152,6 +186,7 @@ export const COURSES: Course[] = [
       minAge: 18,
       insurance: "Required (standard treatment insurance coverage)"
     },
+    minimumAge: 18,
     curriculum: [
       "Blade handling, insertion, and angle safety (10R blade)",
       "Vellus hair (peach fuzz) removal technique",
@@ -165,8 +200,13 @@ export const COURSES: Course[] = [
     id: "phlebotomy",
     slug: "phlebotomy",
     title: "Phlebotomy",
-    category: "foundation",
+    publicName: "Phlebotomy",
+    certifiedTitle: "Certificate in Phlebotomy and Venepuncture Blood Draw Techniques",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Beginner",
     level: "Beginner",
+    category: "foundation",
     startDate: "Oct 25, 2026",
     alternateDates: ["Oct 25, 2026", "Nov 22, 2026", "Dec 20, 2026"],
     description: "Master venepuncture techniques from first draw to safe disposal, practicing on simulated arms and live models.",
@@ -179,6 +219,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Required for live blood draw practices"
     },
+    minimumAge: 21,
     curriculum: [
       "Venous anatomy and vein selection guidelines",
       "Vacutainer, butterfly needle, and syringe draw systems",
@@ -192,8 +233,13 @@ export const COURSES: Course[] = [
     id: "fat-dissolving-injections",
     slug: "fat-dissolving-injections",
     title: "Fat Dissolving Injections",
-    category: "injectables",
+    publicName: "Fat Dissolving Injections",
+    certifiedTitle: "Localised Adipose Tissue Lipolysis and Intralipotherapy Certificate",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Intermediate",
     level: "Intermediate",
+    category: "injectables",
     startDate: "Oct 12, 2026",
     alternateDates: ["Oct 12, 2026", "Nov 09, 2026", "Dec 07, 2026"],
     description: "Master localized fat reduction treatments – covering client assessment, injection techniques, and safety aftercare.",
@@ -206,6 +252,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Required (specialist clinical aesthetic cover)"
     },
+    minimumAge: 21,
     curriculum: [
       "Adipose tissue anatomy and lipolysis chemistry",
       "Fat reduction product guidelines and safe storage",
@@ -219,8 +266,13 @@ export const COURSES: Course[] = [
     id: "prp-therapy",
     slug: "prp-therapy",
     title: "PRP Therapy",
-    category: "skin",
+    publicName: "PRP Therapy",
+    certifiedTitle: "Platelet-Rich Plasma Autologous Rejuvenation and Scalp Therapy Certificate",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Intermediate",
     level: "Intermediate",
+    category: "skin",
     startDate: "Oct 05, 2026",
     alternateDates: ["Oct 05, 2026", "Nov 02, 2026", "Nov 30, 2026"],
     description: "Learn Platelet-Rich Plasma procedures – the ultimate autologous treatment for skin rejuvenation and hair stimulation.",
@@ -233,6 +285,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Required (blood-product therapy insurance add-on)"
     },
+    minimumAge: 21,
     curriculum: [
       "Autologous platelet-rich plasma chemistry",
       "Centrifuge operation and platelet separation",
@@ -246,8 +299,13 @@ export const COURSES: Course[] = [
     id: "iv-nutrition-therapy",
     slug: "iv-nutrition-therapy",
     title: "IV Nutrition Therapy",
-    category: "wellness",
+    publicName: "IV Nutrition Therapy",
+    certifiedTitle: "Intravenous Cannulation and Nutrient Drip Infusion Therapy Certificate",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Intermediate",
     level: "Intermediate",
+    category: "wellness",
     startDate: "Oct 22, 2026",
     alternateDates: ["Oct 22, 2026", "Nov 19, 2026", "Dec 17, 2026"],
     description: "Master cannulation setups, drip bag assembly, vitamin cocktails, and safe infusion monitoring.",
@@ -260,6 +318,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Required (intravenous therapy insurance cover)"
     },
+    minimumAge: 21,
     curriculum: [
       "Intravenous (IV) cannulation and access",
       "IV drip bag setup, assembly, and flow calculation",
@@ -273,8 +332,13 @@ export const COURSES: Course[] = [
     id: "foundation-injectables",
     slug: "foundation-injectables",
     title: "Foundation Injectables",
-    category: "injectables",
+    publicName: "Foundation Injectables",
+    certifiedTitle: "Facial Anatomy Analysis and Injection Technique Certificate (Upper Face)",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Intermediate",
     level: "Intermediate",
+    category: "injectables",
     startDate: "Sept 15, 2026",
     alternateDates: ["Sept 15, 2026", "Oct 13, 2026", "Nov 10, 2026"],
     description: "Learn essential facial anatomy, analysis, and upper face needle techniques on live models under expert supervision.",
@@ -287,6 +351,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Required (specialist clinical aesthetic cover)"
     },
+    minimumAge: 21,
     curriculum: [
       "Facial nerve and muscle anatomy",
       "Product science and reconstitution",
@@ -300,8 +365,13 @@ export const COURSES: Course[] = [
     id: "dermal-fillers",
     slug: "dermal-fillers",
     title: "Dermal Fillers",
-    category: "injectables",
+    publicName: "Dermal Fillers",
+    certifiedTitle: "Hyaluronic Acid Dermal Filler Lip and Nasolabial Administration Certificate",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Intermediate",
     level: "Intermediate",
+    category: "injectables",
     startDate: "Sept 20, 2026",
     alternateDates: ["Sept 20, 2026", "Oct 18, 2026", "Nov 15, 2026"],
     description: "Learn lip and nasolabial foundation techniques with live models, full consultation, and complication protocols.",
@@ -314,6 +384,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Required (specialist dermal filler insurance cover)"
     },
+    minimumAge: 21,
     curriculum: [
       "Lip and nasolabial fold anatomy",
       "Rheology of hyaluronic acid fillers",
@@ -327,8 +398,13 @@ export const COURSES: Course[] = [
     id: "advanced-injectables",
     slug: "advanced-injectables",
     title: "Advanced Injectables",
-    category: "injectables",
+    publicName: "Advanced Injectables",
+    certifiedTitle: "Advanced Full Face Injection Point Mapping and Complications Certificate",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Advanced",
     level: "Advanced",
+    category: "injectables",
     startDate: "Sept 28, 2026",
     alternateDates: ["Sept 28, 2026", "Oct 26, 2026", "Nov 23, 2026"],
     description: "Master full face advanced needle techniques for experienced practitioners. Taught in small groups of four.",
@@ -341,6 +417,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Required (advanced aesthetics insurance cover)"
     },
+    minimumAge: 21,
     curriculum: [
       "Lower face injection technique points",
       "Nefertiti neck lift technique",
@@ -354,8 +431,13 @@ export const COURSES: Course[] = [
     id: "advanced-fillers-russian-lip",
     slug: "advanced-fillers-russian-lip",
     title: "Advanced Fillers & Russian Lip",
-    category: "injectables",
+    publicName: "Advanced Fillers & Russian Lip",
+    certifiedTitle: "Advanced Dermal Filler Cheek Volumisation and Russian Lip Technique Certificate",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Advanced",
     level: "Advanced",
+    category: "injectables",
     startDate: "Oct 02, 2026",
     alternateDates: ["Oct 02, 2026", "Oct 30, 2026", "Nov 27, 2026"],
     description: "Master the flat-profile Russian lip style and mid-face volume restoration technique.",
@@ -368,6 +450,7 @@ export const COURSES: Course[] = [
       minAge: 21,
       insurance: "Required (advanced dermal filler insurance cover)"
     },
+    minimumAge: 21,
     curriculum: [
       "The flat-profile Russian lip technique",
       "Micro-droplet and vertical tenting lip fillers",
