@@ -119,62 +119,7 @@ a, button, select, input, textarea, [role="button"] {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Explicit Desktop Layout and Typography Scale Overrides */
-@media (min-width: 1024px) {
-  /* Scale content max-width to approximately 1400px */
-  .max-w-7xl {
-    max-width: 1400px !important;
-  }
-
-  /* Core body text scaling to 17px */
-  body, p, li, label, select, input, textarea {
-    font-size: 17px;
-  }
-
-  /* Specific typography overrides matching Tailwind scales */
-  .text-xs {
-    font-size: 13px !important;
-  }
-
-  .text-sm {
-    font-size: 15.5px !important;
-  }
-
-  .text-base {
-    font-size: 17px !important;
-  }
-
-  /* Section headers and H1/H2 page title scaling (+10%) */
-  .text-lg {
-    font-size: 1.25rem !important; /* ~20px */
-  }
-
-  .text-xl {
-    font-size: 1.375rem !important; /* ~22px */
-  }
-
-  .text-2xl {
-    font-size: 1.65rem !important; /* ~26px */
-  }
-
-  .text-3xl {
-    font-size: 2.0625rem !important; /* ~33px */
-  }
-
-  .text-4xl {
-    font-size: 2.475rem !important; /* ~40px */
-  }
-
-  .text-5xl {
-    font-size: 3.3rem !important; /* ~53px */
-  }
-
-  .text-6xl {
-    font-size: 4.125rem !important; /* ~66px */
-  }
-}
-
-/* Specific Menu Link Increases for Header & Footer */
+/* Explicit Header & Footer Menu Link Increases */
 header nav a,
 header nav button,
 .hover-underline-reveal {
@@ -193,17 +138,15 @@ footer h4 {
   font-size: 13px !important;
 }
 
-footer ul li a,
-footer p {
+footer ul li a {
   font-size: 13.5px !important;
 }
 
 @media (min-width: 1024px) {
   footer h4 {
-    font-size: 14.5px !important;
+    font-size: 15px !important;
   }
-  footer ul li a,
-  footer p {
+  footer ul li a {
     font-size: 15px !important;
   }
 }
