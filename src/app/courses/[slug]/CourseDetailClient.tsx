@@ -41,6 +41,13 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
     return dates;
   };
   
+  // Automatically fallback to pay in full if plan becomes unavailable
+  useEffect(() => {
+    if (!plan && paymentOption === "plan") {
+      setPaymentOption("full");
+    }
+  }, [plan, paymentOption]);
+  
   // Secure verification states
   const [success, setSuccess] = useState(false);
   const [verifying, setVerifying] = useState(!!sessionId);
@@ -164,9 +171,7 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
     }, 1200);
   };
 
-  // Calculate pricing values dynamically
-  const installment3Val = (course.price / 3).toFixed(0);
-  const installment4Val = (course.price / 4).toFixed(0);
+  // Render course page body
 
   return (
     <>
@@ -554,9 +559,6 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                         {plan && (
                           <option value="plan">Instalment Plan (Deposit £{plan.deposit} + {plan.numberOfInstallments} payments)</option>
                         )}
-                        <option value="installments3">3 Interest-Free Installments (£{installment3Val}/mo)</option>
-                        <option value="installments4">4 Interest-Free Installments (£{installment4Val}/mo)</option>
-                        <option value="deposit">Secure Place with a Deposit (£150)</option>
                       </select>
                     </div>
 
@@ -634,9 +636,6 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                           <span className="font-bold text-text">Total Payable:</span>
                           <span className="text-base font-extrabold text-accent">
                             {paymentOption === "full" && `£${course.price}`}
-                            {paymentOption === "installments3" && `£${installment3Val} (1st of 3)`}
-                            {paymentOption === "installments4" && `£${installment4Val} (1st of 4)`}
-                            {paymentOption === "deposit" && "£150 (Deposit)"}
                             {paymentOption === "plan" && plan && `£${plan.deposit} (Deposit)`}
                           </span>
                         </div>
