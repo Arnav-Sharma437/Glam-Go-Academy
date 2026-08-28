@@ -66,6 +66,23 @@ export async function POST(request: NextRequest) {
       ? course.image
       : `${origin}${course.image}`;
 
+    const sessionMetadata: Record<string, string> = {
+      courseId: course.id,
+      courseSlug: course.slug,
+      paymentOption,
+      selectedDate: selectedDate || course.startDate,
+    };
+
+    if (paymentOption === "plan") {
+      const plan = calculatePaymentPlan(course.price, selectedDate || course.startDate, course.accreditation);
+      if (plan) {
+        sessionMetadata.courseTitle = course.title;
+        sessionMetadata.installmentAmount = plan.installmentAmount.toString();
+        sessionMetadata.numberOfInstallments = plan.numberOfInstallments.toString();
+        sessionMetadata.deposit = plan.deposit.toString();
+      }
+    }
+
     // Create session details
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -88,12 +105,11 @@ export async function POST(request: NextRequest) {
       mode: "payment",
       success_url: `${origin}/courses/${course.slug}?success=true&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/courses/${course.slug}`,
-      metadata: {
-        courseId: course.id,
-        courseSlug: course.slug,
-        paymentOption,
-        selectedDate: selectedDate || course.startDate,
-      },
+      customer_creation: paymentOption === "plan" ? "always" : undefined,
+      payment_intent_data: paymentOption === "plan" ? {
+        setup_future_usage: "off_session",
+      } : undefined,
+      metadata: sessionMetadata,
     });
 
     return NextResponse.json({ url: session.url, sessionId: session.id });
