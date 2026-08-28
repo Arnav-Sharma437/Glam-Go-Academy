@@ -47,14 +47,20 @@ export async function POST(request: NextRequest) {
     } else if (paymentOption === "installments4") {
       amountInPounds = Math.round(course.price / 4);
       descriptionPrefix = "1st of 4 Installments";
-    } else if (paymentOption === "plan") {
+    }
+
+    let descriptionText = `Course Enrolment - ${descriptionPrefix} - Cohort Date: ${
+      selectedDate || course.startDate
+    }`;
+
+    if (paymentOption === "plan") {
       const plan = calculatePaymentPlan(course.price, selectedDate || course.startDate, course.accreditation);
       if (plan) {
         amountInPounds = plan.deposit;
-        descriptionPrefix = `Instalment Plan Deposit (£${plan.deposit} + ${plan.numberOfInstallments} payments)`;
+        descriptionText = `Deposit Payment. Schedule: £${plan.deposit} today, followed by ${plan.numberOfInstallments} payments of £${plan.installmentAmount.toFixed(2)} monthly. Course Date: ${selectedDate || course.startDate}`;
       } else {
         amountInPounds = course.price;
-        descriptionPrefix = "Pay in Full";
+        descriptionText = `Course Enrolment - Pay in Full - Cohort Date: ${selectedDate || course.startDate}`;
       }
     }
 
@@ -92,9 +98,7 @@ export async function POST(request: NextRequest) {
             currency: "gbp",
             product_data: {
               name: course.title,
-              description: `Course Enrolment - ${descriptionPrefix} - Cohort Date: ${
-                selectedDate || course.startDate
-              }`,
+              description: descriptionText,
               images: [imageUrl],
             },
             unit_amount: amountInPence,
