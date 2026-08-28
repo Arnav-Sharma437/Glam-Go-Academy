@@ -40,6 +40,24 @@
   --font-sans: var(--font-inter-var), system-ui, sans-serif;
   --font-body: var(--font-roboto-var), system-ui, sans-serif;
   --font-serif: var(--font-inter-var), system-ui, sans-serif; /* Swapped to Inter to clean up serif "AI" vibe */
+
+  /* Sitewide typography scale refinements for enhanced readability */
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 0.95rem;
+  --font-size-base: 1.05rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 1.35rem;
+  --font-size-2xl: 1.65rem;
+  --font-size-3xl: 2.1rem;
+  --font-size-4xl: 2.6rem;
+  --font-size-5xl: 3.4rem;
+  --font-size-6xl: 4.5rem;
+
+  /* Desktop container widths layout scale updates */
+  --width-7xl: 88rem;
+  --width-6xl: 78rem;
+  --width-5xl: 68rem;
+  --width-4xl: 60rem;
 }
 
 /* Base custom styles */
