@@ -44,6 +44,19 @@ export default function TermsPage() {
               <li>Models must be appropriately screened for clinical contraindications and suitability prior to participation.</li>
               <li>Model participation is strictly subject to the academy's safety, suitability, and clinical screening procedures.</li>
             </ul>
+            
+            <h2 className="text-xl font-bold text-text pt-4">5. Rescheduling & Cancellation Policy</h2>
+            <p>
+              Course bookings may be rescheduled according to the following notice guidelines:
+            </p>
+            <ul className="list-disc list-inside space-y-2 pl-4">
+              <li><strong>21 days' notice or more:</strong> Rescheduling is free of charge (limited to one move per booking).</li>
+              <li><strong>8–20 days' notice:</strong> Rescheduling is subject to a £75 rescheduling fee.</li>
+              <li><strong>7 days or fewer, or no-show:</strong> The secure deposit is forfeited in full.</li>
+            </ul>
+            <p>
+              The statutory 14-day cancellation right for purchases made online takes precedence over local cancellation policies. For standard cancellations and refunds of any balances in excess of secure deposits, requests must be submitted in writing at least 14 days before the cohort start date.
+            </p>
           </div>
         </div>
       </main>

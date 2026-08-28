@@ -31,7 +31,15 @@ export default function RefundsPage() {
 
             <h2 className="text-xl font-bold text-text pt-4">3. Date Rescheduling Policy</h2>
             <p>
-              Glam and Go London understands that schedules change. You may request to shift your cohort booking date once at no cost, provided you give us at least 7 days' notice. Rescheduling requests submitted within 7 days of the course date are subject to a nominal rescheduling fee.
+              Glam & Go London understands that schedules change. Bookings may be rescheduled according to the following notice periods:
+            </p>
+            <ul className="list-disc list-inside space-y-2 pl-4">
+              <li><strong>21 days' notice or more:</strong> Rescheduling is free of charge (limited to one move per booking).</li>
+              <li><strong>8–20 days' notice:</strong> Rescheduling is subject to a £75 rescheduling fee.</li>
+              <li><strong>7 days or fewer, or no-show:</strong> The secure deposit is completely forfeited.</li>
+            </ul>
+            <p className="pt-2 border-t border-muted-light/60">
+              * Note: The statutory 14-day cancellation right (cooling-off period) for purchases made online takes precedence over all local terms.
             </p>
           </div>
         </div>
