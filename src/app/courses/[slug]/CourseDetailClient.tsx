@@ -6,6 +6,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { COURSES, VAT_CONFIG } from "@/data/courses";
+import { calculatePaymentPlan } from "@/utils/paymentPlan";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -24,6 +25,21 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
   const [ageCertified, setAgeCertified] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
   const [loading, setLoading] = useState(false);
+
+  // Calculate dynamic installment plan
+  const plan = course
+    ? calculatePaymentPlan(course.price, selectedDate || course.startDate, course.accreditation)
+    : null;
+
+  const getFutureDates = (num: number) => {
+    const dates = [];
+    for (let i = 1; i <= num; i++) {
+      const d = new Date();
+      d.setMonth(d.getMonth() + i);
+      dates.push(d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }));
+    }
+    return dates;
+  };
   
   // Secure verification states
   const [success, setSuccess] = useState(false);
@@ -535,6 +551,9 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                         required
                       >
                         <option value="full">Pay in Full (£{course.price})</option>
+                        {plan && (
+                          <option value="plan">Instalment Plan (Deposit £{plan.deposit} + {plan.numberOfInstallments} payments)</option>
+                        )}
                         <option value="installments3">3 Interest-Free Installments (£{installment3Val}/mo)</option>
                         <option value="installments4">4 Interest-Free Installments (£{installment4Val}/mo)</option>
                         <option value="deposit">Secure Place with a Deposit (£150)</option>
@@ -610,14 +629,36 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                         <span>VAT Component (20%):</span>
                         <span className="font-semibold text-text">£{(course.price / 1.2 * 0.2).toFixed(2)}</span>
                       </div>
-                      <div className="border-t border-muted-light/40 pt-2.5 flex justify-between items-center">
-                        <span className="font-bold text-text">Total Payable:</span>
-                        <span className="text-base font-extrabold text-accent">
-                          {paymentOption === "full" && `£${course.price}`}
-                          {paymentOption === "installments3" && `£${installment3Val} (1st of 3)`}
-                          {paymentOption === "installments4" && `£${installment4Val} (1st of 4)`}
-                          {paymentOption === "deposit" && "£150 (Deposit)"}
-                        </span>
+                      <div className="border-t border-muted-light/40 pt-2.5 flex flex-col space-y-1">
+                        <div className="flex justify-between items-center">
+                          <span className="font-bold text-text">Total Payable:</span>
+                          <span className="text-base font-extrabold text-accent">
+                            {paymentOption === "full" && `£${course.price}`}
+                            {paymentOption === "installments3" && `£${installment3Val} (1st of 3)`}
+                            {paymentOption === "installments4" && `£${installment4Val} (1st of 4)`}
+                            {paymentOption === "deposit" && "£150 (Deposit)"}
+                            {paymentOption === "plan" && plan && `£${plan.deposit} (Deposit)`}
+                          </span>
+                        </div>
+                        {paymentOption === "plan" && plan && (
+                          <div className="mt-3 pt-3 border-t border-dashed border-muted-light/60 text-[10px] text-muted space-y-1">
+                            <p className="font-semibold text-text uppercase text-[9px] tracking-wider mb-2">Instalment Schedule</p>
+                            <div className="flex justify-between">
+                              <span>Deposit (Due Today):</span>
+                              <span className="font-semibold text-text">£{plan.deposit}</span>
+                            </div>
+                            {getFutureDates(plan.numberOfInstallments).map((dateStr, idx) => (
+                              <div key={idx} className="flex justify-between">
+                                <span>Instalment {idx + 1} ({dateStr}):</span>
+                                <span className="font-semibold text-text">£{plan.installmentAmount.toFixed(2)}</span>
+                              </div>
+                            ))}
+                            <div className="flex justify-between pt-1.5 font-semibold text-text border-t border-muted-light/30 mt-1">
+                              <span>Total Plan Price:</span>
+                              <span>£{plan.totalPayable.toFixed(2)}</span>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
 

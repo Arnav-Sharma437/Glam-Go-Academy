@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { COURSES } from "@/data/courses";
+import { calculatePaymentPlan } from "@/utils/paymentPlan";
 
 export async function POST(request: NextRequest) {
   try {
@@ -46,6 +47,15 @@ export async function POST(request: NextRequest) {
     } else if (paymentOption === "installments4") {
       amountInPounds = Math.round(course.price / 4);
       descriptionPrefix = "1st of 4 Installments";
+    } else if (paymentOption === "plan") {
+      const plan = calculatePaymentPlan(course.price, selectedDate || course.startDate, course.accreditation);
+      if (plan) {
+        amountInPounds = plan.deposit;
+        descriptionPrefix = `Instalment Plan Deposit (£${plan.deposit} + ${plan.numberOfInstallments} payments)`;
+      } else {
+        amountInPounds = course.price;
+        descriptionPrefix = "Pay in Full";
+      }
     }
 
     const amountInPence = amountInPounds * 100;
