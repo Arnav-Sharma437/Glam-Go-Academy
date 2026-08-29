@@ -72,7 +72,7 @@ export default function ContactPage() {
 
                   <div className="border-t border-muted-light/40 pt-4">
                     <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Email Address</span>
-                    <a href="mailto:zuhayr@glamandgolondon.com" className="hover:text-accent transition-colors duration-200">zuhayr@glamandgolondon.com</a>
+                    <a href="mailto:glamandgohounslow@gmail.com" className="hover:text-accent transition-colors duration-200">glamandgohounslow@gmail.com</a>
                   </div>
 
                   <div className="border-t border-muted-light/40 pt-4">

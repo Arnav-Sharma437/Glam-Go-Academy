@@ -162,7 +162,7 @@ export default function Footer() {
               </div>
               <p className="pt-2 border-t border-muted-light/60">
                 <span className="font-semibold text-text">Phone:</span> 020 8577 1333<br />
-                <span className="font-semibold text-text">Email:</span> zuhayr@glamandgolondon.com
+                <span className="font-semibold text-text">Email:</span> <a href="mailto:glamandgohounslow@gmail.com" className="hover:text-accent transition-colors duration-200">glamandgohounslow@gmail.com</a>
               </p>
             </address>
           </div>
