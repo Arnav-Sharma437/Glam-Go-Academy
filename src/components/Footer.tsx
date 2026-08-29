@@ -118,6 +118,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               <li>
+                <Link href="/courses?category=vtct" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                  VTCT Qualifications (3 Programs)
+                </Link>
+              </li>
+              <li>
                 <Link href="/courses?category=injectables" className="text-xs text-muted hover:text-accent transition-colors duration-200">
                   Injectables (5 Courses)
                 </Link>

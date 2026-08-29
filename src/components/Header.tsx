@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const COURSE_CATEGORIES = [
+  { id: "vtct", name: "VTCT Qualifications" },
   { id: "injectables", name: "Injectables" },
   { id: "skin", name: "Skin" },
   { id: "wellness", name: "Wellness" },
