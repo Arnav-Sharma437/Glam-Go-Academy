@@ -42,6 +42,15 @@ export const metadata: Metadata = {
     title: "Glam and Go London | Professional Beauty Academy",
     description: "Train with Glam and Go London. Professional, hands-on cosmetic, hair, and beauty training courses. Enquire now and start your career.",
     images: ["https://academy.glamandgolondon.com/images/og-share.jpg"]
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" }
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" }
+    ]
   }
 };
 
