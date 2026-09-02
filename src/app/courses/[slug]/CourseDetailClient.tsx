@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { COURSES, VAT_CONFIG, getCourseDeadlineInfo, DEADLINE_CONFIG } from "@/data/courses";
+import { COURSES, VAT_CONFIG } from "@/data/courses";
 import { calculatePaymentPlan } from "@/utils/paymentPlan";
 
 interface PageProps {
@@ -219,14 +219,10 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                     </div>
                     <div>
                       <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Schedule</span>
-                      <span>{course.scheduleTime || DEADLINE_CONFIG.defaultScheduleTime}</span>
+                      <span>10:00–17:30</span>
                     </div>
                   </>
                 )}
-                <div>
-                  <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Enrolment Deadline</span>
-                  <span className="text-accent font-semibold">{getCourseDeadlineInfo(course, selectedDate).fullFormatted}</span>
-                </div>
                 <div>
                   <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Location</span>
                   <span>Central London Studio (Soho)</span>
@@ -527,25 +523,11 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                   </form>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col">
-                    <h3 className="font-sans text-xl font-bold text-text mb-4">Enrol in Program</h3>
+                    <h3 className="font-sans text-xl font-bold text-text mb-6">Enrol in Program</h3>
                     
-                    {/* Enrolment Deadline Notice with Time */}
-                    <div className="bg-accent/5 border border-accent/30 rounded-xl p-3.5 mb-5 flex items-center justify-between shadow-xs">
-                      <div className="flex items-center space-x-2">
-                        <span className="flex h-2 w-2 relative">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-                        </span>
-                        <span className="text-[10px] uppercase font-sans font-bold tracking-wider text-text">Enrolment Deadline</span>
-                      </div>
-                      <span className="text-xs font-sans font-bold text-accent">
-                        {getCourseDeadlineInfo(course, selectedDate).fullFormatted}
-                      </span>
-                    </div>
-
                     <div className="mb-4">
                       <label className="block text-[10px] uppercase tracking-wider text-muted font-sans font-semibold mb-2">
-                        Select Cohort Date & Schedule
+                        Select Cohort Date
                       </label>
                       <select
                         name="cohort"
@@ -556,7 +538,7 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                       >
                         {course.alternateDates.map((date) => (
                           <option key={date} value={date}>
-                            {date} {course.accreditation === "CPD" && !date.includes("(") ? `(${course.scheduleTime || DEADLINE_CONFIG.defaultScheduleTime})` : ""} — London Studio
+                            {date} (London Studio)
                           </option>
                         ))}
                       </select>
