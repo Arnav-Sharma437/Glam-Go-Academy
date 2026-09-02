@@ -17,6 +17,9 @@ export interface Course {
   category: "injectables" | "skin" | "wellness" | "foundation";
   startDate: string;
   alternateDates: string[];
+  scheduleTime?: string;
+  deadlineDate?: string;
+  deadlineTime?: string;
   description: string;
   price: number;
   image: string;
@@ -29,6 +32,80 @@ export interface Course {
 export const VAT_CONFIG = {
   status: ""
 };
+
+export interface DeadlineSettings {
+  defaultDeadlineTime: string;
+  defaultScheduleTime: string;
+  daysBeforeStartDeadline: number;
+}
+
+/**
+ * Centralized Deadline & Timing Configuration
+ * Change defaultDeadlineTime or daysBeforeStartDeadline here to update across the entire academy.
+ */
+export const DEADLINE_CONFIG: DeadlineSettings = {
+  // Global closing time for cohort enrolments (e.g., "23:59 GMT", "18:00 BST")
+  defaultDeadlineTime: "23:59 GMT",
+  // Standard clinical training session schedule
+  defaultScheduleTime: "10:00–17:30",
+  // Days before course start date when enrolment closes
+  daysBeforeStartDeadline: 7
+};
+
+/**
+ * Formats enrolment deadline with exact time.
+ * Respects per-course custom overrides (deadlineDate, deadlineTime) if configured.
+ */
+export function getCourseDeadlineInfo(course: Course, selectedCohortDate?: string): { deadlineText: string; timeText: string; fullFormatted: string } {
+  const time = course.deadlineTime || DEADLINE_CONFIG.defaultDeadlineTime;
+  
+  if (course.deadlineDate) {
+    return {
+      deadlineText: course.deadlineDate,
+      timeText: time,
+      fullFormatted: `${course.deadlineDate} at ${time}`
+    };
+  }
+
+  const dateStr = selectedCohortDate || course.startDate;
+
+  if (!dateStr || dateStr.toLowerCase().includes("self-paced") || dateStr.toLowerCase().includes("immediate")) {
+    return {
+      deadlineText: "Rolling Admission",
+      timeText: "Instant Access (24/7)",
+      fullFormatted: "Open Enrolment (24/7 Online)"
+    };
+  }
+
+  if (dateStr.toLowerCase().includes("waitlist") || dateStr.toLowerCase().includes("interest") || dateStr.toLowerCase().includes("enrolling") || dateStr.toLowerCase().includes("contact") || dateStr.toLowerCase().includes("soon")) {
+    return {
+      deadlineText: "Intake Active",
+      timeText: time,
+      fullFormatted: `Current Intake Closes at ${time}`
+    };
+  }
+
+  const parsed = new Date(dateStr);
+  if (!isNaN(parsed.getTime())) {
+    const deadlineDate = new Date(parsed.getTime() - DEADLINE_CONFIG.daysBeforeStartDeadline * 24 * 60 * 60 * 1000);
+    const formattedDate = deadlineDate.toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric"
+    });
+    return {
+      deadlineText: formattedDate,
+      timeText: time,
+      fullFormatted: `${formattedDate} at ${time}`
+    };
+  }
+
+  return {
+    deadlineText: dateStr,
+    timeText: time,
+    fullFormatted: `${dateStr} at ${time}`
+  };
+}
 
 export const COURSES: Course[] = [
   {

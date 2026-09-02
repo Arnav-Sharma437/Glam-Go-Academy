@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { COURSES } from "@/data/courses";
+import { COURSES, getCourseDeadlineInfo } from "@/data/courses";
 
 // Pull the 3 specific courses by their unique IDs from the unified database
 const FEATURED_COURSES = COURSES.filter(c => 
@@ -60,9 +60,14 @@ export default function FeaturedCourses() {
                   {course.title}
                 </h3>
                 
-                <span className="text-[10px] font-sans font-medium text-accent tracking-wide mb-3 block">
-                  Next Start Date: {course.startDate}
-                </span>
+                <div className="space-y-0.5 mb-3">
+                  <span className="text-[10px] font-sans font-medium text-accent tracking-wide block">
+                    Next Start: {course.startDate}
+                  </span>
+                  <span className="text-[9px] font-sans text-muted tracking-wide block">
+                    Deadline: {getCourseDeadlineInfo(course).fullFormatted}
+                  </span>
+                </div>
                 
                 <p className="font-sans text-xs text-muted leading-relaxed mb-4 flex-grow line-clamp-3">
                   {course.description}
