@@ -50,14 +50,6 @@ export default function ContactPage() {
                 
                 <div className="space-y-6 text-xs text-muted leading-relaxed">
                   <div>
-                    <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">London Studio (Training Location)</span>
-                    <p>
-                      Suite 4, 12 Old Compton Street<br />
-                      Soho, London, W1D 4TQ
-                    </p>
-                  </div>
-
-                  <div className="border-t border-muted-light/40 pt-4">
                     <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Head Office (Business Address)</span>
                     <p>
                       Unit 21, Treaty Centre, Hounslow High Street<br />
