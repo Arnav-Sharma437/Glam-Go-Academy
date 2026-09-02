@@ -145,24 +145,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Studio & Head Office Details */}
+          {/* Column 4: Head Office Details */}
           <div className="lg:col-span-3 flex flex-col">
             <h4 className="text-[10px] uppercase tracking-wider text-accent font-bold font-sans mb-4">
-              Studio & Office
+              Head Office
             </h4>
             <address className="not-italic font-sans text-xs text-muted leading-relaxed space-y-2.5">
               <div>
-                <span className="font-semibold text-text uppercase text-[8px] tracking-wider block mb-0.5">London Studio (Training Location)</span>
-                <p>
-                  Suite 4, 12 Old Compton Street<br />
-                  Soho, London, W1D 4TQ
-                </p>
-              </div>
-              <div className="pt-2 border-t border-muted-light/60">
                 <span className="font-semibold text-text uppercase text-[8px] tracking-wider block mb-0.5">Head Office (Business Address)</span>
                 <p>
                   Unit 21, Treaty Centre<br />
-                  Hounslow High Street,TW3 1ES
+                  Hounslow High Street, TW3 1ES
                 </p>
               </div>
               <p className="pt-2 border-t border-muted-light/60">
