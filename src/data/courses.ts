@@ -475,7 +475,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Intake Enrolling", "Contact Academy for Schedules"],
     description: "Approved and enrolling regulated beauty therapy qualification. VTCT registration, exam, and certification fees are included.",
     price: 2200,
-    image: "/images/courses/anatomy_physiology.png",
+    image: "/images/courses/vtct_level_2.png",
     duration: "Months-long Program",
     accreditation: "VTCT",
     prerequisites: {
@@ -508,7 +508,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Waitlist Registration Open"],
     description: "Awaiting awarding-body approval (Qualification No. 500/8964/X). Enrolling on waitlist only. VTCT registration, exam, and certification fees are included.",
     price: 2200,
-    image: "/images/courses/microneedling.png",
+    image: "/images/courses/vtct_level_3.png",
     duration: "Months-long Program",
     accreditation: "VTCT",
     prerequisites: {
@@ -538,7 +538,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Pre-registration Open"],
     description: "Coming soon regulated qualification. Register interest today to receive updates. VTCT registration, exam, and certification fees are included.",
     price: 0,
-    image: "/images/courses/advanced_injectables.png",
+    image: "/images/courses/vtct_level_4.png",
     duration: "Coming Soon",
     accreditation: "VTCT",
     prerequisites: {
