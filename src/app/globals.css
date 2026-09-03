@@ -150,3 +150,44 @@ footer ul li a {
     font-size: 15px !important;
   }
 }
+
+/* Paragraph & Body Text Legibility Enhancements */
+p {
+  font-size: 0.95rem; /* ~15.2px */
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.025rem; /* ~16.4px */
+    line-height: 1.7;
+  }
+}
+
+p.text-xs,
+.text-xs > p,
+p.text-muted {
+  font-size: 0.9rem !important; /* ~14.4px */
+  line-height: 1.6 !important;
+}
+
+@media (min-width: 768px) {
+  p.text-xs,
+  .text-xs > p,
+  p.text-muted {
+    font-size: 0.95rem !important; /* ~15.2px */
+  }
+}
+
+p.text-sm,
+.text-sm > p {
+  font-size: 1rem !important; /* ~16px */
+  line-height: 1.65 !important;
+}
+
+@media (min-width: 768px) {
+  p.text-sm,
+  .text-sm > p {
+    font-size: 1.075rem !important; /* ~17.2px */
+  }
+}
