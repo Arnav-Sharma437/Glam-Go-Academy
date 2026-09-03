@@ -12,45 +12,45 @@ Place all course card and course detail header images in this folder.
 ### Course Image Names & Mappings:
 
 #### 💉 CPD Aesthetics & Injectables Courses:
-1. **`foundation_injectables.jpg`**
+1. **`foundation_injectables.png`**
    - **Course:** Foundation Injectables
-2. **`dermal_fillers.jpg`**
+2. **`dermal_fillers.png`**
    - **Course:** Dermal Fillers
-3. **`advanced_injectables.jpg`**
+3. **`advanced_injectables.png`**
    - **Course:** Advanced Injectables
-4. **`russian_lip.jpg`**
+4. **`russian_lip.png`**
    - **Course:** Russian Lip Masterclass
-5. **`fat_dissolving.jpg`**
+5. **`fat_dissolving.png`**
    - **Course:** Fat Dissolving
 
 #### 💆 Skin Care Courses:
-6. **`microneedling.jpg`**
+6. **`microneedling.png`**
    - **Course:** Microneedling
-7. **`dermaplaning.jpg`**
+7. **`dermaplaning.png`**
    - **Course:** Dermaplaning
-8. **`prp_therapy.jpg`**
+8. **`prp_therapy.png`**
    - **Course:** PRP Therapy
 
 #### 🌿 Wellness & Infusions Courses:
-9. **`vitamin_injections.jpg`**
+9. **`vitamin_injections.png`**
    - **Course:** Vitamin Injections
-10. **`biotin_glutathione.jpg`**
+10. **`biotin_glutathione.png`**
     - **Course:** Biotin & Glutathione
-11. **`iv_nutrition.jpg`**
+11. **`iv_nutrition.png`**
     - **Course:** IV Nutrition Therapy
-12. **`phlebotomy.jpg`**
+12. **`phlebotomy.png`**
     - **Course:** Phlebotomy Training
 
 #### 🔬 Foundation Science Course:
-13. **`anatomy_physiology.jpg`**
+13. **`anatomy_physiology.png`**
     - **Course:** Anatomy & Physiology for Aesthetics
 
 ---
 
 #### 🎓 VTCT Regulated Qualifications:
-14. **`vtct_level_2.jpg`** (or uses `anatomy_physiology.jpg`)
+14. **`vtct_level_2.png`** (or uses `anatomy_physiology.png`)
     - **Qualification:** VTCT Level 2 Diploma in Beauty Therapy
-15. **`vtct_level_3.jpg`** (or uses `microneedling.jpg`)
+15. **`vtct_level_3.png`** (or uses `microneedling.png`)
     - **Qualification:** VTCT Level 3 Diploma in Beauty Therapy Treatments
-16. **`vtct_level_4.jpg`** (or uses `advanced_injectables.jpg`)
+16. **`vtct_level_4.png`** (or uses `advanced_injectables.png`)
     - **Qualification:** VTCT Level 4 Beauty Therapy

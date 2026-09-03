@@ -46,7 +46,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Immediate Access (Online Module)"],
     description: "The essential theory foundation covering skeletal, muscular, circulatory, and skin systems necessary for clinical cosmetic treatments.",
     price: 435,
-    image: "/images/courses/anatomy_physiology.jpg",
+    image: "/images/courses/anatomy_physiology.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -79,7 +79,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Oct 10, 2026", "Nov 07, 2026", "Dec 05, 2026"],
     description: "Learn intramuscular injection techniques, client screening, and record-keeping for vitamin wellness therapies.",
     price: 545,
-    image: "/images/courses/vitamin_injections.jpg",
+    image: "/images/courses/vitamin_injections.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -112,7 +112,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Oct 18, 2026", "Nov 15, 2026", "Dec 13, 2026"],
     description: "Extend your injection menu with hair, skin, and antioxidant body support wellness protocols.",
     price: 545,
-    image: "/images/courses/biotin_glutathione.jpg",
+    image: "/images/courses/biotin_glutathione.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -145,7 +145,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Sept 24, 2026", "Oct 22, 2026", "Nov 19, 2026"],
     description: "Master professional microneedling for skin and hair. Learn skincare theory, pen protocols, and hands-on practice.",
     price: 655,
-    image: "/images/courses/microneedling.jpg",
+    image: "/images/courses/microneedling.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -178,7 +178,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Sept 18, 2026", "Oct 16, 2026", "Nov 13, 2026"],
     description: "Learn safe blade work, skin preparation, and finishing to deliver instantly smoother and brighter skin for clients.",
     price: 655,
-    image: "/images/courses/dermaplaning.jpg",
+    image: "/images/courses/dermaplaning.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -211,7 +211,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Oct 25, 2026", "Nov 22, 2026", "Dec 20, 2026"],
     description: "Master venepuncture techniques from first draw to safe disposal, practicing on simulated arms and live models.",
     price: 655,
-    image: "/images/courses/phlebotomy.jpg",
+    image: "/images/courses/phlebotomy.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -244,7 +244,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Oct 12, 2026", "Nov 09, 2026", "Dec 07, 2026"],
     description: "Master localized fat reduction treatments – covering client assessment, injection techniques, and safety aftercare.",
     price: 875,
-    image: "/images/courses/fat_dissolving.jpg",
+    image: "/images/courses/fat_dissolving.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -277,7 +277,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Oct 05, 2026", "Nov 02, 2026", "Nov 30, 2026"],
     description: "Learn Platelet-Rich Plasma procedures – the ultimate autologous treatment for skin rejuvenation and hair stimulation.",
     price: 875,
-    image: "/images/courses/prp_therapy.jpg",
+    image: "/images/courses/prp_therapy.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -310,7 +310,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Oct 22, 2026", "Nov 19, 2026", "Dec 17, 2026"],
     description: "Master cannulation setups, drip bag assembly, vitamin cocktails, and safe infusion monitoring.",
     price: 875,
-    image: "/images/courses/iv_nutrition.jpg",
+    image: "/images/courses/iv_nutrition.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -343,7 +343,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Sept 15, 2026", "Oct 13, 2026", "Nov 10, 2026"],
     description: "Learn essential facial anatomy, analysis, and upper face needle techniques on live models under expert supervision.",
     price: 985,
-    image: "/images/courses/foundation_injectables.jpg",
+    image: "/images/courses/foundation_injectables.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -376,7 +376,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Sept 20, 2026", "Oct 18, 2026", "Nov 15, 2026"],
     description: "Learn lip and nasolabial foundation techniques with live models, full consultation, and complication protocols.",
     price: 985,
-    image: "/images/courses/dermal_fillers.jpg",
+    image: "/images/courses/dermal_fillers.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -409,7 +409,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Sept 28, 2026", "Oct 26, 2026", "Nov 23, 2026"],
     description: "Master full face advanced needle techniques for experienced practitioners. Taught in small groups of four.",
     price: 1205,
-    image: "/images/courses/advanced_injectables.jpg",
+    image: "/images/courses/advanced_injectables.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -442,7 +442,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Oct 02, 2026", "Oct 30, 2026", "Nov 27, 2026"],
     description: "Master the flat-profile Russian lip style and mid-face volume restoration technique.",
     price: 1315,
-    image: "/images/courses/russian_lip.jpg",
+    image: "/images/courses/russian_lip.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
     prerequisites: {
@@ -475,7 +475,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Intake Enrolling", "Contact Academy for Schedules"],
     description: "Approved and enrolling regulated beauty therapy qualification. VTCT registration, exam, and certification fees are included.",
     price: 2200,
-    image: "/images/courses/anatomy_physiology.jpg",
+    image: "/images/courses/anatomy_physiology.png",
     duration: "Months-long Program",
     accreditation: "VTCT",
     prerequisites: {
@@ -508,7 +508,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Waitlist Registration Open"],
     description: "Awaiting awarding-body approval (Qualification No. 500/8964/X). Enrolling on waitlist only. VTCT registration, exam, and certification fees are included.",
     price: 2200,
-    image: "/images/courses/microneedling.jpg",
+    image: "/images/courses/microneedling.png",
     duration: "Months-long Program",
     accreditation: "VTCT",
     prerequisites: {
@@ -538,7 +538,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Pre-registration Open"],
     description: "Coming soon regulated qualification. Register interest today to receive updates. VTCT registration, exam, and certification fees are included.",
     price: 0,
-    image: "/images/courses/advanced_injectables.jpg",
+    image: "/images/courses/advanced_injectables.png",
     duration: "Coming Soon",
     accreditation: "VTCT",
     prerequisites: {

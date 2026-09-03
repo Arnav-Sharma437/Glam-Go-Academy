@@ -87,7 +87,7 @@ export default function AboutPage() {
                 {/* Large Background Image */}
                 <div className="col-span-12 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg border border-muted-light/60">
                   <Image
-                    src="/images/courses/foundation_injectables.jpg"
+                    src="/images/courses/foundation_injectables.png"
                     alt="Supervised Aesthetics Practice"
                     fill
                     className="object-cover"
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 {/* Small Overlay Image */}
                 <div className="absolute -bottom-10 -right-6 w-1/3 aspect-square rounded-2xl overflow-hidden shadow-2xl border-2 border-bg hidden md:block">
                   <Image
-                    src="/images/courses/vitamin_injections.jpg"
+                    src="/images/courses/vitamin_injections.png"
                     alt="Clinical Setup"
                     fill
                     className="object-cover"
@@ -316,7 +316,7 @@ export default function AboutPage() {
                 {/* Main Studio Image */}
                 <div className="col-span-12 relative aspect-[16/10] rounded-3xl overflow-hidden shadow-xl border border-muted-light/40 z-10">
                   <Image
-                    src="/images/courses/biotin_glutathione.jpg"
+                    src="/images/courses/biotin_glutathione.png"
                     alt="Glam and Go London Aesthetics Studio"
                     fill
                     className="object-cover"
