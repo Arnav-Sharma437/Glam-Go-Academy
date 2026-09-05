@@ -37,6 +37,81 @@ export const COURSES: Course[] = [
   // 1. CPD INJECTABLES (CORE AESTHETIC COURSES)
   // ==========================================
   {
+    id: "foundation-upper-face-lines",
+    slug: "foundation-upper-face-lines",
+    title: "Foundation Facial Line Injections (Upper Face)",
+    publicName: "Foundation Facial Line Injections (Upper Face Lines)",
+    certifiedTitle: "CPD Certified Certificate in Foundation Facial Line Aesthetics",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Beginner",
+    level: "Beginner",
+    category: "injectables",
+    startDate: "Sept 12, 2026",
+    alternateDates: ["Sept 12, 2026", "Oct 10, 2026", "Nov 07, 2026"],
+    description: "Dedicated CPD certification masterclass focusing specifically on the primary three upper-face treatment zones: Forehead lines, Frown/brow lines, and Crow's feet. Gain comprehensive anatomy training, sterile preparation, dosage calculation, and supervised live model injecting.",
+    price: 985,
+    image: "/images/courses/foundation_upper_face.png",
+    duration: "1 Day (10:00 - 17:30)",
+    accreditation: "CPD",
+    prerequisites: {
+      qualification: "Medical professional (Doctor, Nurse, Dentist, Pharmacist) or qualified practitioner (NVQ/VTCT Level 3 Beauty with needle experience)",
+      minAge: 21,
+      insurance: "Eligible for cosmetic practitioner indemnity insurance on completion"
+    },
+    minimumAge: 21,
+    curriculum: [
+      "Forehead lines (frontalis muscle relaxation & landmark mapping)",
+      "Frown / brow lines (glabella complex & corrugator supercilii)",
+      "Crow's feet (lateral orbicularis oculi precision micro-injections)",
+      "Facial musculature anatomy, dynamic vs. static lines, and depth selection",
+      "Sterile product reconstitution, unit calculations, and syringe ergonomics",
+      "Client medical consultation, photographic records, and contraindication screening",
+      "Emergency protocols, ptosis prevention, and complication management"
+    ]
+  },
+  {
+    id: "advanced-full-face-body-lines",
+    slug: "advanced-full-face-body-lines",
+    title: "Advanced Full-Face & Body Line Injections",
+    publicName: "Advanced Full-Face & Body Line Injections (14 Specialized Areas)",
+    certifiedTitle: "CPD Certified Certificate in Advanced Facial & Body Aesthetics",
+    accreditationType: "CPD",
+    certificateNumber: "",
+    difficulty: "Advanced",
+    level: "Advanced",
+    category: "injectables",
+    startDate: "Sept 26, 2026",
+    alternateDates: ["Sept 26, 2026", "Oct 24, 2026", "Nov 21, 2026"],
+    description: "Intensive advanced CPD masterclass covering 14 specialized full-face and body treatment indications. Master non-surgical facial sculpting, lip flips, lower face contouring, bruxism relief, neck rejuvenation, hyperhidrosis, and Korean glass micro-facial protocols.",
+    price: 1205,
+    image: "/images/courses/advanced_full_face.png",
+    duration: "1 Day (10:00 - 17:30)",
+    accreditation: "CPD",
+    prerequisites: {
+      qualification: "Foundation Injectables / Foundation Facial Lines Certificate with minimum 6 months clinical experience",
+      minAge: 21,
+      insurance: "Requires active aesthetic indemnity insurance"
+    },
+    minimumAge: 21,
+    curriculum: [
+      "Brow lift (lateral orbicularis elevation & brow shaping)",
+      "Lip flip (orbicularis oris superficial border relaxation)",
+      "Bunny lines (nasalis muscle smoothing)",
+      "Gummy smile (levator labii superioris alaeque nasi relaxation)",
+      "Nose lift & tip elevation protocols",
+      "Nose slimming injection landmarks",
+      "Lip lines / smoker's lines perioral smoothing",
+      "Marionette lines & downturned mouth corners (depressor anguli oris)",
+      "Cobble chin (mentalis muscle smoothing)",
+      "Jaw slimming (masseter hypertrophy reduction)",
+      "Teeth grinding (Bruxism) clinical relief protocols",
+      "Neck slimming & platysmal neck bands (Nefertiti lift)",
+      "Hyperhidrosis (excessive underarm axillary sweating protocols)",
+      "Korean glass facial (pore-refining micro-droplet intradermal technique)"
+    ]
+  },
+  {
     id: "foundation-injectables",
     slug: "foundation-injectables",
     title: "Foundation Injectables",
