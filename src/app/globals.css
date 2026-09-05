@@ -119,18 +119,16 @@ a, button, select, input, textarea, [role="button"] {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Explicit Header & Footer Menu Link Increases */
-header nav a,
-header nav button,
-.hover-underline-reveal {
-  font-size: 14px;
+/* Header Primary Nav Link Styling */
+header nav > a,
+header nav > div > a {
+  font-size: 13.5px;
 }
 
 @media (min-width: 1024px) {
-  header nav a,
-  header nav button,
-  .hover-underline-reveal {
-    font-size: 15.5px !important;
+  header nav > a,
+  header nav > div > a {
+    font-size: 14.5px !important;
   }
 }
 
