@@ -121,17 +121,24 @@ export default async function CoursesPage({ searchParams }: PageProps) {
             </p>
           </div>
 
-          {/* NHS Discount Notice Banner (Text-based compliant notice) */}
+          {/* NHS Discount Notice Banner */}
           <div className="max-w-3xl mx-auto mb-10 bg-card-bg border border-accent/30 rounded-xl p-4 sm:p-5 flex items-center gap-4 shadow-sm">
-            <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center shrink-0">
-              <span className="font-sans font-bold text-accent text-xs">NHS</span>
+            <div className="relative w-16 h-8 shrink-0 flex items-center justify-center rounded overflow-hidden">
+              <Image
+                src="/images/nhs_logo.png"
+                alt="NHS Logo"
+                width={70}
+                height={30}
+                className="object-contain w-auto h-7"
+                priority
+              />
             </div>
             <div className="flex-1">
               <h2 className="font-sans text-xs font-bold text-text uppercase tracking-wider mb-0.5">
                 NHS Staff Discount Available
               </h2>
               <p className="font-sans text-xs text-muted leading-relaxed">
-                We proudly offer a <strong>10% tuition discount</strong> on all CPD certified courses and training programs for verified NHS healthcare staff. Please present your valid NHS ID during enquiry.
+                We proudly offer a <strong className="text-text">10% tuition discount</strong> on all CPD certified courses and training programs for verified NHS healthcare staff. Please present your valid NHS ID during enquiry.
               </p>
             </div>
           </div>

@@ -106,11 +106,12 @@ export default async function Page({ params, searchParams }: PageProps) {
       "courseMode": "In Person",
       "location": {
         "@type": "Place",
-        "name": "Glam & Go London Soho Studio",
+        "name": "Glam & Go London Academy",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Soho Studio",
-          "addressLocality": "London",
+          "streetAddress": "Unit 2, 77-79 High Street",
+          "addressLocality": "Hounslow",
+          "postalCode": "TW3 1RB",
           "addressCountry": "GB"
         }
       }
