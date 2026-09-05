@@ -7,10 +7,10 @@ import { usePathname } from "next/navigation";
 
 const COURSE_CATEGORIES = [
   { id: "vtct", name: "VTCT Qualifications" },
+  { id: "cpd", name: "CPD Courses" },
   { id: "injectables", name: "Injectables" },
   { id: "skin", name: "Skin" },
-  { id: "wellness", name: "Wellness" },
-  { id: "foundation", name: "Foundation" }
+  { id: "wellness", name: "Wellness" }
 ];
 
 export default function Header() {

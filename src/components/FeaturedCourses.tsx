@@ -35,7 +35,7 @@ export default function FeaturedCourses() {
               className="group flex flex-col bg-card-bg border border-muted-light/60 rounded-2xl overflow-hidden transition-all duration-300 hover:border-accent/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 cursor-pointer"
             >
               {/* Image */}
-              <div className="relative aspect-[4/3] w-full bg-muted-light overflow-hidden rounded-t-2xl">
+              <Link href={`/courses/${course.slug}`} className="relative aspect-[4/3] w-full bg-muted-light overflow-hidden rounded-t-2xl block">
                 <Image
                   src={course.image}
                   alt={course.title}
@@ -44,7 +44,7 @@ export default function FeaturedCourses() {
                   className="object-cover transition-transform duration-700 group-hover:scale-103"
                   loading="lazy"
                 />
-                <div className="absolute top-3 left-3 flex gap-1.5">
+                <div className="absolute top-3 left-3 flex gap-1.5 z-10">
                   <span className="px-2.5 py-1 bg-bg/90 backdrop-blur-sm text-text text-[8px] uppercase tracking-wider font-bold font-sans border border-muted-light/40 rounded-md">
                     {course.level}
                   </span>
@@ -52,12 +52,14 @@ export default function FeaturedCourses() {
                     {course.accreditation}
                   </span>
                 </div>
-              </div>
+              </Link>
 
               {/* Body */}
               <div className="p-5 flex-grow flex flex-col">
-                <h3 className="font-sans text-sm font-bold text-text mb-1.5 group-hover:text-accent transition-colors duration-300 min-h-[40px] line-clamp-2">
-                  {course.title}
+                <h3 className="font-sans text-sm font-bold text-text mb-1.5 min-h-[40px] line-clamp-2">
+                  <Link href={`/courses/${course.slug}`} className="hover:text-accent transition-colors duration-300">
+                    {course.title}
+                  </Link>
                 </h3>
                 
                 <span className="text-[10px] font-sans font-medium text-accent tracking-wide mb-3 block">

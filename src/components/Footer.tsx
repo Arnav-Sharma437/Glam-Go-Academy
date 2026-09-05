@@ -123,23 +123,23 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/courses?category=cpd" className="text-xs text-muted hover:text-accent transition-colors duration-200">
+                  CPD Courses & Masterclasses
+                </Link>
+              </li>
+              <li>
                 <Link href="/courses?category=injectables" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Injectables (5 Courses)
+                  Cosmetic Injectables
                 </Link>
               </li>
               <li>
                 <Link href="/courses?category=skin" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Skin Care (3 Courses)
+                  Advanced Skin Care
                 </Link>
               </li>
               <li>
                 <Link href="/courses?category=wellness" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Wellness Infusions (3 Courses)
-                </Link>
-              </li>
-              <li>
-                <Link href="/courses?category=foundation" className="text-xs text-muted hover:text-accent transition-colors duration-200">
-                  Foundation Science (2 Courses)
+                  IV Drips & Wellness
                 </Link>
               </li>
             </ul>

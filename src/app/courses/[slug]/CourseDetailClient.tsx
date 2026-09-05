@@ -293,6 +293,22 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                 {course.description}
               </p>
 
+              {course.benefits && course.benefits.length > 0 && (
+                <div className="mb-8 bg-card-bg border border-muted-light/60 rounded-2xl p-6 shadow-sm">
+                  <h3 className="font-sans text-xs font-bold text-text uppercase tracking-wider mb-4 text-accent">
+                    Key Treatment Focus & Targeted Benefits
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {course.benefits.map((b, i) => (
+                      <div key={i} className="bg-bg/60 p-4 rounded-xl border border-muted-light/50">
+                        <strong className="block font-sans text-xs font-bold text-text mb-1">{b.title}</strong>
+                        <p className="font-sans text-xs text-muted leading-relaxed">{b.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <h2 className="font-sans text-lg font-bold text-text mb-3">Curriculum Overview</h2>
               <ul className="space-y-4 mb-8">
                 {course.curriculum.map((item, index) => (
