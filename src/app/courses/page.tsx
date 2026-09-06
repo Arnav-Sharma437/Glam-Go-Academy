@@ -70,9 +70,16 @@ function CourseCard({ course }: { course: Course }) {
             <span className="text-[9px] uppercase tracking-wider text-muted font-sans font-bold">
               Tuition Fees
             </span>
-            <span className="font-sans font-bold text-text text-xs sm:text-sm">
-              {course.price > 0 ? `£${course.price}` : "Coming Soon"}
-            </span>
+            <div className="flex items-baseline gap-2">
+              {course.originalPrice && course.originalPrice > course.price && (
+                <span className="font-sans text-[11px] text-muted line-through">
+                  £{course.originalPrice}
+                </span>
+              )}
+              <span className="font-sans font-bold text-text text-xs sm:text-sm">
+                {course.price > 0 ? `£${course.price}` : "Coming Soon"}
+              </span>
+            </div>
           </div>
 
           <Link

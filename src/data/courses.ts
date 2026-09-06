@@ -19,6 +19,7 @@ export interface Course {
   alternateDates: string[];
   description: string;
   price: number;
+  originalPrice?: number;
   image: string;
   duration: string;
   accreditation: "CPD" | "VTCT";
@@ -51,6 +52,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Sept 12, 2026", "Oct 10, 2026", "Nov 07, 2026"],
     description: "Dedicated CPD certification masterclass focusing specifically on the primary three upper-face treatment zones: Forehead lines, Frown/brow lines, and Crow's feet. Gain comprehensive anatomy training, sterile preparation, dosage calculation, and supervised live model injecting.",
     price: 985,
+    originalPrice: 1500,
     image: "/images/courses/foundation_upper_face.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",
@@ -85,6 +87,7 @@ export const COURSES: Course[] = [
     alternateDates: ["Sept 26, 2026", "Oct 24, 2026", "Nov 21, 2026"],
     description: "Intensive advanced CPD masterclass covering 14 specialized full-face and body treatment indications. Master non-surgical facial sculpting, lip flips, lower face contouring, bruxism relief, neck rejuvenation, hyperhidrosis, and Korean glass micro-facial protocols.",
     price: 1205,
+    originalPrice: 2000,
     image: "/images/courses/advanced_full_face.png",
     duration: "1 Day (10:00 - 17:30)",
     accreditation: "CPD",

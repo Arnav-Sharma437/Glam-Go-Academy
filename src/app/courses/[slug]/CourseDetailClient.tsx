@@ -207,6 +207,20 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
               </h1>
 
               <div className="flex flex-wrap gap-y-4 gap-x-8 pb-6 border-b border-muted-light/60 mb-8 font-sans text-xs tracking-wide text-muted">
+                {course.originalPrice && course.originalPrice > course.price ? (
+                  <div>
+                    <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Tuition Fee</span>
+                    <span className="flex items-baseline gap-1.5">
+                      <span className="text-xs line-through text-muted font-normal">£{course.originalPrice}</span>
+                      <span className="text-accent font-bold text-sm">£{course.price}</span>
+                    </span>
+                  </div>
+                ) : (
+                  <div>
+                    <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Tuition Fee</span>
+                    <span className="text-text font-bold text-sm">{course.price > 0 ? `£${course.price}` : "Coming Soon"}</span>
+                  </div>
+                )}
                 <div>
                   <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Duration</span>
                   <span>{course.accreditation === "CPD" ? "1 Day" : course.duration}</span>
@@ -225,7 +239,7 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                 )}
                 <div>
                   <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Location</span>
-                  <span>Central London Studio (Soho)</span>
+                  <span>London Training Academy</span>
                 </div>
                 <div>
                   <span className="block font-semibold text-text uppercase text-[10px] tracking-wider mb-1">Age Limit</span>
@@ -639,8 +653,14 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                     </div>
 
                     <div className="bg-muted-light/30 p-4 border border-muted-light/40 space-y-3 mb-6 rounded-lg font-sans text-xs">
+                      {course.originalPrice && course.originalPrice > course.price && (
+                        <div className="flex justify-between items-center text-muted">
+                          <span>Standard Course Fee:</span>
+                          <span className="line-through text-muted">£{course.originalPrice.toFixed(2)}</span>
+                        </div>
+                      )}
                       <div className="flex justify-between items-center text-muted">
-                        <span>Course Price (VAT inclusive):</span>
+                        <span>{course.originalPrice ? "Promotional Price (VAT inclusive):" : "Course Price (VAT inclusive):"}</span>
                         <span className="font-semibold text-text">£{course.price.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between items-center text-muted">
