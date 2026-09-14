@@ -74,15 +74,15 @@ export default function AboutPage() {
               {/* Luxury counters grid */}
               <div className="grid grid-cols-3 gap-6 pt-8 border-t border-muted-light/60">
                 <div className="space-y-1">
-                  <span className="block text-3xl font-extrabold text-accent tracking-tight">13+</span>
-                  <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">Elite Modules</span>
+                  <span className="block text-xl sm:text-2xl font-extrabold text-accent tracking-tight">VTCT & CPD</span>
+                  <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">Accredited Pathways</span>
                 </div>
                 <div className="space-y-1">
-                  <span className="block text-3xl font-extrabold text-accent tracking-tight">1:1</span>
-                  <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">Clinical Mentoring</span>
+                  <span className="block text-xl sm:text-2xl font-extrabold text-accent tracking-tight">Hands-On</span>
+                  <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">Supervised Training</span>
                 </div>
                 <div className="space-y-1">
-                  <span className="block text-3xl font-extrabold text-accent tracking-tight">Soho</span>
+                  <span className="block text-xl sm:text-2xl font-extrabold text-accent tracking-tight">Soho</span>
                   <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">London W1D</span>
                 </div>
               </div>
