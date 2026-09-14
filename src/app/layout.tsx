@@ -18,19 +18,20 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://glamandgoacademy.com"),
   title: "Glam and Go London | Professional Beauty Academy",
   description: "Train with Glam and Go London. Professional, hands-on cosmetic, hair, and beauty training courses. Enquire now and start your career.",
   authors: [{ name: "Glam and Go London" }],
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: "https://academy.glamandgolondon.com",
+    url: "https://glamandgoacademy.com",
     title: "Glam and Go London | Professional Beauty Academy",
     description: "Train with Glam and Go London. Professional, hands-on cosmetic, hair, and beauty training courses. Enquire now and start your career.",
     siteName: "Glam and Go London",
     images: [
       {
-        url: "https://academy.glamandgolondon.com/images/og-share.jpg",
+        url: "https://glamandgoacademy.com/images/og-share.jpg",
         width: 1200,
         height: 630,
         alt: "Glam and Go London Academy"
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Glam and Go London | Professional Beauty Academy",
     description: "Train with Glam and Go London. Professional, hands-on cosmetic, hair, and beauty training courses. Enquire now and start your career.",
-    images: ["https://academy.glamandgolondon.com/images/og-share.jpg"]
+    images: ["https://glamandgoacademy.com/images/og-share.jpg"]
   },
   icons: {
     icon: [
@@ -91,8 +92,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
               "name": "Glam and Go London",
-              "url": "https://academy.glamandgolondon.com",
-              "logo": "https://academy.glamandgolondon.com/images/logo.png",
+              "url": "https://glamandgoacademy.com",
+              "logo": "https://glamandgoacademy.com/images/logo.png",
               "description": "Professional cosmetics, aesthetics, and regulated beauty qualifications academy in London.",
               "address": {
                 "@type": "PostalAddress",

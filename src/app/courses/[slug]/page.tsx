@@ -20,10 +20,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = `${course.publicName} Training | Glam and Go London`;
   const description = course.description;
-  const canonicalUrl = `https://academy.glamandgolondon.com/courses/${course.slug}`;
+  const canonicalUrl = `https://glamandgoacademy.com/courses/${course.slug}`;
   const ogImage = course.image.startsWith("http")
     ? course.image
-    : `https://academy.glamandgolondon.com${course.image}`;
+    : `https://glamandgoacademy.com${course.image}`;
 
   return {
     title,
@@ -73,19 +73,19 @@ export default async function Page({ params, searchParams }: PageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://academy.glamandgolondon.com"
+        "item": "https://glamandgoacademy.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Courses",
-        "item": "https://academy.glamandgolondon.com/courses"
+        "item": "https://glamandgoacademy.com/courses"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": course.publicName,
-        "item": `https://academy.glamandgolondon.com/courses/${course.slug}`
+        "item": `https://glamandgoacademy.com/courses/${course.slug}`
       }
     ]
   };
@@ -99,7 +99,7 @@ export default async function Page({ params, searchParams }: PageProps) {
     "provider": {
       "@type": "EducationalOrganization",
       "name": "Glam and Go London",
-      "url": "https://academy.glamandgolondon.com"
+      "url": "https://glamandgoacademy.com"
     },
     "hasCourseInstance": {
       "@type": "CourseInstance",

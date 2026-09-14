@@ -9,19 +9,19 @@ export const metadata: Metadata = {
   description:
     "Discover beauty therapy qualifications, VTCT certified pathways, CPD aesthetics masterclasses, skin & wellness training, and 1-to-1 refresher courses at Glam and Go London.",
   alternates: {
-    canonical: "https://academy.glamandgolondon.com/about",
+    canonical: "https://glamandgoacademy.com/about",
   },
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: "https://academy.glamandgolondon.com/about",
+    url: "https://glamandgoacademy.com/about",
     title: "Why Train With Us | Glam and Go London Academy",
     description:
       "Discover beauty therapy qualifications, VTCT certified pathways, CPD aesthetics masterclasses, skin & wellness training, and 1-to-1 refresher courses at Glam and Go London.",
     siteName: "Glam and Go London",
     images: [
       {
-        url: "https://academy.glamandgolondon.com/images/hero_aesthetics.jpg",
+        url: "https://glamandgoacademy.com/images/hero_aesthetics.jpg",
         width: 1200,
         height: 630,
         alt: "Beauty and Aesthetics Clinical Training at Glam and Go London Academy",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Why Train With Us | Glam and Go London Academy",
     description:
       "Discover beauty therapy qualifications, VTCT certified pathways, CPD aesthetics masterclasses, skin & wellness training, and 1-to-1 refresher courses at Glam and Go London.",
-    images: ["https://academy.glamandgolondon.com/images/hero_aesthetics.jpg"],
+    images: ["https://glamandgoacademy.com/images/hero_aesthetics.jpg"],
   },
 };
 
