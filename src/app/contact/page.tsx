@@ -50,10 +50,11 @@ export default function ContactPage() {
                 
                 <div className="space-y-6 text-xs text-muted leading-relaxed">
                   <div>
-                    <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Head Office (Business Address)</span>
+                    <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-1">Academy Venue & Office</span>
                     <p>
-                      Unit 21, Treaty Centre, Hounslow High Street<br />
-                      Hounslow, TW3 1ES
+                      Unit 21, Hounslow High Street<br />
+                      Hounslow, TW3 1ES<br />
+                      United Kingdom
                     </p>
                   </div>
                   

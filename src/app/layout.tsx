@@ -94,12 +94,12 @@ export default function RootLayout({
               "name": "Glam and Go London",
               "url": "https://glamandgoacademy.com",
               "logo": "https://glamandgoacademy.com/images/logo.png",
-              "description": "Professional cosmetics, aesthetics, and regulated beauty qualifications academy in London.",
+              "description": "Professional cosmetics, aesthetics, and regulated beauty qualifications academy in Hounslow, London.",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Soho Studio",
-                "addressLocality": "London",
-                "postalCode": "W1D",
+                "streetAddress": "Unit 21, Hounslow High Street",
+                "addressLocality": "Hounslow",
+                "postalCode": "TW3 1ES",
                 "addressCountry": "GB"
               }
             })

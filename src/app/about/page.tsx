@@ -68,7 +68,7 @@ export default function AboutPage() {
               </div>
               
               <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-md">
-                We deliver recognized VTCT beauty therapy qualifications, CPD-certified cosmetic masterclasses, advanced skin therapies, wellness infusions, and bespoke practical refresher courses. Based in Central London, our programs combine comprehensive theoretical understanding with supervised hands-on practice.
+                We deliver recognized VTCT beauty therapy qualifications, CPD-certified cosmetic masterclasses, advanced skin therapies, wellness infusions, and bespoke practical refresher courses. Based in Hounslow, London, our programs combine comprehensive theoretical understanding with supervised hands-on practice.
               </p>
               
               {/* Luxury counters grid */}
@@ -78,12 +78,12 @@ export default function AboutPage() {
                   <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">Accredited Pathways</span>
                 </div>
                 <div className="space-y-1">
-                  <span className="block text-xl sm:text-2xl font-extrabold text-accent tracking-tight">Hands-On</span>
-                  <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">Supervised Training</span>
+                  <span className="block text-xl sm:text-2xl font-extrabold text-accent tracking-tight">2–8</span>
+                  <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">Typical Class Sizes</span>
                 </div>
                 <div className="space-y-1">
-                  <span className="block text-xl sm:text-2xl font-extrabold text-accent tracking-tight">Soho</span>
-                  <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">London W1D</span>
+                  <span className="block text-xl sm:text-2xl font-extrabold text-accent tracking-tight">Hounslow</span>
+                  <span className="block text-[8px] uppercase tracking-wider text-muted font-bold leading-tight">London TW3 1ES</span>
                 </div>
               </div>
             </div>
@@ -149,14 +149,14 @@ export default function AboutPage() {
                   Our Foundation
                 </span>
                 <h2 className="text-3xl font-extrabold tracking-tight leading-tight text-text">
-                  Comprehensive Training in Central London
+                  Comprehensive Training in Hounslow, London
                 </h2>
                 
                 <div className="w-12 h-[1px] bg-accent/50"></div>
                 
                 <div className="space-y-4 font-sans text-xs sm:text-sm text-muted leading-relaxed">
                   <p>
-                    Glam and Go London is a dedicated beauty, aesthetics, and regulated qualification academy located in Soho. We provide structured training pathways for beginners entering beauty therapy, salon professionals upskilling, and experienced practitioners seeking technique refinement.
+                    Glam and Go London is a dedicated beauty, aesthetics, and regulated qualification academy located in Hounslow. We provide structured training pathways for beginners entering beauty therapy, salon professionals upskilling, and experienced practitioners seeking technique refinement.
                   </p>
                   <p>
                     From foundational beauty therapy and clinical skincare to advanced cosmetic masterclasses and wellness injections, our curriculum emphasizes safety standards, facial anatomy, precision technique, and complication management.
@@ -203,9 +203,9 @@ export default function AboutPage() {
                   <div className="text-accent font-extrabold text-2xl font-sans tracking-tight opacity-50 group-hover:opacity-100 transition-opacity duration-300">
                     02
                   </div>
-                  <h3 className="text-base font-extrabold text-text">Focused Small Cohorts</h3>
+                  <h3 className="text-base font-extrabold text-text">Focused Cohort Sizes</h3>
                   <p className="text-xs text-muted leading-relaxed">
-                    We restrict cohort sizes to ensure every learner receives close educator attention, real-time technique correction, and dedicated support suited to their individual learning pace.
+                    Class sizes depend on the course and typically accommodate between 2 and 8 students. This ensures every learner receives close educator attention, real-time technique correction, and dedicated support suited to their individual learning pace.
                   </p>
                 </div>
               </div>
@@ -316,8 +316,66 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 5: The Soho Studio Experience (Luxury Gallery Layout) */}
+        {/* Section 5: Teaching Team */}
         <section className="border-t border-muted-light/60 py-28">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-bold block">
+                Expert Guidance
+              </span>
+              <h2 className="text-3xl font-extrabold tracking-tight text-text">
+                Our Teaching Team
+              </h2>
+              <div className="w-12 h-[1px] bg-accent/50 mx-auto mt-4"></div>
+              <p className="text-xs sm:text-sm text-muted leading-relaxed pt-2">
+                Our educators bring dedicated qualification expertise and clinical backgrounds to support your practical development.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Tutor 1: Ambreen */}
+              <div className="bg-card-bg border border-muted-light/60 p-8 rounded-3xl shadow-sm flex flex-col justify-between transition-all duration-300 hover:border-accent/40 group relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-accent/20 group-hover:bg-accent transition-colors duration-300"></div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center text-accent font-extrabold text-lg">
+                      A
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-text">Ambreen</h3>
+                      <span className="text-[10px] uppercase tracking-wider text-accent font-semibold block">VTCT Qualified Educator</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted leading-relaxed pt-2">
+                    VTCT qualified from Level 2 through Level 7, providing structured qualification delivery and comprehensive guidance across beauty therapy and aesthetic standards.
+                  </p>
+                </div>
+              </div>
+
+              {/* Tutor 2: Bali */}
+              <div className="bg-card-bg border border-muted-light/60 p-8 rounded-3xl shadow-sm flex flex-col justify-between transition-all duration-300 hover:border-accent/40 group relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-accent/20 group-hover:bg-accent transition-colors duration-300"></div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center text-accent font-extrabold text-lg">
+                      B
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-text">Bali</h3>
+                      <span className="text-[10px] uppercase tracking-wider text-accent font-semibold block">Clinical Educator</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted leading-relaxed pt-2">
+                    With a professional background as an Osteopath, Bali brings in-depth anatomical understanding and clinical safety perspective to hands-on practical training.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 6: The Hounslow Studio Experience (Luxury Gallery Layout) */}
+        <section className="border-t border-muted-light/60 py-28 bg-muted-light/5">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
@@ -328,11 +386,11 @@ export default function AboutPage() {
                     Our Location
                   </span>
                   <h2 className="text-3xl font-extrabold tracking-tight text-text leading-tight">
-                    Central London <br />
+                    Hounslow <br />
                     Aesthetics Studio
                   </h2>
                   <p className="text-xs sm:text-sm text-muted leading-relaxed">
-                    Our modern, fully-equipped clinical space is located in the heart of London’s West End. We offer a sterile, professional environment mimicking a real-world clinic setting.
+                    Our modern, fully-equipped clinical space is located on Hounslow High Street. We offer a sterile, professional environment mimicking a real-world clinic setting.
                   </p>
                 </div>
 
@@ -372,15 +430,16 @@ export default function AboutPage() {
                   <div className="text-muted">
                     <strong className="text-text block uppercase tracking-wider text-[9px] mb-1">Studio Address</strong>
                     <p className="leading-relaxed">
-                      Suite 4, 12 Old Compton Street<br />
-                      Soho, London, W1D 4TQ
+                      Unit 21, Hounslow High Street<br />
+                      Hounslow, TW3 1ES<br />
+                      United Kingdom
                     </p>
                   </div>
                 </div>
 
                 <div className="pt-2">
                   <a
-                    href="https://maps.google.com/?q=12+Old+Compton+Street,+Soho,+London,+W1D+4TQ"
+                    href="https://maps.google.com/?q=Unit+21,+Hounslow+High+Street,+Hounslow,+TW3+1ES"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block px-5 py-3 border border-text/15 text-text text-xs tracking-wider uppercase font-semibold hover:bg-text hover:text-bg hover:border-text transition-all duration-300 rounded-lg cursor-pointer hover:scale-102"
@@ -411,7 +470,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 6: Luxury Call-to-Action Panel */}
+        {/* Section 7: Luxury Call-to-Action Panel */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 py-12">
           <div className="bg-gradient-to-br from-[#1C1A17] via-[#12100E] to-[#1C1A17] border border-muted-light/20 p-12 sm:p-20 rounded-3xl text-center text-[#FAF7F2] relative overflow-hidden transition-all duration-300 shadow-2xl group">
             {/* Backdrop glow leek */}

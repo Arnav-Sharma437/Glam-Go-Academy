@@ -362,7 +362,7 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                       Thank you for enrolling{verifiedName ? `, ${verifiedName}` : formData.name ? `, ${formData.name}` : ""}. Your enrolment has been confirmed. Stripe will provide your payment confirmation.
                     </p>
                     <p className="font-sans text-xs text-muted leading-relaxed mb-8">
-                      We look forward to seeing you at our Soho studio on <span className="font-semibold text-text">{selectedDate}</span>.
+                      We look forward to seeing you at our Hounslow academy studio on <span className="font-semibold text-text">{selectedDate}</span>.
                     </p>
                     <Link
                       href="/"

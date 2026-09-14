@@ -109,9 +109,9 @@ export default async function Page({ params, searchParams }: PageProps) {
         "name": "Glam & Go London Academy",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Unit 2, 77-79 High Street",
+          "streetAddress": "Unit 21, Hounslow High Street",
           "addressLocality": "Hounslow",
-          "postalCode": "TW3 1RB",
+          "postalCode": "TW3 1ES",
           "addressCountry": "GB"
         }
       }
