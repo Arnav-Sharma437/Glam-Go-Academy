@@ -1,7 +1,41 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Why Train With Us | Glam and Go London Academy",
+  description:
+    "Discover beauty therapy qualifications, VTCT certified pathways, CPD aesthetics masterclasses, skin & wellness training, and 1-to-1 refresher courses at Glam and Go London.",
+  alternates: {
+    canonical: "https://academy.glamandgolondon.com/about",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "https://academy.glamandgolondon.com/about",
+    title: "Why Train With Us | Glam and Go London Academy",
+    description:
+      "Discover beauty therapy qualifications, VTCT certified pathways, CPD aesthetics masterclasses, skin & wellness training, and 1-to-1 refresher courses at Glam and Go London.",
+    siteName: "Glam and Go London",
+    images: [
+      {
+        url: "https://academy.glamandgolondon.com/images/hero_aesthetics.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Beauty and Aesthetics Clinical Training at Glam and Go London Academy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Why Train With Us | Glam and Go London Academy",
+    description:
+      "Discover beauty therapy qualifications, VTCT certified pathways, CPD aesthetics masterclasses, skin & wellness training, and 1-to-1 refresher courses at Glam and Go London.",
+    images: ["https://academy.glamandgolondon.com/images/hero_aesthetics.jpg"],
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -20,9 +54,9 @@ export default function AboutPage() {
                   London Training Academy
                 </span>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.08] text-text font-sans">
-                  Redefining <br />
+                  Professional <br />
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent via-text to-accent dark:via-white">
-                    Aesthetics
+                    Beauty & Aesthetics
                   </span> <br />
                   Education
                 </h1>
@@ -34,7 +68,7 @@ export default function AboutPage() {
               </div>
               
               <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-md">
-                We specialize in delivering intensive, clinically-led aesthetics and cosmetic training. Based in the heart of London, our programs bridge classroom theory with supervised hands-on practice.
+                We deliver recognized VTCT beauty therapy qualifications, CPD-certified cosmetic masterclasses, advanced skin therapies, wellness infusions, and bespoke practical refresher courses. Based in Central London, our programs combine comprehensive theoretical understanding with supervised hands-on practice.
               </p>
               
               {/* Luxury counters grid */}
@@ -66,8 +100,9 @@ export default function AboutPage() {
               <div className="relative aspect-[16/10] w-full bg-muted-light rounded-3xl overflow-hidden shadow-2xl border border-muted-light/40 z-10 transition-transform duration-500 hover:scale-[1.01]">
                 <Image
                   src="/images/hero_aesthetics.jpg"
-                  alt="Glam and Go London Academy Studio"
+                  alt="Practical clinical skincare treatment and observation session with practitioner and student"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 58vw, 700px"
                   priority
                   className="object-cover"
                 />
@@ -88,8 +123,10 @@ export default function AboutPage() {
                 <div className="col-span-12 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg border border-muted-light/60">
                   <Image
                     src="/images/courses/foundation_injectables.png"
-                    alt="Supervised Aesthetics Practice"
+                    alt="Cosmetic facial treatment demonstration with micro-syringe technique"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 58vw, 650px"
+                    loading="lazy"
                     className="object-cover"
                   />
                 </div>
@@ -97,8 +134,10 @@ export default function AboutPage() {
                 <div className="absolute -bottom-10 -right-6 w-1/3 aspect-square rounded-2xl overflow-hidden shadow-2xl border-2 border-bg hidden md:block">
                   <Image
                     src="/images/courses/vitamin_injections.png"
-                    alt="Clinical Setup"
+                    alt="Practitioner in clinical attire preparing sterile ampoule and syringe"
                     fill
+                    sizes="(max-width: 768px) 33vw, 220px"
+                    loading="lazy"
                     className="object-cover"
                   />
                 </div>
@@ -110,17 +149,17 @@ export default function AboutPage() {
                   Our Foundation
                 </span>
                 <h2 className="text-3xl font-extrabold tracking-tight leading-tight text-text">
-                  Elite Training in Central London
+                  Comprehensive Training in Central London
                 </h2>
                 
                 <div className="w-12 h-[1px] bg-accent/50"></div>
                 
                 <div className="space-y-4 font-sans text-xs sm:text-sm text-muted leading-relaxed">
                   <p>
-                    Glam and Go London is a dedicated training academy located in Soho. We cater to beauty specialists, salon staff, and aspiring cosmetic practitioners looking to build a certified career in clinical beauty.
+                    Glam and Go London is a dedicated beauty, aesthetics, and regulated qualification academy located in Soho. We provide structured training pathways for beginners entering beauty therapy, salon professionals upskilling, and experienced practitioners seeking technique refinement.
                   </p>
                   <p>
-                    By maintaining standard safety guidelines and providing high-quality sterile study rooms, our students learn correct needle depth, facial anatomy danger zones, and complication management.
+                    From foundational beauty therapy and clinical skincare to advanced cosmetic masterclasses and wellness injections, our curriculum emphasizes safety standards, facial anatomy, precision technique, and complication management.
                   </p>
                 </div>
               </div>
@@ -150,9 +189,9 @@ export default function AboutPage() {
                   <div className="text-accent font-extrabold text-2xl font-sans tracking-tight opacity-50 group-hover:opacity-100 transition-opacity duration-300">
                     01
                   </div>
-                  <h3 className="text-base font-extrabold text-text">Safety First</h3>
+                  <h3 className="text-base font-extrabold text-text">Safety & Clinical Rigour</h3>
                   <p className="text-xs text-muted leading-relaxed">
-                    Our training prioritizes patient health. We cover facial anatomy danger zones, product reconstitution safety, and complications/emergency dissolving management.
+                    Our programs prioritize client safety and hygiene standards. Training covers anatomical structures, aseptic protocols, product handling, and comprehensive complication recognition and emergency management.
                   </p>
                 </div>
               </div>
@@ -164,9 +203,9 @@ export default function AboutPage() {
                   <div className="text-accent font-extrabold text-2xl font-sans tracking-tight opacity-50 group-hover:opacity-100 transition-opacity duration-300">
                     02
                   </div>
-                  <h3 className="text-base font-extrabold text-text">Small Cohorts</h3>
+                  <h3 className="text-base font-extrabold text-text">Focused Small Cohorts</h3>
                   <p className="text-xs text-muted leading-relaxed">
-                    We restrict class sizes to small groups to ensure each student receives direct, one-to-one guidance and real-time needle technique mentoring from clinical tutors.
+                    We restrict cohort sizes to ensure every learner receives close educator attention, real-time technique correction, and dedicated support suited to their individual learning pace.
                   </p>
                 </div>
               </div>
@@ -178,9 +217,9 @@ export default function AboutPage() {
                   <div className="text-accent font-extrabold text-2xl font-sans tracking-tight opacity-50 group-hover:opacity-100 transition-opacity duration-300">
                     03
                   </div>
-                  <h3 className="text-base font-extrabold text-text">Hands-on Practice</h3>
+                  <h3 className="text-base font-extrabold text-text">Supervised Practical Application</h3>
                   <p className="text-xs text-muted leading-relaxed">
-                    Students practice techniques directly on live models in our clinical environment. This builds treatment-room confidence for graduation.
+                    Learners transition seamlessly from classroom theory to practical application on live models under tutor supervision, building real-world technique, consultation ability, and professional confidence.
                   </p>
                 </div>
               </div>
@@ -198,37 +237,79 @@ export default function AboutPage() {
               Accredited Education Pathways
             </h2>
             <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-2xl mx-auto mb-16">
-              Our training standards coordinate with established educational frameworks. Upon completion, you receive accredited certifications to satisfy insurance requirements.
+              Our training aligns with established professional frameworks, offering CPD certification for practitioners and Ofqual-regulated VTCT beauty qualifications.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* CPD Accreditation card */}
               <div className="bg-card-bg border border-muted-light/60 p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left shadow-md relative group hover:scale-[1.01] transition-transform duration-300">
-                <div className="absolute top-4 right-4 text-[9px] uppercase tracking-wider font-bold text-accent">Verified CPD</div>
+                <div className="absolute top-4 right-4 text-[9px] uppercase tracking-wider font-bold text-accent">CPD Certified</div>
                 <div className="h-16 w-20 flex flex-col items-center justify-center border border-accent/20 bg-bg rounded-xl shrink-0 select-none shadow-sm">
                   <span className="text-lg font-extrabold tracking-widest text-text">CPD</span>
                   <span className="text-[6px] uppercase font-bold text-muted -mt-0.5 tracking-wider">Certified</span>
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-sm font-bold text-text">CPD Portfolio Accreditation</h4>
+                  <h3 className="text-sm font-bold text-text">CPD Masterclasses & Certification</h3>
                   <p className="text-xs text-muted leading-relaxed">
-                    Recognized by leading cosmetic insurers. All 13 core training modules provide certified CPD points allowing you to secure public liability coverage immediately upon completion.
+                    Our CPD courses cover cosmetic treatments, skin therapies, and wellness injections. On successful completion, graduates receive a CPD certificate designed to support practitioner insurance applications, subject to individual insurance provider terms and prerequisite checks.
                   </p>
+                  <div className="pt-1">
+                    <Link
+                      href="/courses?category=cpd"
+                      className="text-[11px] font-bold text-accent hover:underline inline-flex items-center gap-1"
+                    >
+                      Browse CPD Courses →
+                    </Link>
+                  </div>
                 </div>
               </div>
 
               {/* VTCT Framework support card */}
               <div className="bg-card-bg border border-muted-light/60 p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left shadow-md relative group hover:scale-[1.01] transition-transform duration-300">
-                <div className="absolute top-4 right-4 text-[9px] uppercase tracking-wider font-bold text-accent">Level Approved</div>
+                <div className="absolute top-4 right-4 text-[9px] uppercase tracking-wider font-bold text-accent">VTCT Qualifications</div>
                 <div className="h-16 w-20 flex flex-col items-center justify-center border border-accent/20 bg-bg rounded-xl shrink-0 select-none shadow-sm">
                   <span className="text-lg font-extrabold tracking-widest text-text">VTCT</span>
-                  <span className="text-[6px] uppercase font-bold text-muted -mt-0.5 tracking-wider">Approved</span>
+                  <span className="text-[6px] uppercase font-bold text-muted -mt-0.5 tracking-wider">Qualifications</span>
                 </div>
-                <div className="space-y-2">
-                  <h4 className="text-sm font-bold text-text">VTCT Framework Support</h4>
+                <div className="space-y-3">
+                  <h3 className="text-sm font-bold text-text">VTCT Regulated Qualifications</h3>
                   <p className="text-xs text-muted leading-relaxed">
-                    Structured mapping and layout ready for Level 2, Level 3 and Level 4 beauty therapy programs. All certificate pathways follow leading national criteria frameworks.
+                    Nationally recognized, Ofqual-regulated beauty therapy qualifications structured by specific qualification level:
                   </p>
+                  <ul className="space-y-1.5 text-xs text-left">
+                    <li className="flex items-center justify-between bg-bg/70 px-3 py-1.5 rounded-lg border border-muted-light/40">
+                      <Link href="/courses/vtct-level-2-beauty-therapy" className="hover:text-accent font-medium text-text">
+                        VTCT Level 2 Diploma in Beauty Therapy
+                      </Link>
+                      <span className="text-[9px] uppercase font-bold text-accent bg-accent/10 px-2 py-0.5 rounded">
+                        Approved
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-between bg-bg/70 px-3 py-1.5 rounded-lg border border-muted-light/40">
+                      <Link href="/courses/vtct-level-3-beauty-therapy-treatments" className="hover:text-accent font-medium text-text">
+                        VTCT Level 3 Diploma in Beauty Therapy Treatments
+                      </Link>
+                      <span className="text-[9px] uppercase font-bold text-accent bg-accent/10 px-2 py-0.5 rounded">
+                        Approved
+                      </span>
+                    </li>
+                    <li className="flex items-center justify-between bg-bg/70 px-3 py-1.5 rounded-lg border border-muted-light/40">
+                      <Link href="/courses/vtct-level-4-beauty-therapy" className="hover:text-accent font-medium text-text">
+                        VTCT Level 4 Advanced Beauty Therapy
+                      </Link>
+                      <span className="text-[9px] uppercase font-bold text-muted bg-muted-light/40 px-2 py-0.5 rounded">
+                        Pending Approval
+                      </span>
+                    </li>
+                  </ul>
+                  <div className="pt-1">
+                    <Link
+                      href="/courses?category=vtct"
+                      className="text-[11px] font-bold text-accent hover:underline inline-flex items-center gap-1"
+                    >
+                      View All VTCT Qualifications →
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -257,7 +338,7 @@ export default function AboutPage() {
 
                 {/* Facilities List */}
                 <div className="border-t border-muted-light/60 pt-6 space-y-4 font-sans text-xs">
-                  <h4 className="text-[10px] uppercase tracking-wider text-text font-bold">Studio Facilities:</h4>
+                  <h3 className="text-[10px] uppercase tracking-wider text-text font-bold">Studio Facilities:</h3>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-muted">
                     <li className="flex items-center gap-2">
                       <svg className="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
@@ -309,7 +390,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Right Column: Dynamic Visual Grid (College Layout) */}
+              {/* Right Column: Dynamic Visual Grid */}
               <div className="lg:col-span-7 grid grid-cols-12 gap-4 relative group">
                 <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-accent/25 via-accent/5 to-transparent blur-2xl opacity-75 transition-all duration-700"></div>
                 
@@ -317,8 +398,10 @@ export default function AboutPage() {
                 <div className="col-span-12 relative aspect-[16/10] rounded-3xl overflow-hidden shadow-xl border border-muted-light/40 z-10">
                   <Image
                     src="/images/courses/biotin_glutathione.png"
-                    alt="Glam and Go London Aesthetics Studio"
+                    alt="Clinical tray with cosmetic ampoules, vials, and sterile instruments on marble countertop"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 58vw, 700px"
+                    loading="lazy"
                     className="object-cover"
                   />
                 </div>
@@ -336,14 +419,14 @@ export default function AboutPage() {
             
             <div className="max-w-xl mx-auto relative z-10 space-y-8">
               <span className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold block animate-pulse">
-                Begin Your Journey
+                Begin Your Training
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#FAF7F2] leading-tight font-sans">
-                Develop Certified <br />
-                Aesthetics Skills
+                Advance Your Beauty & <br />
+                Aesthetics Career
               </h2>
               <p className="text-xs sm:text-sm text-[#FAF7F2]/75 leading-relaxed max-w-md mx-auto">
-                Secure your seat in our next Soho clinical training cohort. Keep classes small, hands-on, and secure.
+                Explore our upcoming cohort dates across VTCT qualifications, CPD certified courses, and refresher modules. Enrol online or speak with our admissions team.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

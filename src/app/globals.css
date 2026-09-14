@@ -6,7 +6,7 @@
   --text: #1C1A17;        /* Deep charcoal / near-black */
   --accent: #C9A24B;      /* Muted gold */
   --accent-hover: #B8913B;
-  --muted: #8A8378;       /* Neutral mid-tone for secondary text */
+  --muted: #6B655B;       /* Refined tone meeting WCAG AA (5.0:1 contrast ratio against #FAF7F2) */
   --muted-light: #ECE7DF; /* Soft light neutral border/background */
   --white: #FFFFFF;
   --card-bg: #FFFFFF;

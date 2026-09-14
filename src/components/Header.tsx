@@ -129,7 +129,7 @@ export default function Header() {
                   alt="Glam and Go London Academy"
                   fill
                   className={`object-contain transition-all duration-300 ${
-                    isSolid ? "brightness-0 dark:brightness-100" : "brightness-0 invert"
+                    isSolid ? "brightness-0 dark:invert" : "brightness-0 invert"
                   }`}
                   priority
                   onError={() => setLogoError(true)}

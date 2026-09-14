@@ -22,7 +22,7 @@ export default function Footer() {
                     src="/images/logo/Glam-Go-logo.webp"
                     alt="Glam and Go London Logo"
                     fill
-                    className="object-contain object-left brightness-0 dark:brightness-100"
+                    className="object-contain object-left brightness-0 dark:invert"
                     onError={() => setLogoError(true)}
                   />
                 </div>
@@ -55,7 +55,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61593930254674"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted hover:text-accent transition-colors duration-200"
@@ -159,7 +159,7 @@ export default function Footer() {
                 </p>
               </div>
               <p className="pt-2 border-t border-muted-light/60">
-                <span className="font-semibold text-text">Phone:</span> 020 8577 1333<br />
+                <span className="font-semibold text-text">Phone:</span> <a href="tel:02085771333" className="hover:text-accent transition-colors duration-200">020 8577 1333</a><br />
                 <span className="font-semibold text-text">Email:</span> <a href="mailto:glamandgohounslow@gmail.com" className="hover:text-accent transition-colors duration-200">glamandgohounslow@gmail.com</a>
               </p>
             </address>
