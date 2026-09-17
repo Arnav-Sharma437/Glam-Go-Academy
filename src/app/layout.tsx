@@ -3,6 +3,7 @@ import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import BottomTabBar from "@/components/BottomTabBar";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -109,6 +110,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-bg text-text font-body selection:bg-accent selection:text-bg">
         {children}
         <CustomCursor />
+        <FloatingWhatsApp />
         <BottomTabBar />
       </body>
     </html>
