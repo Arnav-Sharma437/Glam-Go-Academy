@@ -60,7 +60,7 @@ function AnimatedValue({ value }: { value: string }) {
 
 export default function TrustStrip() {
   const highlights = [
-    { value: "500+", label: "Students Trained" },
+    { value: "VTCT & CPD", label: "Certified Pathways" },
     { value: "London", label: "Est. Studio Location" },
     { value: "100%", label: "Hands-on Training" },
     { value: "1:1", label: "Expert Tutor Support" }

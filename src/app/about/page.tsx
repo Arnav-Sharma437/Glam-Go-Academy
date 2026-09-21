@@ -297,8 +297,8 @@ export default function AboutPage() {
                       <Link href="/courses/vtct-level-4-beauty-therapy" className="hover:text-accent font-medium text-text">
                         VTCT Level 4 Advanced Beauty Therapy
                       </Link>
-                      <span className="text-[9px] uppercase font-bold text-muted bg-muted-light/40 px-2 py-0.5 rounded">
-                        Pending Approval
+                      <span className="text-[9px] uppercase font-bold text-accent bg-accent/10 px-2 py-0.5 rounded">
+                        Approved
                       </span>
                     </li>
                   </ul>
@@ -347,7 +347,7 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <p className="text-xs text-muted leading-relaxed pt-2">
-                    VTCT qualified from Level 2 through Level 7, providing structured qualification delivery and comprehensive guidance across beauty therapy and aesthetic standards.
+                    VTCT qualified educator with extensive qualification and beauty therapy experience, providing structured qualification delivery and comprehensive guidance across beauty therapy and aesthetic standards.
                   </p>
                 </div>
               </div>

@@ -59,7 +59,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Medical professional (Doctor, Nurse, Dentist, Pharmacist) or qualified practitioner (NVQ/VTCT Level 3 Beauty with needle experience)",
       minAge: 21,
-      insurance: "Eligible for cosmetic practitioner indemnity insurance on completion"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -94,7 +94,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Foundation Injectables / Foundation Facial Lines Certificate with minimum 6 months clinical experience",
       minAge: 21,
-      insurance: "Requires active aesthetic indemnity insurance"
+      insurance: "Requires active aesthetic indemnity insurance (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -135,7 +135,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Medical professional (Doctor, Nurse, Dentist, Pharmacist) or qualified aesthetic practitioner (NVQ/VTCT Level 3 Beauty Therapy with needle experience)",
       minAge: 21,
-      insurance: "Eligible for practitioner indemnity insurance upon completion"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -169,7 +169,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Foundation Injectables Certification with minimum 6 months clinical injecting experience",
       minAge: 21,
-      insurance: "Requires active aesthetic indemnity insurance"
+      insurance: "Requires active aesthetic indemnity insurance (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -210,7 +210,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Medical professional or Level 3 Beauty Therapy with needle experience / Phlebotomy",
       minAge: 21,
-      insurance: "Eligible for cosmetic practitioner insurance"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -244,7 +244,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Foundation Dermal Fillers certification with proven practical experience",
       minAge: 21,
-      insurance: "Requires active cosmetic indemnity insurance"
+      insurance: "Requires active cosmetic indemnity insurance (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -279,7 +279,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Foundation Injectables, Dermal Fillers, or Level 3 Beauty with needle experience",
       minAge: 21,
-      insurance: "Eligible for cosmetic practitioner indemnity insurance"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -313,7 +313,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Microneedling, Mesotherapy, or Injectables qualification",
       minAge: 18,
-      insurance: "Eligible for aesthetic insurance"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     curriculum: [
@@ -346,7 +346,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Foundation Injectables, Dermal Fillers, or Level 3 Beauty with needle experience",
       minAge: 21,
-      insurance: "Eligible for practitioner indemnity insurance"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -380,7 +380,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Level 3 Beauty Therapy, Phlebotomy, Microneedling, or healthcare background",
       minAge: 18,
-      insurance: "Eligible for aesthetic insurance"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     curriculum: [
@@ -414,7 +414,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Phlebotomy certification required (can be combined on consecutive dates) or medical background",
       minAge: 18,
-      insurance: "Eligible for public liability insurance on completion"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     curriculum: [
@@ -447,7 +447,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Level 3 Beauty Therapy, Phlebotomy, Microneedling, or healthcare background",
       minAge: 18,
-      insurance: "Eligible for public liability insurance on completion"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     curriculum: [
@@ -484,7 +484,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Facial qualification, Level 2/3 Beauty, or medical background",
       minAge: 18,
-      insurance: "Eligible for public liability insurance on completion"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     curriculum: [
@@ -517,7 +517,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Facial qualification, Level 2/3 Beauty, or medical background",
       minAge: 18,
-      insurance: "Eligible for public liability insurance on completion"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     curriculum: [
@@ -587,7 +587,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Phlebotomy certification (can be trained prior) or healthcare professional",
       minAge: 18,
-      insurance: "Eligible for public liability insurance on completion"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     curriculum: [
@@ -620,7 +620,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Phlebotomy, Vitamin B12, or needle qualification required",
       minAge: 18,
-      insurance: "Eligible for practitioner indemnity insurance"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     benefits: [
@@ -675,7 +675,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "No prior experience required; needle safety and injection techniques are fully taught",
       minAge: 18,
-      insurance: "Eligible for public liability insurance on completion"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     curriculum: [
@@ -708,7 +708,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "No prior experience required",
       minAge: 18,
-      insurance: "Eligible for public liability insurance on completion"
+      insurance: "Designed to support insurance eligibility upon completion (subject to insurer criteria)"
     },
     minimumAge: 18,
     curriculum: [
@@ -746,7 +746,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Proof of prior Foundation Injectables certification",
       minAge: 21,
-      insurance: "Requires active cosmetic indemnity insurance or academy coverage"
+      insurance: "Requires active cosmetic indemnity insurance or academy coverage (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -778,7 +778,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "Proof of prior Foundation Dermal Fillers certification",
       minAge: 21,
-      insurance: "Requires active cosmetic indemnity insurance"
+      insurance: "Requires active cosmetic indemnity insurance (subject to insurer criteria)"
     },
     minimumAge: 21,
     curriculum: [
@@ -813,7 +813,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "No prior experience required; open to beginners",
       minAge: 16,
-      insurance: "Provided during academy clinical training"
+      insurance: "Provided under academy clinical supervision during practical training"
     },
     minimumAge: 16,
     curriculum: [
@@ -836,9 +836,9 @@ export const COURSES: Course[] = [
     difficulty: "Intermediate",
     level: "Intermediate",
     category: "vtct",
-    startDate: "Awaiting Awarding-Body Approval (Waitlist)",
-    alternateDates: ["Waitlist Registration Open"],
-    description: "Advanced regulated qualification covering body massage, facial electrotherapy, advanced skincare therapies, and micro-current skin toning. Enrolling on waitlist only. VTCT registration, exam, and certification fees are included.",
+    startDate: "Intake Enrolling",
+    alternateDates: ["Intake Enrolling", "Contact Academy for Schedules"],
+    description: "Advanced regulated qualification covering body massage, facial electrotherapy, advanced skincare therapies, and micro-current skin toning. VTCT registration, exam, and certification fees are included.",
     price: 2200,
     image: "/images/courses/vtct_level_3.png",
     duration: "Months-long Program",
@@ -846,7 +846,7 @@ export const COURSES: Course[] = [
     prerequisites: {
       qualification: "VTCT Level 2 Beauty Therapy or equivalent beauty diploma",
       minAge: 16,
-      insurance: "Awaiting final awarding body approval"
+      insurance: "Provided under academy clinical supervision during practical training"
     },
     minimumAge: 16,
     curriculum: [
@@ -868,17 +868,17 @@ export const COURSES: Course[] = [
     difficulty: "Advanced",
     level: "Advanced",
     category: "vtct",
-    startDate: "Coming Soon (Register Interest)",
-    alternateDates: ["Pre-registration Open"],
-    description: "Ofqual-regulated Level 4 qualification covering advanced non-surgical aesthetics, laser/IPL skin therapies, and chemical peeling procedures. Register interest today to receive cohort syllabus updates. VTCT registration, exam, and certification fees are included.",
+    startDate: "Intake Enrolling",
+    alternateDates: ["Intake Enrolling", "Contact Academy for Schedules"],
+    description: "Ofqual-regulated Level 4 qualification covering advanced non-surgical aesthetics, laser/IPL skin therapies, and chemical peeling procedures. Register interest today to receive cohort syllabus and intake updates. VTCT registration, exam, and certification fees are included.",
     price: 0,
     image: "/images/courses/vtct_level_4.png",
-    duration: "Coming Soon",
+    duration: "Months-long Program (Part-Time / Full-Time)",
     accreditation: "VTCT",
     prerequisites: {
       qualification: "VTCT Level 3 Beauty Therapy or equivalent healthcare credential",
       minAge: 18,
-      insurance: "Not required for register interest"
+      insurance: "Provided under academy clinical supervision during practical training"
     },
     minimumAge: 18,
     curriculum: [

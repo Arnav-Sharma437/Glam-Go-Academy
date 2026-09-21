@@ -279,8 +279,8 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                       <span className="text-muted">{course.accreditation === "CPD" ? `CPD Certified Certificate in ${course.title}` : `VTCT Accredited Certificate in ${course.title}`}</span>
                     </div>
                     <div className="border-t border-muted-light/40 pt-2.5">
-                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Underwriter Approved</span>
-                      <span className="text-muted">Eligible for cosmetic practitioner insurance</span>
+                      <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-0.5">Insurance Eligibility</span>
+                      <span className="text-muted">Designed to support insurance applications (subject to insurer criteria)</span>
                     </div>
                     {course.accreditation === "CPD" && (
                       <div className="border-t border-muted-light/40 pt-2.5">
@@ -379,12 +379,9 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="font-sans text-xl text-text font-bold mb-3">Request Received</h3>
+                    <h3 className="font-sans text-xl text-text font-bold mb-3">Enquiry Received</h3>
                     <p className="font-sans text-xs text-muted leading-relaxed mb-8">
-                      {course.id === "vtct-level-4-beauty-therapy"
-                        ? "Thank you! Your interest has been registered. We will notify you as soon as this qualification launches."
-                        : "Thank you. Your waitlist application has been received. Our registrations team will contact you shortly with intake updates."
-                      }
+                      Thank you. Your enquiry has been received. Our registrations team will contact you shortly with intake and schedule updates.
                     </p>
                     <Link
                       href="/"
@@ -395,9 +392,9 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                   </div>
                 ) : course.id === "vtct-level-3-beauty-therapy-treatments" ? (
                   <form onSubmit={handleWaitlistSubmit} className="flex flex-col">
-                    <h3 className="font-sans text-xl font-bold text-text mb-2">Join Program Waitlist</h3>
+                    <h3 className="font-sans text-xl font-bold text-text mb-2">Register Your Enquiry</h3>
                     <p className="text-[10px] text-muted font-sans mb-6 leading-relaxed">
-                      Awaiting awarding-body approval (Qualification No. 500/8964/X). Enrolment is currently waitlist-only.
+                      Approved Ofqual-regulated qualification (Qualification No. 500/8964/X). Register your details for upcoming cohort schedules.
                     </p>
 
                     <div className="mb-4">
@@ -464,7 +461,7 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                           <span>Submitting...</span>
                         </>
                       ) : (
-                        <span>Join Level 3 Waitlist</span>
+                        <span>Submit Level 3 Enquiry</span>
                       )}
                     </button>
 
@@ -476,7 +473,7 @@ export default function CourseDetailClient({ params, searchParams }: PageProps) 
                   <form onSubmit={handleWaitlistSubmit} className="flex flex-col">
                     <h3 className="font-sans text-xl font-bold text-text mb-2">Register Interest</h3>
                     <p className="text-[10px] text-muted font-sans mb-6 leading-relaxed">
-                      Regulated Level 4 qualification coming soon. Sign up for intake schedules.
+                      Approved Ofqual-regulated Level 4 qualification. Sign up for upcoming cohort schedules.
                     </p>
 
                     <div className="mb-4">
