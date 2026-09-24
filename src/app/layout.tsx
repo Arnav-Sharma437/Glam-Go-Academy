@@ -102,7 +102,13 @@ export default function RootLayout({
                 "addressLocality": "Hounslow",
                 "postalCode": "TW3 1ES",
                 "addressCountry": "GB"
-              }
+              },
+              "sameAs": [
+                "https://www.instagram.com/glamngoacademy?stkn=MXJqbTVjcWFyMnc0cg%3D%3D",
+                "https://www.facebook.com/profile.php?id=61594383416371",
+                "https://vm.tiktok.com/ZN8jv7JLD/",
+                "https://www.youtube.com/@glamandgolondon9985"
+              ]
             })
           }}
         />

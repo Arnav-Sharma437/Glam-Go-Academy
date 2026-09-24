@@ -85,7 +85,7 @@ export default function ContactPage() {
 
                   <div className="border-t border-muted-light/40 pt-4">
                     <span className="block font-bold text-text uppercase tracking-wider text-[9px] mb-2">Social Channels</span>
-                    <div className="flex items-center gap-3 text-xs">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
                       <a
                         href="https://www.instagram.com/glamngoacademy?stkn=MXJqbTVjcWFyMnc0cg%3D%3D"
                         target="_blank"
@@ -102,6 +102,24 @@ export default function ContactPage() {
                         className="text-muted hover:text-accent font-semibold inline-flex items-center gap-1 transition-colors"
                       >
                         Facebook ↗
+                      </a>
+                      <span className="text-muted/40">•</span>
+                      <a
+                        href="https://vm.tiktok.com/ZN8jv7JLD/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted hover:text-accent font-semibold inline-flex items-center gap-1 transition-colors"
+                      >
+                        TikTok ↗
+                      </a>
+                      <span className="text-muted/40">•</span>
+                      <a
+                        href="https://www.youtube.com/@glamandgolondon9985"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted hover:text-accent font-semibold inline-flex items-center gap-1 transition-colors"
+                      >
+                        YouTube ↗
                       </a>
                     </div>
                   </div>
